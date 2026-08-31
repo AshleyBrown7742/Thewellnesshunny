@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WellnessHunny — Root-Cause Wellness Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f9f6f0;
+    --cream-deep: #f0e8d8;
+    --card: #ffffff;
+    --honey-light: #f5c87a;
+    --honey: #d98e2b;
+    --honey-deep: #a65d03;
+    --ink: #211911;
+    --ink-soft: #635748;
+    --line: #e6dcce;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--cream); color: var(--ink);
+    font-family: 'Jost', sans-serif; font-weight: 400; line-height: 1.7;
+    overflow-x: hidden;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; margin: 0; color: var(--ink); }
+  a { color: var(--honey-deep); }
+  .eyebrow {
+    font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 11.5px; font-weight: 600; color: var(--honey-deep);
+  }
+  .btn {
+    font-family: 'Jost', sans-serif; font-weight: 600; font-size: 15px;
+    border: none; cursor: pointer; border-radius: 999px; padding: 15px 30px;
+    display: inline-block; text-decoration: none; position: relative; overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--honey-light) 0%, var(--honey) 60%, var(--honey-deep) 100%);
+    color: #ffffff; box-shadow: 0 8px 20px rgba(166, 93, 3, 0.25);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 10px 24px rgba(166, 93, 3, 0.35);
+    transform: translateY(-1px);
+  }
+  .btn-ghost { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--honey-deep); }
+
+  nav { padding: 26px 0; position: absolute; width: 100%; top: 0; z-index: 10; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: #fff; font-weight: 600; }
+  .logo span { color: var(--honey-light); }
+  .nav-links { display: none; }
+  @media (min-width: 760px) { 
+    .nav-links { display: flex; align-items: center; } 
+    .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 28px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--honey-light); }
+  }
+
+  /* Video Section Styles with Solid Fallback Backgrounds */
+  .video-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    color: #ffffff;
+    overflow: hidden;
+    background-color: #211911;
+  }
+  .video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(33, 25, 17, 0.65) 0%, rgba(33, 25, 17, 0.8) 100%);
+    z-index: 1;
+  }
+
+  .hero-text h1 { font-size: 64px; font-style: italic; line-height: 1.05; margin: 20px 0 20px; color: #fff; }
+  .hero-text h1 .accent { color: var(--honey-light); }
+  .hero-text .sub { font-size: 18px; color: rgba(255,255,255,0.9); max-width: 540px; margin: 0 0 30px; }
+  .hero-text .eyebrow { color: var(--honey-light); }
+
+  section { padding: 80px 0; }
+  .section-head { margin-bottom: 40px; }
+  .section-head.center { text-align: center; }
+  .section-head h2 { font-size: 42px; font-style: italic; }
+  .section-head p { color: var(--ink-soft); font-size: 16px; margin-top: 10px; }
+
+  .philo-section {
+    position: relative;
+    padding: 120px 0;
+    color: #ffffff;
+    overflow: hidden;
+    background-color: #15100b;
+  }
+  .philo-section h2 { color: #ffffff; }
+  .philo-section p { color: rgba(255, 255, 255, 0.9); }
+  .philo-section .eyebrow { color: var(--honey-light); }
+
+  .chip-row { display: flex; flex-wrap: wrap; margin-top: 24px; gap: 10px; }
+  .chip { background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 999px; }
+
+  .grid-cards { display: flex; flex-wrap: wrap; gap: 16px; }
+  .grid-card { flex: 1 1 220px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 28px 24px; }
+  .grid-card .num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--honey-deep); margin-bottom: 8px; font-weight: 600; }
+  .grid-card h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 17px; margin-bottom: 8px; }
+  .grid-card p { color: var(--ink-soft); font-size: 14px; margin: 0; line-height: 1.6; }
+
+  .steps-row { display: flex; flex-wrap: wrap; }
+  .step-cell { flex: 1 1 220px; padding: 30px 24px; border-top: 1px solid var(--line); }
+  .step-cell:nth-child(-n+4) { border-top: 2px solid var(--ink); }
+  .step-cell .n { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 36px; color: var(--honey-deep); font-weight: 500; }
+  .step-cell h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 17px; margin: 12px 0 8px; }
+  .step-cell p { color: var(--ink-soft); font-size: 14px; margin: 0; line-height: 1.6; }
+
+  .price-card { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 12px 36px; }
+  .price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; gap: 12px; }
+  .price-row:last-child { border-bottom: none; }
+  .price-row .name { font-weight: 600; font-size: 17px; }
+  .price-row .desc { font-size: 14px; color: var(--ink-soft); max-width: 480px; margin-top: 4px; line-height: 1.5; }
+  .price-row .amt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--honey-deep); font-weight: 600; white-space: nowrap; }
+
+  .fullscript-banner { background: var(--cream-deep); border: 1px dashed var(--honey); border-radius: 16px; padding: 20px 24px; margin-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .fullscript-banner p { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
+  .fullscript-banner strong { color: var(--ink); }
+
+  .quote-panel { background: var(--ink); border-radius: 28px; padding: 70px 40px; text-align: center; }
+  .quote-panel blockquote { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--cream); font-size: 32px; max-width: 720px; margin: 0 auto; line-height: 1.45; }
+  .quote-panel .attr { margin-top: 24px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--honey-light); }
+
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item:first-child { border-top: 2px solid var(--ink); }
+  .faq-item summary { cursor: pointer; padding: 24px 0; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; color: var(--honey-deep); font-size: 24px; font-weight: 400; }
+  .faq-item[open] summary::after { content: "\2212"; }
+  .faq-item p { color: var(--ink-soft); font-size: 15px; padding-bottom: 24px; margin: 0; max-width: 680px; line-height: 1.7; }
+
+  .cta-final { text-align: center; padding: 80px 0; }
+  .cta-final h2 { font-size: 46px; font-style: italic; margin-bottom: 14px; }
+  .cta-final p { color: var(--ink-soft); margin-bottom: 32px; font-size: 17px; }
+
+  footer { border-top: 1px solid var(--line); padding: 40px 0; text-align: center; font-size: 13px; color: var(--ink-soft); }
+
+  @media (max-width: 720px) {
+    .hero-text h1 { font-size: 42px; }
+    .price-card { padding: 8px 20px; }
+    .quote-panel { padding: 40px 20px; }
+    .quote-panel blockquote { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">wellness<span>hunny</span></div>
+    <div class="nav-links">
+      <a href="#philosophy">Philosophy</a>
+      <a href="#pillars">Pillars</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Services &amp; Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<div class="video-hero">
+  <video class="video-bg" autoplay loop muted playsinline>
+    <source src="honey.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow">Virtual Root-Cause Wellness Coaching</span>
+      <h1>Feel like <span class="accent">yourself</span> again.</h1>
+      <p class="sub">Symptom relief is a band-aid; we go after the root. For anyone tired of being told their labs are "normal" while still feeling exhausted, bloated, or out of sync.</p>
+      <div class="hero-ctas">
+        <a href="#pricing" class="btn btn-primary">Apply for a free call</a>
+        <a href="#how" class="btn btn-ghost" style="background: rgba(255,255,255,0.15); color:#fff; border-color: rgba(255,255,255,0.3);">See how it works</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="philosophy" class="philo-section">
+  <video class="video-bg" autoplay loop muted playsinline>
+    <source src="tea.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay" style="background: rgba(21, 16, 11, 0.82);"></div>
+  <div class="wrap">
+    <div style="max-width: 680px;">
+      <span class="eyebrow">Our Philosophy</span>
+      <h2>Symptoms are signals, not the full story.</h2>
+      <p>Most health experiences leave people feeling like a collection of isolated symptoms. If your lab results keep coming back "normal" but you still don't feel right, you're in the right place.</p>
+      <p>We work at the intersection of functional wellness and real life. By evaluating gut health, daily metabolic patterns, stress load, sleep quality, and lifestyle factors together, we uncover what your body has been trying to tell you all along.</p>
+      <div class="chip-row">
+        <span class="chip">Gut &amp; Digestion</span>
+        <span class="chip">Metabolic Energy</span>
+        <span class="chip">Nervous System</span>
+        <span class="chip">Restful Sleep</span>
+        <span class="chip">Custom Protocols</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pillars">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Core Focus Areas</span>
+      <h2>Four Pillars of Root-Cause Coaching</h2>
+      <p>A holistic, structured approach built around how your body actually functions.</p>
+    </div>
+    <div class="grid-cards">
+      <div class="grid-card">
+        <div class="num">01</div>
+        <h3>Gut &amp; Digestive Repair</h3>
+        <p>Eliminate chronic bloating and food reactivity by optimizing your microbiome, digestion, and gut barrier integrity.</p>
+      </div>
+      <div class="grid-card">
+        <div class="num">02</div>
+        <h3>Metabolic Energy</h3>
+        <p>Ditch the 3 PM fatigue. We support cortisol curves and blood sugar balance to unlock natural, sustained daily vitality.</p>
+      </div>
+      <div class="grid-card">
+        <div class="num">03</div>
+        <h3>Nervous System Reset</h3>
+        <p>Shift your body out of chronic survival mode so real healing, physiological recovery, and restful sleep can actually happen.</p>
+      </div>
+      <div class="grid-card">
+        <div class="num">04</div>
+        <h3>Sustainable Action Protocols</h3>
+        <p>No generic templates or extreme diets. You get a tailored roadmap built around your real-life routine and long-term goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">The Client Path</span>
+      <h2>How We Work Together</h2>
+      <p>A simple, intentional 4-step journey toward lasting wellness.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-cell">
+        <div class="n">1</div>
+        <h3>Apply for a Free Call</h3>
+        <p>Complete a quick 5-minute health application so we can review your goals and make sure we are a great fit before our 20-minute call.</p>
+      </div>
+      <div class="step-cell">
+        <div class="n">2</div>
+        <h3>Deep-Dive Intake</h3>
+        <p>A comprehensive analysis mapping out your complete health timeline, symptoms, stress load, environment, and daily habits.</p>
+      </div>
+      <div class="step-cell">
+        <div class="n">3</div>
+        <h3>Custom Action Protocol</h3>
+        <p>Receive a step-by-step nutrition, lifestyle, and supplement protocol delivered via Fullscript with total clarity.</p>
+      </div>
+      <div class="step-cell">
+        <div class="n">4</div>
+        <h3>Check-Ins &amp; Support</h3>
+        <p>Bi-weekly strategy check-ins paired with direct messaging support (during business hours) to keep you accountable and progressing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="wrap">
+    <div class="quote-panel">
+      <blockquote>"For years I was told my fatigue and bloating were just 'stress.' WellnessHunny helped me connect the dots and gave me my life back."</blockquote>
+      <div class="attr">— Sarah M., Coaching Client</div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Investment</span>
+      <h2>Coaching &amp; Service Options</h2>
+      <p>Transparent pricing tailored to support your root-cause journey.</p>
+    </div>
+    <div class="price-card">
+      <div class="price-row">
+        <div>
+          <div class="name">Discovery Session</div>
+          <div class="desc">Initial 20-minute consultation to review your health goals and evaluate fit. <em>(Application required before booking)</em></div>
+        </div>
+        <div class="amt">Free</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <div class="name">3-Month Foundation Program</div>
+          <div class="desc">Complete health intake analysis, personalized Action Protocol, bi-weekly check-ins, and direct client messaging support.</div>
+        </div>
+        <div class="amt">$450 <span style="font-size:15px; font-style:normal;">/ mo</span></div>
+      </div>
+      <div class="price-row">
+        <div>
+          <div class="name">Lab Interpretation &amp; Action Protocol</div>
+          <div class="desc">Includes a <strong>45-minute virtual appointment</strong> to thoroughly review your results, plus a custom step-by-step lifestyle protocol. <em>(Optional add-on for any ordered labs)</em></div>
+        </div>
+        <div class="amt">+$150 <span style="font-size:15px; font-style:normal;">/ lab set</span></div>
+      </div>
+      <div class="price-row">
+        <div>
+          <div class="name">Standalone Functional Labs</div>
+          <div class="desc">Order functional testing directly for your personal info. <em>Note: Select tests (such as Hair Tissue Mineral Analysis or specific lab kits) include built-in summary reports.</em></div>
+        </div>
+        <div class="amt">Varies by lab</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <div class="name">À La Carte Session</div>
+          <div class="desc">Single 30-minute focused consultation for targeted guidance, quick protocol tune-ups, or check-ins. <em>(Reserved for active or past clients)</em></div>
+        </div>
+        <div class="amt">$65 <span style="font-size:15px; font-style:normal;">/ session</span></div>
+      </div>
+    </div>
+
+    <div class="fullscript-banner">
+      <div>
+        <strong>Professional-Grade Supplement Store</strong>
+        <p>Order practitioner-grade supplements directly through our Fullscript online dispensary with automatic protocol integration and client savings.</p>
+      </div>
+      <a href="https://fullscript.com" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 10px 20px; font-size: 13.5px;">Visit Fullscript Store &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Questions</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How is root-cause coaching different from traditional care?</summary>
+        <p>Conventional medicine excels at managing acute symptoms and diagnosing disease. Root-cause coaching investigates *why* those symptoms are happening in the first place—focusing on gut integrity, stress load, and metabolic health to address issues at their origin through lifestyle, nutritional, and supplement support.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is everything conducted virtually?</summary>
+        <p>Yes. All 1:1 strategy calls and continuous support are delivered through a secure virtual client portal, so you can transform your health from anywhere.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need lab tests to start?</summary>
+        <p>Not at all. We gather immense insight from your detailed health timeline, symptom patterns, and daily lifestyle markers. While specialized functional lab work may be recommended down the line to get deeper insights, it is never required to begin your healing journey. If you already have recent lab work from a doctor, we'll happily review it together during your intake.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How quickly will I see progress?</summary>
+        <p>Most clients notice meaningful shifts in energy, sleep quality, and digestion within the first 3 to 4 weeks, with deep, lasting physical transformation consolidating over 3 to 6 months.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="cta-final">
+  <div class="wrap">
+    <h2>Ready to find your root cause?</h2>
+    <p>Complete our quick application to book your free 20-minute discovery call.</p>
+    <a href="#pricing" class="btn btn-primary">Apply for your free call</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 WellnessHunny. All rights reserved. Root-Cause Wellness Coaching.</p>
+    <p style="font-size:11.5px; margin-top:8px; opacity:0.8;">Disclaimer: WellnessHunny provides functional wellness coaching and educational guidance. Services are not intended to diagnose, treat, or cure any medical condition.</p>
+  </div>
+</footer>
+
+</body>
+</html>
