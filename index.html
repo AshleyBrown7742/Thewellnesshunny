@@ -111,4 +111,312 @@
   .philo-section .eyebrow { color: var(--tan-light); }
 
   .chip-row { display: flex; flex-wrap: wrap; margin-top: 24px; gap: 10px; }
-  .chip { background: rgba(255,255,255,0.15); backdrop-filter: blur
+  .chip { background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 999px; }
+
+  .grid-cards { display: flex; flex-wrap: wrap; gap: 16px; }
+  .grid-card { flex: 1 1 220px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 28px 24px; }
+  .grid-card .num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--tan-deep); margin-bottom: 8px; font-weight: 600; }
+  .grid-card h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 17px; margin-bottom: 8px; }
+  .grid-card p { color: var(--ink-soft); font-size: 14px; margin: 0; line-height: 1.6; }
+
+  .steps-row { display: flex; flex-wrap: wrap; }
+  .step-cell { flex: 1 1 220px; padding: 30px 24px; border-top: 1px solid var(--line); }
+  .step-cell:nth-child(-n+4) { border-top: 2px solid var(--ink); }
+  .step-cell .n { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 36px; color: var(--tan-deep); font-weight: 500; }
+  .step-cell h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 17px; margin: 12px 0 8px; }
+  .step-cell p { color: var(--ink-soft); font-size: 14px; margin: 0; line-height: 1.6; }
+
+  .price-card { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 12px 36px; }
+  .price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; gap: 12px; }
+  .price-row:last-child { border-bottom: none; }
+  .price-row .name { font-weight: 600; font-size: 17px; }
+  .price-row .desc { font-size: 14px; color: var(--ink-soft); max-width: 480px; margin-top: 4px; line-height: 1.5; }
+  .price-row .amt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--tan-deep); font-weight: 600; white-space: nowrap; }
+
+  /* Malla Container */
+  .intake-card { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 40px; margin-top: 20px; text-align: center; }
+  .malla-badge { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--tan-deep); font-weight: 500; margin-bottom: 24px; }
+
+  .fullscript-banner { background: var(--cream-deep); border: 1px dashed var(--tan); border-radius: 16px; padding: 20px 24px; margin-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .fullscript-banner p { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
+  .fullscript-banner strong { color: var(--ink); }
+
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item:first-child { border-top: 2px solid var(--ink); }
+  .faq-item summary { cursor: pointer; padding: 24px 0; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; color: var(--tan-deep); font-size: 24px; font-weight: 400; }
+  .faq-item[open] summary::after { content: "\2212"; }
+  .faq-item p { color: var(--ink-soft); font-size: 15px; padding-bottom: 24px; margin: 0; max-width: 680px; line-height: 1.7; }
+
+  .cta-final { text-align: center; padding: 80px 0; }
+  .cta-final h2 { font-size: 46px; font-style: italic; margin-bottom: 14px; }
+  .cta-final p { color: var(--ink-soft); margin-bottom: 32px; font-size: 17px; }
+
+  footer { border-top: 1px solid var(--line); padding: 40px 0; text-align: center; font-size: 13px; color: var(--ink-soft); }
+
+  @media (max-width: 720px) {
+    .hero-text h1 { font-size: 42px; }
+    .price-card, .intake-card { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">wellness<span>hunny</span></div>
+    <div class="nav-links">
+      <a href="#philosophy">Philosophy</a>
+      <a href="#services">Services</a>
+      <a href="#how">How it Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#intake">Pre-Consult Intake</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<div class="video-hero">
+  <video class="video-bg" autoplay loop muted playsinline>
+    <source src="honey.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow">Virtual Root-Cause Wellness &amp; Advocacy</span>
+      <h1>Feel like <span class="accent">yourself</span> again.</h1>
+      <p class="sub">Structured root-cause coaching, medical support &amp; advocacy, preset lifestyle protocols, and direct clinical referrals—tailored to your exact health needs before your call even starts.</p>
+      <div class="hero-ctas">
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary">Complete Pre-Consult Intake</a>
+        <a href="#services" class="btn btn-ghost" style="background: rgba(255,255,255,0.15); color:#fff; border-color: rgba(255,255,255,0.3);">Explore Care Pathways</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="philosophy" class="philo-section">
+  <video class="video-bg" autoplay loop muted playsinline>
+    <source src="tea.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay" style="background: rgba(31, 24, 19, 0.82);"></div>
+  <div class="wrap">
+    <div style="max-width: 680px;">
+      <span class="eyebrow">Our Philosophy</span>
+      <h2>Prepared provider care. Efficient answers.</h2>
+      <p>Before we meet, your provider thoroughly reviews your health background, symptom notes, diagnostic interests, and goals.</p>
+      <p>Whether you need help understanding complex diagnosis results, navigating medication side effects, coaching through a structured reset protocol, or obtaining readiness labs for direct clinical referrals, every session hits the ground running.</p>
+      <div class="chip-row">
+        <span class="chip">Medical Coaching &amp; Advocacy</span>
+        <span class="chip">Preset Reset Protocols</span>
+        <span class="chip">Functional Lab Testing</span>
+        <span class="chip">Weight Loss &amp; HRT Referrals</span>
+        <span class="chip">Natural Therapies</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Ways We Help</span>
+      <h2>Care Pathways &amp; Medical Advocacy</h2>
+      <p>Comprehensive support bridging functional coaching and medical navigation.</p>
+    </div>
+    <div class="grid-cards">
+      <div class="grid-card">
+        <div class="num">01</div>
+        <h3>Medical Coaching &amp; Advocacy</h3>
+        <p>Get clarity on confusing diagnoses, evaluate medication side effects, and receive professional prep/guidance to advocate for yourself effectively with your PCP or specialists.</p>
+      </div>
+      <div class="grid-card">
+        <div class="num">02</div>
+        <h3>Structured Reset Protocols</h3>
+        <p>Participate in targeted preset protocols—including Fasting, Detox, Metabolic Resets, Cellular Health, Gut Resets, and Nervous System Recovery—with guided session coaching.</p>
+      </div>
+      <div class="grid-card">
+        <div class="num">03</div>
+        <h3>Weight Loss &amp; HRT Referrals</h3>
+        <p>Obtain seamless readiness labs and direct referrals to start prescription therapies through our clinical sister business with zero redundant intakes or duplicate lab work.</p>
+      </div>
+      <div class="grid-card">
+        <div class="num">04</div>
+        <h3>Functional Labs &amp; Natural Therapies</h3>
+        <p>Explore natural wellness protocols and order targeted testing (HTMA, specialized gut panels, hormone markers) with expert interpretation and protocol design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">The Client Path</span>
+      <h2>How We Work Together</h2>
+      <p>A streamlined, prepared approach to maximize every minute of your visit.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-cell">
+        <div class="n">1</div>
+        <h3>Submit Intake via Malla</h3>
+        <p>Access our encrypted portal to detail your symptoms, lab interests, protocol preferences, and medical background.</p>
+      </div>
+      <div class="step-cell">
+        <div class="n">2</div>
+        <h3>Provider Preparation</h3>
+        <p>Your provider thoroughly reads and reviews your complete intake file prior to the call to outline recommendations.</p>
+      </div>
+      <div class="step-cell">
+        <div class="n">3</div>
+        <h3>Targeted Consultation</h3>
+        <p>Meet for your 1:1 virtual session focused entirely on action steps, diagnostic interpretation, or clinical referral execution.</p>
+      </div>
+      <div class="step-cell">
+        <div class="n">4</div>
+        <h3>Flexible Ongoing Support</h3>
+        <p>Use check-in sessions as coaching checkpoints while completing your protocols or navigating ongoing medical care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Transparent Pricing</span>
+      <h2>À La Carte &amp; Session Options</h2>
+      <p>Choose the option that fits your path—from free consultations and pay-as-you-go sessions to direct labs and protocol ordering.</p>
+    </div>
+    <div class="price-card">
+      <div class="price-row">
+        <div>
+          <div class="name">Free 15-Minute Intro Consult</div>
+          <div class="desc">A quick virtual discovery session to chat through your health goals, ask questions, and explore whether our coaching or clinical referral pathways are right for you.</div>
+        </div>
+        <div class="amt">Free</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <div class="name">Single 1:1 Consult / Coaching Visit</div>
+          <div class="desc">Standard 60-minute targeted session open to all clients. Use for medical coaching &amp; advocacy, symptom deep-dives, protocol coaching, or prescription referral review. Pre-consult review included.</div>
+        </div>
+        <div class="amt">$65 <span style="font-size:15px; font-style:normal;">/ session</span></div>
+      </div>
+      <div class="price-row">
+        <div>
+          <div class="name">Monthly Strategy Bundle <em>(Save $20/mo)</em></div>
+          <div class="desc">Includes 2 check-in sessions per month (approx. $55/session) plus ongoing messaging support—ideal for steady progress through preset protocols.</div>
+        </div>
+        <div class="amt">$110 <span style="font-size:15px; font-style:normal;">/ mo</span></div>
+      </div>
+      <div class="price-row">
+        <div>
+          <div class="name">Bi-Weekly Consistency Pass <em>(Save $60/mo)</em></div>
+          <div class="desc">Includes 4 check-in sessions per month (approx. $50/session) for intensive advocacy, frequent protocol coaching, or close metabolic monitoring.</div>
+        </div>
+        <div class="amt">$200 <span style="font-size:15px; font-style:normal;">/ mo</span></div>
+      </div>
+      <div class="price-row">
+        <div>
+          <div class="name">Lab Interpretation Add-On</div>
+          <div class="desc">Includes a thorough 45-minute virtual analysis of ordered functional lab panels alongside a custom step-by-step action plan.</div>
+        </div>
+        <div class="amt">+$150 <span style="font-size:15px; font-style:normal;">/ lab set</span></div>
+      </div>
+      <div class="price-row">
+        <div>
+          <div class="name">Prescription Medical Referral (Weight Loss / HRT)</div>
+          <div class="desc">Direct readiness lab ordering and seamless referral to our clinical sister practice to begin medication immediately without additional intakes.</div>
+        </div>
+        <div class="amt">Included <span style="font-size:15px; font-style:normal;">with session</span></div>
+      </div>
+    </div>
+
+    <div class="fullscript-banner">
+      <div>
+        <strong>À La Carte Protocols &amp; Professional-Grade Supplements</strong>
+        <p>Order preset reset protocols and practitioner-grade supplements directly through our Fullscript dispensary—no formal consultation required.</p>
+      </div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a href="https://us.fullscript.com/welcome/lipbunnybeauty/signup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px;">Create Account &rarr;</a>
+        <a href="https://us.fullscript.com/s/lipbunnybeauty/shop" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 10px 20px; font-size: 13.5px;">Visit Fullscript Store &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="intake">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Client Portal &amp; Booking</span>
+      <h2>Pre-Consultation Health Assessment</h2>
+      <p>Complete your encrypted intake and schedule your consultation through our secure portal prior to your appointment.</p>
+    </div>
+    
+    <div class="intake-card">
+      <div class="malla-badge">
+        <span>🔒 Secure HIPAA-Compliant Portal powered by Malla EHR</span>
+      </div>
+      <p style="color: var(--ink-soft); max-width: 580px; margin: 0 auto 28px; font-size: 15.5px;">
+        To ensure your provider has ample time to review your symptoms, diagnostic preferences, and referral needs, please register and complete your assessment in Malla EHR below.
+      </p>
+      
+      <iframe src="https://app.malla.co/join/ashley-brown-00659" width="100%" height="650px" style="border: 1px solid var(--line); border-radius:16px; background:#faf7f2; margin-bottom: 20px;"></iframe>
+
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 16px 36px;">Open Malla Portal in New Tab &rarr;</a>
+        <a href="https://us.fullscript.com/welcome/lipbunnybeauty/signup" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 16px 36px;">Create Fullscript Account &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Questions</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Why is the pre-consultation intake required?</summary>
+        <p>By filling out the intake prior to booking, your provider can review your medical history, symptoms, and referral/lab interests beforehand. This ensures 100% of your call time is spent giving you actionable solutions and guidance.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I order labs or protocols à la carte without a consultation?</summary>
+        <p>Yes! You can order targeted preset reset protocols and practitioner-grade supplements directly through our Fullscript dispensary, or request functional lab ordering through our portal without needing to complete an initial long-form consultation.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is medical coaching, support, and advocacy?</summary>
+        <p>Many patients feel overwhelmed during doctor visits. We help you review complex lab results, understand diagnosis details, evaluate potential medication side effects, and draft structured questions so you can advocate effectively when speaking with your PCP or specialists.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How does the direct referral to the sister business work?</summary>
+        <p>If you are seeking medical weight loss (e.g., GLP-1s) or HRT, we order your necessary readiness labs. Once complete, you receive a direct referral to our clinical partner business to begin medication immediately—without having to pay for a second intake or repeat testing.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do the preset reset protocols work?</summary>
+        <p>We offer targeted, pre-structured protocols (Gastrointestinal, Fasting/Detox, Metabolic, Cellular Health, and Nervous System). You can use your $65 check-in sessions as ongoing coaching appointments while you navigate these protocols.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="cta-final">
+  <div class="wrap">
+    <h2>Ready to start your tailored path?</h2>
+    <p>Complete your pre-consultation intake form above to schedule your 1:1 session.</p>
+    <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary">Begin Intake on Malla</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 WellnessHunny. All rights reserved. Functional Coaching &amp; Medical Advocacy.</p>
+    <p style="font-size:11.5px; margin-top:8px; opacity:0.8;">Disclaimer: WellnessHunny provides wellness coaching, lifestyle protocols, and advocacy education. Clinical referrals and medical care are fulfilled by affiliated licensed partner practices.</p>
+  </div>
+</footer>
+
+</body>
+</html>
