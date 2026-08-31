@@ -133,6 +133,17 @@
   .price-row .desc { font-size: 14px; color: var(--ink-soft); max-width: 480px; margin-top: 4px; line-height: 1.5; }
   .price-row .amt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--tan-deep); font-weight: 600; white-space: nowrap; }
 
+  /* Form Styles */
+  .intake-card { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 40px; margin-top: 20px; }
+  .form-group { margin-bottom: 24px; }
+  .form-group label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 8px; color: var(--ink); }
+  .form-group input[type="text"], .form-group input[type="email"], .form-group select, .form-group textarea {
+    width: 100%; padding: 12px 16px; border: 1px solid var(--line); border-radius: 8px; font-family: 'Jost', sans-serif; font-size: 15px; background: var(--cream); color: var(--ink);
+  }
+  .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 8px; }
+  .checkbox-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-soft); }
+  .checkbox-item input { accent-color: var(--tan-deep); width: 18px; height: 18px; }
+
   .fullscript-banner { background: var(--cream-deep); border: 1px dashed var(--tan); border-radius: 16px; padding: 20px 24px; margin-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
   .fullscript-banner p { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
   .fullscript-banner strong { color: var(--ink); }
@@ -153,7 +164,7 @@
 
   @media (max-width: 720px) {
     .hero-text h1 { font-size: 42px; }
-    .price-card { padding: 8px 20px; }
+    .price-card, .intake-card { padding: 20px; }
   }
 </style>
 </head>
@@ -164,9 +175,10 @@
     <div class="logo">wellness<span>hunny</span></div>
     <div class="nav-links">
       <a href="#philosophy">Philosophy</a>
-      <a href="#pillars">Pillars</a>
-      <a href="#how">How it works</a>
-      <a href="#pricing">Services &amp; Pricing</a>
+      <a href="#services">Services</a>
+      <a href="#how">How it Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#intake">Pre-Consult Intake</a>
       <a href="#faq">FAQ</a>
     </div>
   </div>
@@ -179,12 +191,12 @@
   <div class="video-overlay"></div>
   <div class="wrap">
     <div class="hero-text">
-      <span class="eyebrow">Virtual Root-Cause Wellness Coaching</span>
+      <span class="eyebrow">Virtual Root-Cause Wellness &amp; Advocacy</span>
       <h1>Feel like <span class="accent">yourself</span> again.</h1>
-      <p class="sub">Flexible, accessible root-cause coaching. Pay as you go with single check-ins or save with flexible monthly bundles—no expensive required long-term commitments.</p>
+      <p class="sub">Structured root-cause coaching, medical advocacy, preset lifestyle protocols, and direct clinical referrals—tailored to your exact health needs before your call even starts.</p>
       <div class="hero-ctas">
-        <a href="#pricing" class="btn btn-primary">Book a session</a>
-        <a href="#how" class="btn btn-ghost" style="background: rgba(255,255,255,0.15); color:#fff; border-color: rgba(255,255,255,0.3);">See how it works</a>
+        <a href="#intake" class="btn btn-primary">Complete Pre-Consult Intake</a>
+        <a href="#services" class="btn btn-ghost" style="background: rgba(255,255,255,0.15); color:#fff; border-color: rgba(255,255,255,0.3);">Explore Care Pathways</a>
       </div>
     </div>
   </div>
@@ -198,47 +210,47 @@
   <div class="wrap">
     <div style="max-width: 680px;">
       <span class="eyebrow">Our Philosophy</span>
-      <h2>Symptoms are signals, not the full story.</h2>
-      <p>Most health experiences leave people feeling like a collection of isolated symptoms. If your lab results keep coming back "normal" but you still don't feel right, you're in the right place.</p>
-      <p>We work at the intersection of functional wellness and real life. By evaluating gut health, daily metabolic patterns, stress load, sleep quality, and lifestyle factors together, we uncover what your body has been trying to tell you all along.</p>
+      <h2>Prepared provider care. Efficient answers.</h2>
+      <p>We don't waste your appointment time asking basic intake questions. Before we meet, your provider thoroughly reviews your health background, symptom notes, diagnostic interests, and goals.</p>
+      <p>Whether you need help understanding complex diagnosis results, navigating medication side effects, coaching through a structured reset protocol, or obtaining readiness labs for direct clinical referrals, every session hits the ground running.</p>
       <div class="chip-row">
-        <span class="chip">Gut &amp; Digestion</span>
-        <span class="chip">Metabolic Energy</span>
-        <span class="chip">Nervous System</span>
-        <span class="chip">Restful Sleep</span>
-        <span class="chip">Custom Protocols</span>
+        <span class="chip">Medical Advocacy</span>
+        <span class="chip">Preset Reset Protocols</span>
+        <span class="chip">Functional Lab Testing</span>
+        <span class="chip">Weight Loss &amp; HRT Referrals</span>
+        <span class="chip">Natural Therapies</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="pillars">
+<section id="services">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow">Core Focus Areas</span>
-      <h2>Four Pillars of Root-Cause Coaching</h2>
-      <p>A holistic, structured approach built around how your body actually functions.</p>
+      <span class="eyebrow">Ways We Help</span>
+      <h2>Care Pathways &amp; Medical Advocacy</h2>
+      <p>Comprehensive support bridging functional coaching and medical navigation.</p>
     </div>
     <div class="grid-cards">
       <div class="grid-card">
         <div class="num">01</div>
-        <h3>Gut &amp; Digestive Repair</h3>
-        <p>Eliminate chronic bloating and food reactivity by optimizing your microbiome, digestion, and gut barrier integrity.</p>
+        <h3>Medical Advice &amp; Advocacy</h3>
+        <p>Get clarity on confusing diagnoses, evaluate medication side effects, and receive professional prep/guidance to advocate for yourself effectively with your PCP or specialists.</p>
       </div>
       <div class="grid-card">
         <div class="num">02</div>
-        <h3>Metabolic Energy</h3>
-        <p>Ditch the 3 PM fatigue. We support cortisol curves and blood sugar balance to unlock natural, sustained daily vitality.</p>
+        <h3>Structured Reset Protocols</h3>
+        <p>Participate in targeted preset protocols—including Fasting, Detox, Metabolic Resets, Cellular Health, Gut Resets, and Nervous System Recovery—with guided session coaching.</p>
       </div>
       <div class="grid-card">
         <div class="num">03</div>
-        <h3>Nervous System Reset</h3>
-        <p>Shift your body out of chronic survival mode so real healing, physiological recovery, and restful sleep can actually happen.</p>
+        <h3>Weight Loss &amp; HRT Referrals</h3>
+        <p>Obtain seamless readiness labs and direct referrals to start prescription therapies through our clinical sister business with zero redundant intakes or duplicate lab work.</p>
       </div>
       <div class="grid-card">
         <div class="num">04</div>
-        <h3>Sustainable Action Protocols</h3>
-        <p>No generic templates or extreme diets. You get a tailored roadmap built around your real-life routine and long-term goals.</p>
+        <h3>Functional Labs &amp; Natural Therapies</h3>
+        <p>Explore natural wellness protocols and order targeted testing (HTMA, specialized gut panels, hormone markers) with expert interpretation and protocol design.</p>
       </div>
     </div>
   </div>
@@ -249,28 +261,28 @@
     <div class="section-head center">
       <span class="eyebrow">The Client Path</span>
       <h2>How We Work Together</h2>
-      <p>A simple, flexible journey toward lasting wellness on your terms.</p>
+      <p>A streamlined, prepared approach to maximize every minute of your visit.</p>
     </div>
     <div class="steps-row">
       <div class="step-cell">
         <div class="n">1</div>
-        <h3>Book Your Session</h3>
-        <p>Pick a single 1:1 consultation or choose a discounted session bundle that fits your schedule and budget.</p>
+        <h3>Submit Intake Form</h3>
+        <p>Fill out our pre-consultation intake detailing your symptoms, interest in labs, protocols, advocacy needs, or referral pathways.</p>
       </div>
       <div class="step-cell">
         <div class="n">2</div>
-        <h3>Deep-Dive Intake</h3>
-        <p>Complete a targeted health analysis mapping out your timeline, symptoms, stress load, environment, and daily habits.</p>
+        <h3>Provider Preparation</h3>
+        <p>Your provider thoroughly reads and reviews your complete intake file prior to the call to outline recommendations.</p>
       </div>
       <div class="step-cell">
         <div class="n">3</div>
-        <h3>Custom Action Protocol</h3>
-        <p>Receive clear, actionable steps for nutrition, lifestyle, and professional supplement protocols delivered via Fullscript.</p>
+        <h3>Targeted Consultation</h3>
+        <p>Meet for your 1:1 virtual session focused entirely on action steps, diagnostic interpretation, or clinical referral execution.</p>
       </div>
       <div class="step-cell">
         <div class="n">4</div>
-        <h3>Progress As You Go</h3>
-        <p>Schedule follow-up sessions whenever you need guidance, accountability, or protocol adjustments.</p>
+        <h3>Flexible Ongoing Support</h3>
+        <p>Use check-in sessions as coaching checkpoints while completing your protocols or navigating ongoing medical care.</p>
       </div>
     </div>
   </div>
@@ -279,52 +291,45 @@
 <section id="pricing">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow">Flexible Options</span>
+      <span class="eyebrow">Transparent Pricing</span>
       <h2>À La Carte &amp; Session Bundles</h2>
-      <p>Transparent pricing designed to give you total control over your health investment.</p>
+      <p>Pay as you go or choose discounted packages for protocol coaching and advocacy.</p>
     </div>
     <div class="price-card">
       <div class="price-row">
         <div>
-          <div class="name">Discovery Session</div>
-          <div class="desc">Initial 20-minute consultation to review your health goals, ask questions, and evaluate fit.</div>
-        </div>
-        <div class="amt">Free</div>
-      </div>
-      <div class="price-row">
-        <div>
-          <div class="name">Single 1:1 Check-In Session</div>
-          <div class="desc">Standard 60-minute targeted consultation open to everyone. Deep-dive into symptoms, receive custom lifestyle recommendations, or tune up your current protocol as needed.</div>
+          <div class="name">Single 1:1 Consult / Coaching Visit</div>
+          <div class="desc">Standard 60-minute targeted session open to all clients. Use for medical advocacy, symptom deep-dives, protocol coaching, or prescription referral review. Pre-consult intake review included.</div>
         </div>
         <div class="amt">$65 <span style="font-size:15px; font-style:normal;">/ session</span></div>
       </div>
       <div class="price-row">
         <div>
           <div class="name">Monthly Strategy Bundle <em>(Save $20/mo)</em></div>
-          <div class="desc">Includes 2 check-in sessions per month (approx. $55/session) plus ongoing email/messaging support for steady, monthly accountability.</div>
+          <div class="desc">Includes 2 check-in sessions per month (approx. $55/session) plus ongoing messaging support—ideal for steady progress through preset protocols.</div>
         </div>
         <div class="amt">$110 <span style="font-size:15px; font-style:normal;">/ mo</span></div>
       </div>
       <div class="price-row">
         <div>
           <div class="name">Bi-Weekly Consistency Pass <em>(Save $60/mo)</em></div>
-          <div class="desc">Includes 4 check-in sessions per month (approx. $50/session) for accelerated progress, close oversight, and continuous protocol adjustments.</div>
+          <div class="desc">Includes 4 check-in sessions per month (approx. $50/session) for intensive advocacy, frequent protocol coaching, or close metabolic monitoring.</div>
         </div>
         <div class="amt">$200 <span style="font-size:15px; font-style:normal;">/ mo</span></div>
       </div>
       <div class="price-row">
         <div>
           <div class="name">Lab Interpretation Add-On</div>
-          <div class="desc">Includes a thorough 45-minute virtual analysis of your ordered functional test results alongside a custom step-by-step protocol.</div>
+          <div class="desc">Includes a thorough 45-minute virtual analysis of ordered functional lab panels alongside a custom step-by-step action plan.</div>
         </div>
         <div class="amt">+$150 <span style="font-size:15px; font-style:normal;">/ lab set</span></div>
       </div>
       <div class="price-row">
         <div>
-          <div class="name">Standalone Functional Labs</div>
-          <div class="desc">Order functional testing directly for your personal info. <em>Note: Select tests (such as Hair Tissue Mineral Analysis or specific lab kits) include built-in summary reports.</em></div>
+          <div class="name">Prescription Medical Referral (Weight Loss / HRT)</div>
+          <div class="desc">Direct readiness lab ordering and seamless referral to our clinical sister practice to begin medication immediately without additional intakes.</div>
         </div>
-        <div class="amt">Varies by lab</div>
+        <div class="amt">Included <span style="font-size:15px; font-style:normal;">with session</span></div>
       </div>
     </div>
 
@@ -335,7 +340,77 @@
       </div>
       <a href="https://fullscript.com" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 10px 20px; font-size: 13.5px;">Visit Fullscript Store &rarr;</a>
     </div>
+  </div>
+</section>
 
+<section id="intake">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Client Intake</span>
+      <h2>Pre-Consultation Health Assessment</h2>
+      <p>Please complete this form before scheduling. Your provider will review all details prior to your call.</p>
+    </div>
+    
+    <div class="intake-card">
+      <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Intake submitted! Redirecting to schedule your call...');">
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" required placeholder="First and Last Name">
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" required placeholder="name@example.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Primary Goals &amp; Areas of Focus (Select all that apply)</label>
+          <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" name="focus" value="medical-advocacy"> Medical Advice &amp; Advocacy (PCP/Specialist Help)</label>
+            <label class="checkbox-item"><input type="checkbox" name="focus" value="diagnosis-help"> Diagnosis Understanding &amp; Medication Side Effects</label>
+            <label class="checkbox-item"><input type="checkbox" name="focus" value="weightloss-referral"> Medical Weight Loss Referral (GLP-1 / Readiness Labs)</label>
+            <label class="checkbox-item"><input type="checkbox" name="focus" value="hrt-referral"> Hormone Replacement Therapy (HRT Referral)</label>
+            <label class="checkbox-item"><input type="checkbox" name="focus" value="natural-protocols"> Natural Protocols &amp; Holistic Health</label>
+            <label class="checkbox-item"><input type="checkbox" name="focus" value="preset-protocols"> Guided Preset Reset Protocols</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Interested in Preset Reset Protocols?</label>
+          <div class="checkbox-grid">
+            <label class="checkbox-item"><input type="checkbox" name="protocol" value="gut-reset"> Gut Reset</label>
+            <label class="checkbox-item"><input type="checkbox" name="protocol" value="metabolic-reset"> Metabolic Reset</label>
+            <label class="checkbox-item"><input type="checkbox" name="protocol" value="cellular-health"> Cellular Health Protocol</label>
+            <label class="checkbox-item"><input type="checkbox" name="protocol" value="fasting-detox"> Guided Fasting / Detox</label>
+            <label class="checkbox-item"><input type="checkbox" name="protocol" value="nervous-system"> Nervous System Reset</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Interested in Diagnostic Functional Labs?</label>
+          <select name="labs">
+            <option value="none">Not at this time</option>
+            <option value="htma">Hair Tissue Mineral Analysis (HTMA)</option>
+            <option value="gut-panel">Comprehensive Gut Microbiome Stool Testing</option>
+            <option value="readiness-labs">Prescription Readiness Labs (Weight Loss / HRT)</option>
+            <option value="full-functional">Full Functional Health &amp; Metabolic Panel</option>
+            <option value="unsure">Unsure - Want provider recommendation during call</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Symptom Summary &amp; Background Details for Provider Review</label>
+          <textarea rows="4" placeholder="Briefly describe what you are experiencing, any current diagnoses, medications, or specific questions you need answered..."></textarea>
+        </div>
+
+        <div style="text-align: center; margin-top: 28px;">
+          <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 360px;">Submit Intake &amp; Proceed to Book</button>
+        </div>
+
+      </form>
+    </div>
   </div>
 </section>
 
@@ -347,20 +422,20 @@
     </div>
     <div class="faq-list">
       <details class="faq-item">
-        <summary>Do I have to sign up for a monthly contract?</summary>
-        <p>No! You can book individual 1:1 check-in sessions at $65 whenever you need them. Monthly bundles are completely optional for clients who want bi-weekly check-ins and discounted per-session pricing.</p>
+        <summary>Why is the pre-consultation intake required?</summary>
+        <p>By filling out the intake prior to booking, your provider can review your medical history, symptoms, and referral/lab interests beforehand. This ensures 100% of your call time is spent giving you actionable solutions and guidance.</p>
       </details>
       <details class="faq-item">
-        <summary>How is root-cause coaching different from traditional care?</summary>
-        <p>Conventional medicine excels at managing acute symptoms and diagnosing disease. Root-cause coaching investigates *why* those symptoms are happening in the first place—focusing on gut integrity, stress load, and metabolic health to address issues at their origin through lifestyle, nutritional, and supplement support.</p>
+        <summary>How does the direct referral to the sister business work?</summary>
+        <p>If you are seeking medical weight loss (e.g., GLP-1s) or HRT, we order your necessary readiness labs. Once complete, you receive a direct referral to our clinical partner business to begin medication immediately—without having to pay for a second intake or repeat testing.</p>
       </details>
       <details class="faq-item">
-        <summary>Is everything conducted virtually?</summary>
-        <p>Yes. All strategy calls and ongoing support are delivered through a secure virtual client portal, so you can work on your health from anywhere.</p>
+        <summary>What is medical advocacy help?</summary>
+        <p>Many patients feel overwhelmed during doctor visits. We help you review complex lab results, understand diagnosis details, evaluate potential medication side effects, and draft structured questions so you can advocate effectively when speaking with your PCP or specialists.</p>
       </details>
       <details class="faq-item">
-        <summary>Do I need lab tests to start?</summary>
-        <p>Not at all. We gather immense insight from your detailed health timeline, symptom patterns, and daily lifestyle markers. While specialized functional lab work (like gut health testing or mineral panels) may be recommended down the line, it is never required to begin your healing journey.</p>
+        <summary>How do the preset reset protocols work?</summary>
+        <p>We offer targeted, pre-structured protocols (Gastrointestinal, Fasting/Detox, Metabolic, Cellular Health, and Nervous System). You can use your $65 check-in sessions as ongoing coaching appointments while you navigate these protocols.</p>
       </details>
     </div>
   </div>
@@ -368,16 +443,16 @@
 
 <div class="cta-final">
   <div class="wrap">
-    <h2>Ready to find your root cause?</h2>
-    <p>Book a single session or schedule a free 20-minute discovery call to get started.</p>
-    <a href="#pricing" class="btn btn-primary">View options &amp; book</a>
+    <h2>Ready to start your tailored path?</h2>
+    <p>Complete your pre-consultation intake form above to schedule your 1:1 session.</p>
+    <a href="#intake" class="btn btn-primary">Complete Intake Form</a>
   </div>
 </div>
 
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 WellnessHunny. All rights reserved. Root-Cause Wellness Coaching.</p>
-    <p style="font-size:11.5px; margin-top:8px; opacity:0.8;">Disclaimer: WellnessHunny provides functional wellness coaching and educational guidance. Services are not intended to diagnose, treat, or cure any medical condition.</p>
+    <p>&copy; 2026 WellnessHunny. All rights reserved. Functional Coaching &amp; Medical Advocacy.</p>
+    <p style="font-size:11.5px; margin-top:8px; opacity:0.8;">Disclaimer: WellnessHunny provides wellness coaching, lifestyle protocols, and advocacy education. Clinical referrals and medical care are fulfilled by affiliated licensed partner practices.</p>
   </div>
 </footer>
 
