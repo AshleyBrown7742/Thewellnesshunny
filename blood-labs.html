@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Testing Menu — WellnessHunny</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf7f2;
+    --cream-deep: #ebd2c0;
+    --card: #ffffff;
+    --tan-light: #e3d2c0;
+    --tan: #b89b7d;
+    --tan-deep: #8c6d4f;
+    --ink: #2b231d;
+    --ink-soft: #635748;
+    --line: #e3dad0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--cream); color: var(--ink);
+    font-family: 'Jost', sans-serif; font-weight: 400; line-height: 1.7;
+    overflow-x: hidden;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; margin: 0; color: var(--ink); }
+  a { color: var(--tan-deep); }
+  .eyebrow {
+    font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 11.5px; font-weight: 600; color: var(--tan-deep);
+  }
+  .btn {
+    font-family: 'Jost', sans-serif; font-weight: 600; font-size: 14px;
+    border: none; cursor: pointer; border-radius: 999px; padding: 12px 24px;
+    display: inline-block; text-decoration: none; position: relative; overflow: hidden;
+    transition: all 0.2s ease; text-align: center;
+  }
+  .btn-primary {
+    background: var(--tan-deep);
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  }
+  .btn-primary:hover {
+    background: #6e543b;
+    transform: translateY(-1px);
+  }
+  .btn-ghost { 
+    background: #ffffff !important; 
+    color: var(--ink) !important; 
+    border: 1px solid var(--line); 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  .btn-ghost:hover { 
+    background: var(--cream-deep) !important; 
+    border-color: var(--cream-deep);
+  }
+
+  /* Header / Nav */
+  nav { padding: 24px 0; background: var(--ink); color: #fff; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: #fff; font-weight: 600; text-decoration: none; }
+  .logo span { color: transparent; -webkit-text-stroke: 1px var(--tan-light); }
+
+  /* Hero Section */
+  .page-hero { padding: 60px 0 40px; text-align: center; background: var(--cream); border-bottom: 1px solid var(--line); }
+  .page-hero h1 { font-size: 48px; font-style: italic; margin: 10px 0; }
+  .page-hero p { color: var(--ink-soft); max-width: 620px; margin: 0 auto; font-size: 16px; }
+
+  /* Category Headers */
+  .category-title { margin: 50px 0 20px; border-bottom: 2px solid var(--ink); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline; }
+  .category-title h2 { font-size: 32px; font-style: italic; }
+  .category-title span { font-size: 13px; color: var(--tan-deep); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  /* Grid Layout */
+  .panel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+  .panel-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
+  .panel-card h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 20px; margin-bottom: 4px; }
+  .panel-card .price { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: var(--tan-deep); font-weight: 600; margin-bottom: 12px; }
+  
+  .why-box { background: rgba(235, 210, 192, 0.3); border-left: 3px solid var(--tan-deep); padding: 12px 14px; border-radius: 0 10px 10px 0; margin-bottom: 16px; font-size: 13.5px; color: var(--ink); }
+  .why-box strong { color: var(--tan-deep); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
+
+  .marker-list { font-size: 13px; color: var(--ink-soft); background: var(--cream); border-radius: 12px; padding: 14px; margin-bottom: 20px; line-height: 1.6; }
+  .marker-list strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 4px; }
+
+  footer { border-top: 1px solid var(--line); padding: 40px 0; text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 80px; }
+
+  @media (max-width: 600px) {
+    .page-hero h1 { font-size: 36px; }
+    .category-title { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="logo">wellness<span>hunny</span></a>
+    <a href="index.html" class="btn btn-ghost" style="padding: 8px 18px; font-size: 13px;">&larr; Back to Main Site</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Direct-to-Consumer Diagnostic Testing</span>
+    <h1>Blood Testing &amp; Panel Menu</h1>
+    <p>Choose from baseline health screenings, deep-dive comprehensive assessments, or targeted re-test panels tailored to your exact wellness goals.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- CATEGORY 1: BASELINE COMPREHENSIVE -->
+  <div class="category-title">
+    <h2>1. Comprehensive Baseline Panels</h2>
+    <span>Essential Annual &amp; Wellness Screening</span>
+  </div>
+
+  <div class="panel-grid">
+    
+    <!-- Male Comprehensive -->
+    <div class="panel-card">
+      <div>
+        <h3>Comprehensive Male Health Panel</h3>
+        <div class="price">$150</div>
+        <div class="why-box">
+          <strong>Why Choose This Test:</strong>
+          Ideal for men seeking an affordable, thorough yearly health checkup[cite: 2]. Evaluates primary metabolic function, key cardiovascular markers, blood sugar control, foundational thyroid activity, and core male hormones[cite: 2].
+        </div>
+        <div class="marker-list">
+          <strong>Key Markers Included:</strong>
+          CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, PSA, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine[cite: 2].
+        </div>
+      </div>
+      <a href="index.html#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+    </div>
+
+    <!-- Female Comprehensive -->
+    <div class="panel-card">
+      <div>
+        <h3>Comprehensive Female Health Panel</h3>
+        <div class="price">$150</div>
+        <div class="why-box">
+          <strong>Why Choose This Test:</strong>
+          The essential entry panel for women looking to evaluate energy, metabolic health, baseline thyroid function, inflammatory markers, and foundational sex hormones[cite: 2].
+        </div>
+        <div class="marker-list">
+          <strong>Key Markers Included:</strong>
+          CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, FSH, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine[cite: 2].
+        </div>
+      </div>
+      <a href="index.html#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+    </div>
+
+  </div>
+
+  <!-- CATEGORY 2: ADVANCED COMPREHENSIVE -->
+  <div class="category-title">
+    <h2>2. Advanced Deep-Dive Panels</h2>
+    <span>Comprehensive Root-Cause &amp; Heavy Metals</span>
+  </div>
+
+  <div class="panel-grid">
+
+    <!-- Male Advanced -->
+    <div class="panel-card">
+      <div>
+        <h3>Advanced Male Comprehensive Panel</h3>
+        <div class="price">Full Deep-Dive</div>
+        <div class="why-box">
+          <strong>Why Choose This Test:</strong>
+          For men experiencing unexplained fatigue, stubborn weight gain, systemic inflammation, or severe hormonal imbalances[cite: 2]. Adds deep heavy metal toxin screening, adrenal stress markers, reverse thyroid metrics, and specialized cardiovascular lipid fractions[cite: 2].
+        </div>
+        <div class="marker-list">
+          <strong>Key Markers Included:</strong>
+          All baseline markers PLUS Reverse T3, Cortisol, Fasting Insulin, DHEA-S, High-Sensitivity CRP, Uric Acid, Copper, Zinc, OmegaCheck (Fatty Acids), and Heavy Metals (Arsenic, Lead, Mercury, Cadmium)[cite: 2].
+        </div>
+      </div>
+      <a href="index.html#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+    </div>
+
+    <!-- Female Advanced -->
+    <div class="panel-card">
+      <div>
+        <h3>Advanced Female Comprehensive Panel</h3>
+        <div class="price">Full Deep-Dive</div>
+        <div class="why-box">
+          <strong>Why Choose This Test:</strong>
+          Designed for complex hormone issues, PCOS symptoms, peri-menopause tracking, chronic fatigue, or suspected heavy metal toxicity[cite: 2]. Provides the most complete biological blueprint available[cite: 2].
+        </div>
+        <div class="marker-list">
+          <strong>Key Markers Included:</strong>
+          All baseline markers PLUS Reverse T3, Progesterone (LC/MS/MS), Prolactin, Fasting Insulin, Cortisol, DHEA-S, High-Sensitivity CRP, Copper, Zinc, OmegaCheck, AMH (Fertility), and Heavy Metals Panel[cite: 2].
+        </div>
+      </div>
+      <a href="index.html#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+    </div>
+
+  </div>
+
+  <!-- CATEGORY 3: TARGETED & FOLLOW-UP PANELS -->
+  <div class="category-title">
+    <h2>3. Targeted &amp; Follow-Up Panels</h2>
+    <span>Symptom-Specific &amp; Progress Re-Testing</span>
+  </div>
+
+  <div class="panel-grid">
+
+    <!-- Thyroid Follow-Up -->
+    <div class="panel-card">
+      <div>
+        <h3>Extended Thyroid Panel</h3>
+        <div class="price">Targeted Re-Test</div>
+        <div class="why-box">
+          <strong>Why Choose This Test:</strong>
+          Ideal if you are adjusting thyroid medication, managing Hashimoto's, or suffering from persistent brain fog, cold intolerance, and thinning hair despite "normal" basic TSH readings[cite: 2].
+        </div>
+        <div class="marker-list">
+          <strong>Key Markers Included:</strong>
+          TSH, Free T3, Free T4, Reverse T3, Thyroid Peroxidase (TPO) Antibodies, and Selenium levels[cite: 2].
+        </div>
+      </div>
+      <a href="index.html#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+    </div>
+
+    <!-- Menstrual / Fertility Health -->
+    <div class="panel-card">
+      <div>
+        <h3>Menstrual Health &amp; Hormone Panel</h3>
+        <div class="price">Targeted Assessment</div>
+        <div class="why-box">
+          <strong>Why Choose This Test:</strong>
+          Specific to women evaluating cycle irregularities, fertility, PMS/PMDD, or estrogen dominance[cite: 2]. Measures complete pituitary-ovarian signaling pathways[cite: 2].
+        </div>
+        <div class="marker-list">
+          <strong>Key Markers Included:</strong>
+          Estradiol, Estrone, Progesterone, FSH, LH, Free &amp; Total Testosterone, Prolactin, Ferritin, and Hemoglobin A1c[cite: 2].
+        </div>
+      </div>
+      <a href="index.html#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+    </div>
+
+    <!-- Micronutrient & Metabolic Add-On -->
+    <div class="panel-card">
+      <div>
+        <h3>Micronutrient &amp; Metabolic Panel</h3>
+        <div class="price">Nutritional Focus</div>
+        <div class="why-box">
+          <strong>Why Choose This Test:</strong>
+          Great for optimizing energy, recovery, cellular health, and insulin sensitivity[cite: 2]. Pinpoints exact cellular nutrient shortages[cite: 2].
+        </div>
+        <div class="marker-list">
+          <strong>Key Markers Included:</strong>
+          RBC Packed Magnesium, Vitamin D 25-OH, Vitamin B12, Fasting Insulin, Homocysteine, Uric Acid, Lipid Panel, and CMP[cite: 2].
+        </div>
+      </div>
+      <a href="index.html#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 WellnessHunny. Direct-to-Consumer Diagnostic Blood Testing.</p>
+  </div>
+</footer>
+
+</body>
+</html>
