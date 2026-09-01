@@ -147,6 +147,17 @@
   .price-row .desc { font-size: 14px; color: var(--ink-soft); max-width: 480px; margin-top: 4px; line-height: 1.5; }
   .price-row .amt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--tan-deep); font-weight: 600; white-space: nowrap; }
 
+  /* Lab Styles */
+  .lab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 24px; }
+  .lab-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
+  .lab-card h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 19px; margin-bottom: 6px; }
+  .lab-card .lab-price { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: var(--tan-deep); font-weight: 600; margin-bottom: 12px; }
+  .lab-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0 0 16px; }
+  .lab-card .panel-list { font-size: 13px; color: var(--ink); background: var(--cream); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; line-height: 1.6; }
+  .lab-card .panel-list strong { color: var(--tan-deep); font-weight: 600; display: block; margin-bottom: 4px; }
+  .compare-box { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px; margin-top: 24px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+  .compare-text { flex: 1 1 300px; }
+
   /* Malla Container */
   .intake-card { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 40px; margin-top: 20px; text-align: center; }
   .malla-badge { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--tan-deep); font-weight: 500; margin-bottom: 24px; }
@@ -185,6 +196,7 @@
       <a href="#services">Services</a>
       <a href="#how">How it Works</a>
       <a href="#pricing">Pricing</a>
+      <a href="#labs">Labs</a>
       <a href="#intake">Pre-Consult Intake</a>
       <a href="#faq">FAQ</a>
     </div>
@@ -350,6 +362,91 @@
         <a href="https://us.fullscript.com/s/lipbunnybeauty/shop" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 10px 20px; font-size: 13.5px;">Visit Fullscript Store &rarr;</a>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="labs">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Diagnostic Testing</span>
+      <h2>À La Carte Functional &amp; Blood Testing</h2>
+      <p>Order direct-to-consumer lab panels tailored to your health goals. No mandatory consult required to order.</p>
+    </div>
+
+    <div class="lab-grid">
+      
+      <!-- Male Blood Panel -->
+      <div class="lab-card">
+        <div>
+          <h3>Comprehensive Male Health Panel</h3>
+          <div class="lab-price">$150</div>
+          <p>A full-spectrum blood screening designed to assess metabolic function, cardiovascular risks, hormone balance, thyroid activity, key nutrient reserves, and inflammatory markers.</p>
+          <div class="panel-list">
+            <strong>Included Markers:</strong>
+            CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, PSA, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine.
+          </div>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <!-- Female Blood Panel -->
+      <div class="lab-card">
+        <div>
+          <h3>Comprehensive Female Health Panel</h3>
+          <div class="lab-price">$150</div>
+          <p>An extensive blood panel evaluating hormonal balance, thyroid function, metabolic health, nutritional status, and systemic inflammation—tailored specifically for women's health needs.</p>
+          <div class="panel-list">
+            <strong>Included Markers:</strong>
+            CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, FSH, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine.
+          </div>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <!-- Genova GI Effects Stool Test -->
+      <div class="lab-card">
+        <div>
+          <h3>Genova GI Effects® Stool Profile</h3>
+          <div class="lab-price">$400</div>
+          <p>The gold standard in comprehensive stool testing. Evaluates gut microbiome diversity, inflammation, digestive enzyme activity, leaky gut markers, and uncovers hidden bacterial, viral, or parasitic infections.</p>
+          <div class="panel-list">
+            <strong>Best For:</strong>
+            Chronic bloating, gas, IBS/IBD, constipation, food intolerances, autoimmune triggers, or deep gut microbiome optimization.
+          </div>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <!-- Trace Elements / HTMA Test -->
+      <div class="lab-card">
+        <div>
+          <h3>Hair Tissue Mineral Analysis (HTMA)</h3>
+          <div class="lab-price">À La Carte</div>
+          <p>A non-invasive tissue test measuring mineral accumulation (calcium, magnesium, zinc, copper) and toxic heavy metal exposure (lead, mercury, arsenic, cadmium) locked inside hair protein structures over time.</p>
+          <div class="panel-list">
+            <strong>Best For:</strong>
+            Uncovering chronic mineral depletion, adrenal fatigue, metabolic rate, and long-term heavy metal toxicity that serum blood work overlooks.
+          </div>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+    </div>
+
+    <!-- Trace Elements Comparison -->
+    <div class="compare-box">
+      <div class="compare-text">
+        <span class="eyebrow" style="color: var(--tan-deep);">Diagnostic Insight</span>
+        <h3 style="font-size: 26px; margin: 4px 0 12px;">Trace Elements (HTMA) vs. Standard Blood Tests</h3>
+        <p style="margin: 0; color: var(--ink-soft); font-size: 14.5px;">
+          <strong>Why test tissue instead of blood?</strong> A standard blood test provides an instantaneous snapshot of circulating minerals that your body tightly regulates day-to-day. However, blood levels can appear "normal" even when cellular tissues are severely depleted.
+        </p>
+        <p style="margin: 10px 0 0; color: var(--ink-soft); font-size: 14.5px;">
+          <strong>HTMA acts like a 3-month video recording</strong> instead of a single photo. As hair grows, it retains a timeline of stored tissue minerals and toxic heavy metals. This makes HTMA superior for catching chronic stress patterns, slow-developing mineral deficiencies, and heavy metal accumulation that blood draws miss completely.
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
 
