@@ -64,7 +64,7 @@
 
   nav { padding: 26px 0; position: absolute; width: 100%; top: 0; z-index: 10; }
   nav .wrap { display: flex; justify-content: space-between; align-items: center; }
-  .logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: #fff; font-weight: 600; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: #fff; font-weight: 600; text-decoration: none; }
   
   /* Transparent outline text for 'hunny' */
   .logo span { 
@@ -75,7 +75,7 @@
   .nav-links { display: none; }
   @media (min-width: 760px) { 
     .nav-links { display: flex; align-items: center; } 
-    .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 28px; transition: color 0.2s; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 24px; transition: color 0.2s; }
     .nav-links a:hover { color: var(--tan-light); }
   }
 
@@ -158,6 +158,14 @@
   .compare-box { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px; margin-top: 24px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
   .compare-text { flex: 1 1 300px; }
 
+  /* Blood Testing Menu Styles */
+  .blood-menu-section { background: var(--cream); border-top: 1px solid var(--line); padding: 80px 0; }
+  .category-title { margin: 40px 0 20px; border-bottom: 2px solid var(--ink); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline; }
+  .category-title h2 { font-size: 30px; font-style: italic; }
+  .category-title span { font-size: 13px; color: var(--tan-deep); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
+  .why-box { background: rgba(235, 210, 192, 0.3); border-left: 3px solid var(--tan-deep); padding: 12px 14px; border-radius: 0 10px 10px 0; margin-bottom: 16px; font-size: 13.5px; color: var(--ink); }
+  .why-box strong { color: var(--tan-deep); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
+
   /* Malla Container */
   .intake-card { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 40px; margin-top: 20px; text-align: center; }
   .malla-badge { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--tan-deep); font-weight: 500; margin-bottom: 24px; }
@@ -183,6 +191,7 @@
   @media (max-width: 720px) {
     .hero-text h1 { font-size: 42px; }
     .price-card, .intake-card { padding: 24px; }
+    .category-title { flex-direction: column; gap: 4px; }
   }
 </style>
 </head>
@@ -190,14 +199,15 @@
 
 <nav>
   <div class="wrap">
-    <div class="logo">wellness<span>hunny</span></div>
+    <a href="#" class="logo">wellness<span>hunny</span></a>
     <div class="nav-links">
       <a href="#philosophy">Philosophy</a>
       <a href="#services">Services</a>
       <a href="#how">How it Works</a>
       <a href="#pricing">Pricing</a>
-      <a href="#labs">Labs</a>
-      <a href="#intake">Pre-Consult Intake</a>
+      <a href="#labs">À La Carte Labs</a>
+      <a href="#blood-menu">Blood Panel Menu</a>
+      <a href="#intake">Intake</a>
       <a href="#faq">FAQ</a>
     </div>
   </div>
@@ -215,7 +225,7 @@
       <p class="sub">Structured root-cause coaching, medical support &amp; advocacy, preset lifestyle protocols, and direct clinical referrals—tailored to your exact health needs before your call even starts.</p>
       <div class="hero-ctas">
         <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary">Complete Pre-Consult Intake</a>
-        <a href="#services" class="btn btn-ghost">Explore Care Pathways</a>
+        <a href="#blood-menu" class="btn btn-ghost">View Full Blood Testing Menu &rarr;</a>
       </div>
     </div>
   </div>
@@ -365,12 +375,13 @@
   </div>
 </section>
 
+<!-- MAIN A LA CARTE LABS SECTION -->
 <section id="labs">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Diagnostic Testing</span>
-      <h2>À La Carte Functional &amp; Blood Testing</h2>
-      <p>Order direct-to-consumer lab panels tailored to your health goals. No mandatory consult required to order.</p>
+      <h2>À La Carte Specialty &amp; Diagnostic Labs</h2>
+      <p>Order direct-to-consumer lab panels tailored to your health goals. No mandatory consult required to order[cite: 1].</p>
     </div>
 
     <div class="lab-grid">
@@ -380,10 +391,10 @@
         <div>
           <h3>Comprehensive Male Health Panel</h3>
           <div class="lab-price">$150</div>
-          <p>A full-spectrum blood screening designed to assess metabolic function, cardiovascular risks, hormone balance, thyroid activity, key nutrient reserves, and inflammatory markers.</p>
+          <p>A full-spectrum blood screening designed to assess metabolic function, cardiovascular risks, hormone balance, thyroid activity, key nutrient reserves, and inflammatory markers[cite: 1].</p>
           <div class="panel-list">
             <strong>Included Markers:</strong>
-            CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, PSA, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine.
+            CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, PSA, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine[cite: 1].
           </div>
         </div>
         <a href="#intake" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">Order Panel &rarr;</a>
@@ -394,10 +405,10 @@
         <div>
           <h3>Comprehensive Female Health Panel</h3>
           <div class="lab-price">$150</div>
-          <p>An extensive blood panel evaluating hormonal balance, thyroid function, metabolic health, nutritional status, and systemic inflammation—tailored specifically for women's health needs.</p>
+          <p>An extensive blood panel evaluating hormonal balance, thyroid function, metabolic health, nutritional status, and systemic inflammation—tailored specifically for women's health needs[cite: 1].</p>
           <div class="panel-list">
             <strong>Included Markers:</strong>
-            CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, FSH, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine.
+            CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, FSH, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine[cite: 1].
           </div>
         </div>
         <a href="#intake" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">Order Panel &rarr;</a>
@@ -408,10 +419,10 @@
         <div>
           <h3>Genova GI Effects® Stool Profile</h3>
           <div class="lab-price">$400</div>
-          <p>The gold standard in comprehensive stool testing. Evaluates gut microbiome diversity, inflammation, digestive enzyme activity, leaky gut markers, and uncovers hidden bacterial, viral, or parasitic infections.</p>
+          <p>The gold standard in comprehensive stool testing[cite: 1]. Evaluates gut microbiome diversity, inflammation, digestive enzyme activity, leaky gut markers, and uncovers hidden bacterial, viral, or parasitic infections[cite: 1].</p>
           <div class="panel-list">
             <strong>Best For:</strong>
-            Chronic bloating, gas, IBS/IBD, constipation, food intolerances, autoimmune triggers, or deep gut microbiome optimization.
+            Chronic bloating, gas, IBS/IBD, constipation, food intolerances, autoimmune triggers, or deep gut microbiome optimization[cite: 1].
           </div>
         </div>
         <a href="#intake" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">Order Panel &rarr;</a>
@@ -422,10 +433,10 @@
         <div>
           <h3>Hair Tissue Mineral Analysis (HTMA)</h3>
           <div class="lab-price">À La Carte</div>
-          <p>A non-invasive tissue test measuring mineral accumulation (calcium, magnesium, zinc, copper) and toxic heavy metal exposure (lead, mercury, arsenic, cadmium) locked inside hair protein structures over time.</p>
+          <p>A non-invasive tissue test measuring mineral accumulation (calcium, magnesium, zinc, copper) and toxic heavy metal exposure (lead, mercury, arsenic, cadmium) locked inside hair protein structures over time[cite: 1].</p>
           <div class="panel-list">
             <strong>Best For:</strong>
-            Uncovering chronic mineral depletion, adrenal fatigue, metabolic rate, and long-term heavy metal toxicity that serum blood work overlooks.
+            Uncovering chronic mineral depletion, adrenal fatigue, metabolic rate, and long-term heavy metal toxicity that serum blood work overlooks[cite: 1].
           </div>
         </div>
         <a href="#intake" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">Order Panel &rarr;</a>
@@ -439,17 +450,184 @@
         <span class="eyebrow" style="color: var(--tan-deep);">Diagnostic Insight</span>
         <h3 style="font-size: 26px; margin: 4px 0 12px;">Trace Elements (HTMA) vs. Standard Blood Tests</h3>
         <p style="margin: 0; color: var(--ink-soft); font-size: 14.5px;">
-          <strong>Why test tissue instead of blood?</strong> A standard blood test provides an instantaneous snapshot of circulating minerals that your body tightly regulates day-to-day. However, blood levels can appear "normal" even when cellular tissues are severely depleted.
+          <strong>Why test tissue instead of blood?</strong> A standard blood test provides an instantaneous snapshot of circulating minerals that your body tightly regulates day-to-day[cite: 1]. However, blood levels can appear "normal" even when cellular tissues are severely depleted[cite: 1].
         </p>
         <p style="margin: 10px 0 0; color: var(--ink-soft); font-size: 14.5px;">
-          <strong>HTMA acts like a 3-month video recording</strong> instead of a single photo. As hair grows, it retains a timeline of stored tissue minerals and toxic heavy metals. This makes HTMA superior for catching chronic stress patterns, slow-developing mineral deficiencies, and heavy metal accumulation that blood draws miss completely.
+          <strong>HTMA acts like a 3-month video recording</strong> instead of a single photo[cite: 1]. As hair grows, it retains a timeline of stored tissue minerals and toxic heavy metals[cite: 1]. This makes HTMA superior for catching chronic stress patterns, slow-developing mineral deficiencies, and heavy metal accumulation that blood draws miss completely[cite: 1].
         </p>
       </div>
+    </div>
+
+    <!-- Direct Button to Detailed Blood Menu -->
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="#blood-menu" class="btn btn-primary" style="padding: 16px 36px;">Explore Full Categorized Blood Panel Menu &darr;</a>
     </div>
 
   </div>
 </section>
 
+<!-- INTEGRATED FULL BLOOD TESTING MENU SECTION -->
+<section id="blood-menu" class="blood-menu-section">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Complete Blood Lab Menu</span>
+      <h2>Categorized Blood Test Options</h2>
+      <p>Browse our complete list of panels grouped by health goal, with clear explanations of why each test is chosen[cite: 2].</p>
+    </div>
+
+    <!-- CATEGORY 1: BASELINE COMPREHENSIVE -->
+    <div class="category-title">
+      <h2>1. Comprehensive Baseline Panels</h2>
+      <span>Essential Annual &amp; Wellness Screening</span>
+    </div>
+
+    <div class="lab-grid">
+      
+      <!-- Male Comprehensive -->
+      <div class="lab-card">
+        <div>
+          <h3>Comprehensive Male Health Panel</h3>
+          <div class="lab-price">$150</div>
+          <div class="why-box">
+            <strong>Why Choose This Test:</strong>
+            Ideal for men seeking an affordable, thorough yearly health checkup[cite: 2]. Evaluates primary metabolic function, key cardiovascular markers, blood sugar control, foundational thyroid activity, and core male hormones[cite: 2].
+          </div>
+          <div class="panel-list">
+            <strong>Key Markers Included:</strong>
+            CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, PSA, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine[cite: 2].
+          </div>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <!-- Female Comprehensive -->
+      <div class="lab-card">
+        <div>
+          <h3>Comprehensive Female Health Panel</h3>
+          <div class="lab-price">$150</div>
+          <div class="why-box">
+            <strong>Why Choose This Test:</strong>
+            The essential entry panel for women looking to evaluate energy, metabolic health, baseline thyroid function, inflammatory markers, and foundational sex hormones[cite: 2].
+          </div>
+          <div class="panel-list">
+            <strong>Key Markers Included:</strong>
+            CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, FSH, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine[cite: 2].
+          </div>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+    </div>
+
+    <!-- CATEGORY 2: ADVANCED COMPREHENSIVE -->
+    <div class="category-title">
+      <h2>2. Advanced Deep-Dive Panels</h2>
+      <span>Comprehensive Root-Cause &amp; Heavy Metals</span>
+    </div>
+
+    <div class="lab-grid">
+
+      <!-- Male Advanced -->
+      <div class="lab-card">
+        <div>
+          <h3>Advanced Male Comprehensive Panel</h3>
+          <div class="lab-price">Full Deep-Dive</div>
+          <div class="why-box">
+            <strong>Why Choose This Test:</strong>
+            For men experiencing unexplained fatigue, stubborn weight gain, systemic inflammation, or severe hormonal imbalances[cite: 2]. Adds deep heavy metal toxin screening, adrenal stress markers, reverse thyroid metrics, and specialized cardiovascular lipid fractions[cite: 2].
+          </div>
+          <div class="panel-list">
+            <strong>Key Markers Included:</strong>
+            All baseline markers PLUS Reverse T3, Cortisol, Fasting Insulin, DHEA-S, High-Sensitivity CRP, Uric Acid, Copper, Zinc, OmegaCheck (Fatty Acids), and Heavy Metals (Arsenic, Lead, Mercury, Cadmium)[cite: 2].
+          </div>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <!-- Female Advanced -->
+      <div class="lab-card">
+        <div>
+          <h3>Advanced Female Comprehensive Panel</h3>
+          <div class="lab-price">Full Deep-Dive</div>
+          <div class="why-box">
+            <strong>Why Choose This Test:</strong>
+            Designed for complex hormone issues, PCOS symptoms, peri-menopause tracking, chronic fatigue, or suspected heavy metal toxicity[cite: 2]. Provides the most complete biological blueprint available[cite: 2].
+          </div>
+          <div class="panel-list">
+            <strong>Key Markers Included:</strong>
+            All baseline markers PLUS Reverse T3, Progesterone (LC/MS/MS), Prolactin, Fasting Insulin, Cortisol, DHEA-S, High-Sensitivity CRP, Copper, Zinc, OmegaCheck, AMH (Fertility), and Heavy Metals Panel[cite: 2].
+          </div>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+    </div>
+
+    <!-- CATEGORY 3: TARGETED & FOLLOW-UP PANELS -->
+    <div class="category-title">
+      <h2>3. Targeted &amp; Follow-Up Panels</h2>
+      <span>Symptom-Specific &amp; Progress Re-Testing</span>
+    </div>
+
+    <div class="lab-grid">
+
+      <!-- Thyroid Follow-Up -->
+      <div class="lab-card">
+        <div>
+          <h3>Extended Thyroid Panel</h3>
+          <div class="lab-price">Targeted Re-Test</div>
+          <div class="why-box">
+            <strong>Why Choose This Test:</strong>
+            Ideal if you are adjusting thyroid medication, managing Hashimoto's, or suffering from persistent brain fog, cold intolerance, and thinning hair despite "normal" basic TSH readings[cite: 2].
+          </div>
+          <div class="panel-list">
+            <strong>Key Markers Included:</strong>
+            TSH, Free T3, Free T4, Reverse T3, Thyroid Peroxidase (TPO) Antibodies, and Selenium levels[cite: 2].
+          </div>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <!-- Menstrual / Fertility Health -->
+      <div class="lab-card">
+        <div>
+          <h3>Menstrual Health &amp; Hormone Panel</h3>
+          <div class="lab-price">Targeted Assessment</div>
+          <div class="why-box">
+            <strong>Why Choose This Test:</strong>
+            Specific to women evaluating cycle irregularities, fertility, PMS/PMDD, or estrogen dominance[cite: 2]. Measures complete pituitary-ovarian signaling pathways[cite: 2].
+          </div>
+          <div class="panel-list">
+            <strong>Key Markers Included:</strong>
+            Estradiol, Estrone, Progesterone, FSH, LH, Free &amp; Total Testosterone, Prolactin, Ferritin, and Hemoglobin A1c[cite: 2].
+          </div>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <!-- Micronutrient & Metabolic Add-On -->
+      <div class="lab-card">
+        <div>
+          <h3>Micronutrient &amp; Metabolic Panel</h3>
+          <div class="lab-price">Nutritional Focus</div>
+          <div class="why-box">
+            <strong>Why Choose This Test:</strong>
+            Great for optimizing energy, recovery, cellular health, and insulin sensitivity[cite: 2]. Pinpoints exact cellular nutrient shortages[cite: 2].
+          </div>
+          <div class="panel-list">
+            <strong>Key Markers Included:</strong>
+            RBC Packed Magnesium, Vitamin D 25-OH, Vitamin B12, Fasting Insulin, Homocysteine, Uric Acid, Lipid Panel, and CMP[cite: 2].
+          </div>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- INTAKE & PORTAL SECTION -->
 <section id="intake">
   <div class="wrap">
     <div class="section-head center">
@@ -476,6 +654,7 @@
   </div>
 </section>
 
+<!-- FAQ SECTION -->
 <section id="faq">
   <div class="wrap">
     <div class="section-head center">
@@ -489,7 +668,7 @@
       </details>
       <details class="faq-item">
         <summary>Can I order labs or protocols à la carte without a consultation?</summary>
-        <p>Yes! You can order targeted preset reset protocols and practitioner-grade supplements directly through our Fullscript dispensary, or request functional lab ordering through our portal without needing to complete an initial long-form consultation.</p>
+        <p>Yes! You can order targeted preset reset protocols and practitioner-grade supplements directly through our Fullscript dispensary, or request functional lab ordering through our portal without needing to complete an initial long-form consultation[cite: 1].</p>
       </details>
       <details class="faq-item">
         <summary>What is medical coaching, support, and advocacy?</summary>
