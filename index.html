@@ -38,16 +38,29 @@
     display: inline-block; text-decoration: none; position: relative; overflow: hidden;
     transition: all 0.2s ease; text-align: center;
   }
+  
+  /* Solid Primary Button */
   .btn-primary {
-    background: linear-gradient(135deg, var(--tan-light) 0%, var(--tan) 60%, var(--tan-deep) 100%);
-    color: #ffffff !important; box-shadow: 0 8px 20px rgba(140, 109, 79, 0.25);
+    background: var(--tan-deep);
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
   }
   .btn-primary:hover {
-    box-shadow: 0 10px 24px rgba(140, 109, 79, 0.35);
+    background: #6e543b;
     transform: translateY(-1px);
   }
-  .btn-ghost { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
-  .btn-ghost:hover { border-color: var(--tan-deep); }
+
+  /* Solid Secondary / Ghost Button */
+  .btn-ghost { 
+    background: #ffffff !important; 
+    color: var(--ink) !important; 
+    border: 1px solid #ffffff; 
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  }
+  .btn-ghost:hover { 
+    background: var(--cream-deep) !important; 
+    border-color: var(--cream-deep);
+  }
 
   nav { padding: 26px 0; position: absolute; width: 100%; top: 0; z-index: 10; }
   nav .wrap { display: flex; justify-content: space-between; align-items: center; }
@@ -92,6 +105,7 @@
   .hero-text h1 .accent { color: var(--tan-light); }
   .hero-text .sub { font-size: 18px; color: rgba(255,255,255,0.9); max-width: 540px; margin: 0 0 30px; }
   .hero-text .eyebrow { color: var(--tan-light); }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
   section { padding: 80px 0; }
   .section-head { margin-bottom: 40px; }
@@ -189,7 +203,7 @@
       <p class="sub">Structured root-cause coaching, medical support &amp; advocacy, preset lifestyle protocols, and direct clinical referrals—tailored to your exact health needs before your call even starts.</p>
       <div class="hero-ctas">
         <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary">Complete Pre-Consult Intake</a>
-        <a href="#services" class="btn btn-ghost" style="background: rgba(255,255,255,0.15); color:#fff; border-color: rgba(255,255,255,0.3);">Explore Care Pathways</a>
+        <a href="#services" class="btn btn-ghost">Explore Care Pathways</a>
       </div>
     </div>
   </div>
@@ -286,7 +300,7 @@
     <div class="section-head center">
       <span class="eyebrow">Transparent Pricing</span>
       <h2>À La Carte &amp; Session Options</h2>
-      <p>Choose the option that fits your path—from free consultations and pay-as-you-go sessions to direct labs and protocol ordering.</p>
+      <p>Choose the option that fits your path—from free consultations and pay-as-you-go sessions to monthly protocol support.</p>
     </div>
     <div class="price-card">
       <div class="price-row">
@@ -305,15 +319,8 @@
       </div>
       <div class="price-row">
         <div>
-          <div class="name">Monthly Strategy Bundle <em>(Save $20/mo)</em></div>
-          <div class="desc">Includes 2 check-in sessions per month (approx. $55/session) plus ongoing messaging support—ideal for steady progress through preset protocols.</div>
-        </div>
-        <div class="amt">$110 <span style="font-size:15px; font-style:normal;">/ mo</span></div>
-      </div>
-      <div class="price-row">
-        <div>
-          <div class="name">Bi-Weekly Consistency Pass <em>(Save $60/mo)</em></div>
-          <div class="desc">Includes 4 check-in sessions per month (approx. $50/session) for intensive advocacy, frequent protocol coaching, or close metabolic monitoring.</div>
+          <div class="name">Monthly Protocol Coaching Package</div>
+          <div class="desc">Includes 4 weekly check-in sessions (30 mins each) for step-by-step guidance, accountability, and real-time adjustments—a great adjunct to Fullscript protocol programs.</div>
         </div>
         <div class="amt">$200 <span style="font-size:15px; font-style:normal;">/ mo</span></div>
       </div>
@@ -397,7 +404,7 @@
       </details>
       <details class="faq-item">
         <summary>How do the preset reset protocols work?</summary>
-        <p>We offer targeted, pre-structured protocols (Gastrointestinal, Fasting/Detox, Metabolic, Cellular Health, and Nervous System). You can use your $65 check-in sessions as ongoing coaching appointments while you navigate these protocols.</p>
+        <p>We offer targeted, pre-structured protocols (Gastrointestinal, Fasting/Detox, Metabolic, Cellular Health, and Nervous System). You can pair them with our $200/mo package for weekly 30-minute coaching check-ins as you navigate your regimen.</p>
       </details>
     </div>
   </div>
