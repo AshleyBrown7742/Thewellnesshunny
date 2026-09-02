@@ -6,97 +6,162 @@
 <title>Lip Bunny Rx — Clinical HRT, Tirzepatide &amp; Topical GHK-Cu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --dark-bg: #141210;
-    --card-bg: #1e1b18;
-    --gold: #d4af37;
-    --gold-light: #f3e5ab;
-    --text: #f0ece9;
-    --text-muted: #a39c95;
-    --line: #2e2a25;
+    --bg-dark: #120e0e;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(230, 201, 197, 0.18);
+    --rose-gold: #e8c5be;
+    --blush: #f7ece9;
+    --blush-soft: #fcf8f7;
+    --text-muted: #bdaeab;
+    --line: rgba(232, 197, 190, 0.15);
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0; background: var(--dark-bg); color: var(--text);
-    font-family: 'Jost', sans-serif; font-weight: 400; line-height: 1.7;
-    overflow-x: hidden;
+    margin: 0; background: var(--bg-dark); color: var(--blush);
+    font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7;
+    overflow-x: hidden; letter-spacing: 0.02em;
   }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
-  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; margin: 0; color: #fff; }
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; margin: 0; color: #ffffff; letter-spacing: 0.03em; }
   
   .eyebrow {
-    font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.18em;
-    font-size: 11.5px; font-weight: 600; color: var(--gold);
+    font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.22em;
+    font-size: 11px; font-weight: 500; color: var(--rose-gold);
   }
 
   .btn {
-    font-family: 'Jost', sans-serif; font-weight: 600; font-size: 15px;
-    border: none; cursor: pointer; border-radius: 999px; padding: 15px 30px;
-    display: inline-block; text-decoration: none; transition: all 0.2s ease; text-align: center;
+    font-family: 'Jost', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: 0.08em;
+    border: none; cursor: pointer; border-radius: 999px; padding: 16px 34px;
+    display: inline-block; text-decoration: none; transition: all 0.3s ease; text-align: center;
   }
-  .btn-gold { background: var(--gold); color: #141210 !important; }
-  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
-  .btn-outline { background: transparent; color: var(--text) !important; border: 1px solid var(--line); }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold) !important; }
+  .btn-rose { 
+    background: linear-gradient(135deg, #ebd0ca 0%, #d4aba3 100%); 
+    color: #1a1211 !important; 
+    box-shadow: 0 4px 20px rgba(232, 197, 190, 0.2);
+  }
+  .btn-rose:hover { 
+    background: linear-gradient(135deg, #f5ded8 0%, #e0b8b0 100%); 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 24px rgba(232, 197, 190, 0.35);
+  }
+  .btn-outline { 
+    background: rgba(255, 255, 255, 0.02); 
+    color: var(--blush) !important; 
+    border: 1px solid var(--card-border); 
+    backdrop-filter: blur(6px);
+  }
+  .btn-outline:hover { 
+    border-color: var(--rose-gold); 
+    color: var(--rose-gold) !important; 
+    background: rgba(232, 197, 190, 0.05);
+  }
 
-  .hunny-banner { background: #231e1a; color: var(--text-muted); text-align: center; padding: 10px 20px; font-size: 13.5px; border-bottom: 1px solid var(--line); position: relative; z-index: 20; }
-  .hunny-banner a { color: var(--gold); text-decoration: underline; margin-left: 6px; font-weight: 600; }
+  .hunny-banner { 
+    background: #181212; 
+    color: var(--text-muted); 
+    text-align: center; 
+    padding: 11px 20px; 
+    font-size: 13px; 
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid var(--line); 
+    position: relative; 
+    z-index: 20; 
+  }
+  .hunny-banner a { color: var(--rose-gold); text-decoration: none; margin-left: 6px; font-weight: 400; border-bottom: 1px solid var(--rose-gold); }
 
-  nav { padding: 24px 0; border-bottom: 1px solid var(--line); position: absolute; width: 100%; top: 38px; z-index: 10; }
+  nav { padding: 26px 0; border-bottom: 1px solid var(--line); position: absolute; width: 100%; top: 41px; z-index: 10; }
   nav .wrap { display: flex; justify-content: space-between; align-items: center; }
-  .logo { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #fff; font-weight: 600; text-decoration: none; letter-spacing: 0.05em; }
-  .logo span { color: var(--gold); font-style: italic; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #fff; font-weight: 400; text-decoration: none; letter-spacing: 0.12em; }
+  .logo span { color: var(--rose-gold); font-style: italic; font-weight: 300; }
 
   .video-hero {
     position: relative;
-    min-height: 90vh;
+    min-height: 92vh;
     display: flex;
     align-items: center;
-    padding: 140px 0 80px;
+    padding: 150px 0 90px;
     color: #ffffff;
     overflow: hidden;
-    background-color: #141210;
+    background-color: var(--bg-dark);
   }
   .video-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     object-fit: cover; z-index: 1;
+    filter: brightness(0.75) contrast(1.05);
   }
   .video-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(20, 18, 16, 0.72) 0%, rgba(20, 18, 16, 0.88) 100%);
+    background: linear-gradient(180deg, rgba(18, 14, 14, 0.75) 0%, rgba(18, 14, 14, 0.92) 100%);
     z-index: 1;
   }
 
-  .hero-text { text-align: center; margin: 0 auto; max-width: 780px; }
-  .hero-text h1 { font-size: 58px; font-style: italic; margin: 16px 0; }
-  .hero-text p { color: var(--text-muted); font-size: 18px; margin-bottom: 32px; }
+  .hero-text { text-align: center; margin: 0 auto; max-width: 800px; }
+  .hero-text h1 { font-size: 62px; font-style: italic; margin: 18px 0; font-weight: 300; line-height: 1.1; }
+  .hero-text p { color: var(--text-muted); font-size: 17.5px; margin-bottom: 36px; font-weight: 300; line-height: 1.8; }
 
-  section { padding: 80px 0; border-bottom: 1px solid var(--line); }
-  .section-head { text-align: center; margin-bottom: 40px; }
-  .section-head h2 { font-size: 42px; font-style: italic; }
+  section { padding: 90px 0; border-bottom: 1px solid var(--line); }
+  .section-head { text-align: center; margin-bottom: 50px; }
+  .section-head h2 { font-size: 44px; font-style: italic; font-weight: 300; }
 
   .philo-section {
     position: relative;
-    padding: 100px 0;
+    padding: 110px 0;
     color: #ffffff;
     overflow: hidden;
-    background-color: #141210;
+    background-color: var(--bg-dark);
   }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-  .card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 20px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; }
-  .card h3 { font-size: 26px; margin: 8px 0 12px; color: var(--gold-light); }
-  .card p { color: var(--text-muted); font-size: 15px; margin-bottom: 20px; }
-  .card .tag { background: rgba(212, 175, 55, 0.1); color: var(--gold); border: 1px solid rgba(212, 175, 55, 0.3); font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 999px; display: inline-block; margin-bottom: 12px; align-self: flex-start; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+  .card { 
+    background: var(--card-bg); 
+    border: 1px solid var(--card-border); 
+    border-radius: 24px; 
+    padding: 38px 32px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .card:hover { transform: translateY(-4px); border-color: rgba(232, 197, 190, 0.4); }
+  .card h3 { font-size: 28px; margin: 10px 0 14px; color: var(--blush-soft); font-style: italic; }
+  .card p { color: var(--text-muted); font-size: 14.5px; margin-bottom: 24px; line-height: 1.7; }
+  .card .tag { 
+    background: rgba(232, 197, 190, 0.08); 
+    color: var(--rose-gold); 
+    border: 1px solid rgba(232, 197, 190, 0.25); 
+    font-size: 11px; 
+    font-weight: 500; 
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px; 
+    border-radius: 999px; 
+    display: inline-block; 
+    margin-bottom: 14px; 
+    align-self: flex-start; 
+  }
 
-  .process-box { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 40px; margin-top: 20px; }
-  .price-highlight { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--gold); font-style: italic; }
+  .process-box { 
+    background: var(--card-bg); 
+    border: 1px solid var(--card-border); 
+    border-radius: 28px; 
+    padding: 48px; 
+    margin-top: 20px; 
+    backdrop-filter: blur(16px);
+  }
+  .price-highlight { font-family: 'Cormorant Garamond', serif; font-size: 52px; color: var(--rose-gold); font-style: italic; font-weight: 300; }
 
-  footer { padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); }
+  footer { padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); letter-spacing: 0.04em; }
+
+  @media (max-width: 720px) {
+    .hero-text h1 { font-size: 44px; }
+    .process-box { padding: 28px; }
+  }
 </style>
 </head>
 <body>
@@ -108,7 +173,7 @@
 <nav>
   <div class="wrap">
     <a href="lipbunny-rx.html" class="logo">LIP BUNNY <span>Rx</span></a>
-    <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-gold" style="padding: 10px 20px; font-size: 13.5px;">Client Portal</a>
+    <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-rose" style="padding: 10px 22px; font-size: 12.5px;">Client Portal</a>
   </div>
 </nav>
 
@@ -119,10 +184,10 @@
   <div class="video-overlay"></div>
   <div class="wrap">
     <div class="hero-text">
-      <span class="eyebrow">Medical Telehealth &amp; Whole-Woman Prescription Care</span>
-      <h1>Total Clinical Optimization for Women.</h1>
-      <p>Precision Tirzepatide, customized Bioidentical HRT, and Topical GHK-Cu—combined with comprehensive lab monitoring, targeted nutrition, and scripts fulfilled at cost through Strive Pharmacy.</p>
-      <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-gold">Start $85/Mo Clinical Intake &rarr;</a>
+      <span class="eyebrow">Medical Telehealth &amp; Whole-Woman Prescription Protocols</span>
+      <h1>Luxe Clinical Medicine for Women.</h1>
+      <p>Precision Tirzepatide, bioidentical HRT, and topical GHK-Cu—supported by complete lab monitoring, whole-woman nutrition, and pharmacy scripts fulfilled at cost via Strive Pharmacy.</p>
+      <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-rose">Begin $85/Mo Clinical Intake &rarr;</a>
     </div>
   </div>
 </div>
@@ -131,13 +196,13 @@
   <video class="video-bg" autoplay loop muted playsinline>
     <source src="./sculpture-flowers.mp4" type="video/mp4">
   </video>
-  <div class="video-overlay" style="background: rgba(20, 18, 16, 0.88);"></div>
+  <div class="video-overlay" style="background: rgba(18, 14, 14, 0.9);"></div>
   <div class="wrap">
-    <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+    <div style="max-width: 740px; margin: 0 auto; text-align: center;">
       <span class="eyebrow">Addressing the Entire Woman</span>
-      <h2 style="font-size: 42px; margin: 12px 0 20px;">We don't just write prescriptions. We optimize your biology.</h2>
-      <p style="font-size: 16.5px; color: var(--text-muted); line-height: 1.8;">
-        True results require looking at the complete picture. Alongside your prescription therapies, we actively evaluate and balance Vitamin D, Thyroid function, B12, Magnesium, Omegas, and targeted Adaptogens based on your lab work—ensuring your body has the baseline support required to thrive.
+      <h2 style="font-size: 44px; margin: 14px 0 22px;">We don't just write prescriptions. We optimize your biology.</h2>
+      <p style="font-size: 16.5px; color: var(--text-muted); line-height: 1.85;">
+        True clinical longevity requires looking at the entire body. Alongside your prescription therapies, we actively monitor and balance Vitamin D, Thyroid health, B12, Magnesium, Omegas, and targeted Adaptogens based on your individual lab work—ensuring your body has the foundational health required to thrive.
       </p>
     </div>
   </div>
@@ -146,15 +211,15 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Targeted Therapies</span>
-      <h2>Prescription Offerings</h2>
+      <span class="eyebrow">Prescription Offerings</span>
+      <h2>Targeted Clinical Therapies</h2>
     </div>
     <div class="grid">
       <div class="card">
         <div>
           <span class="tag">Metabolic Health</span>
           <h3>Tirzepatide Protocol</h3>
-          <p>Advanced dual GLP-1/GIP agonist therapy for sustainable weight loss, insulin sensitivity, and appetite regulation. Prescriptions are fulfilled at cost through Strive Pharmacy.</p>
+          <p>Advanced dual GLP-1/GIP therapy for sustainable body composition, metabolic repair, and insulin regulation. Prescriptions are fulfilled at cost through Strive Pharmacy.</p>
         </div>
         <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="width:100%;">Get Started &rarr;</a>
       </div>
@@ -163,7 +228,7 @@
         <div>
           <span class="tag">Hormone Optimization</span>
           <h3>Female Bioidentical HRT</h3>
-          <p>Customized bioidentical hormone replacement therapy designed specifically for women to restore energy, muscle tone, sleep, and libido while easing peri-menopause and hormonal shifts.</p>
+          <p>Tailored bioidentical hormone replacement designed specifically for women to restore energy, muscle tone, sleep, and libido while gracefully navigating peri-menopause.</p>
         </div>
         <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="width:100%;">Get Started &rarr;</a>
       </div>
@@ -172,7 +237,7 @@
         <div>
           <span class="tag">Peptide Therapy</span>
           <h3>Topical GHK-Cu</h3>
-          <p>Targeted topical copper peptide formulations designed to accelerate skin regeneration, boost natural collagen synthesis, improve elasticity, and restore youthful vitality.</p>
+          <p>Elegantly formulated topical copper peptide therapy to stimulate tissue repair, boost collagen synthesis, enhance elasticity, and promote radiant skin vitality.</p>
         </div>
         <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="width:100%;">Get Started &rarr;</a>
       </div>
@@ -183,43 +248,43 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Simple &amp; Transparent</span>
-      <h2>How the Program Works</h2>
+      <span class="eyebrow">Transparent &amp; Simple</span>
+      <h2>How Your Care Model Works</h2>
     </div>
 
     <div class="process-box">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 28px; margin-bottom: 28px;">
         <div>
-          <h3 style="font-size: 32px; color: #fff;">Monthly Clinical Membership</h3>
-          <p style="color: var(--text-muted); margin: 4px 0 0;">Includes monthly check-ins, medical management, protocol adjustments, and script coordination.</p>
+          <h3 style="font-size: 34px; color: #ffffff; font-style: italic;">Monthly Clinical Membership</h3>
+          <p style="color: var(--text-muted); margin: 4px 0 0; font-size: 15px;">Covers monthly telehealth check-ins, continuous medical management, and protocol optimization.</p>
         </div>
         <div class="price-highlight">$85 <span style="font-size: 18px; color: var(--text-muted); font-style: normal;">/ month</span></div>
       </div>
 
       <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
         <div>
-          <h4 style="color: var(--gold); font-size: 18px; margin-bottom: 8px;">1. Initial &amp; Required Blood Labs</h4>
-          <p style="color: var(--text-muted); font-size: 14.5px;">Comprehensive blood work is strictly required prior to medication initiation. Our standard <strong>$150 Female Baseline Panel</strong> serves as the Lip Bunny initial panel, measuring thyroid, metabolic function, hormones, and key micronutrients.</p>
+          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">1. Initial &amp; Required Labs</h4>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">Comprehensive blood work is required before starting medication. Our standard <strong>$150 Female Baseline Panel</strong> serves as the Lip Bunny initial panel—assessing thyroid, hormones, metabolism, and micronutrients.</p>
         </div>
 
         <div>
-          <h4 style="color: var(--gold); font-size: 18px; margin-bottom: 8px;">2. Regular Monitoring &amp; Re-Testing</h4>
-          <p style="color: var(--text-muted); font-size: 14.5px;">Safety and efficacy come first. You will participate in <strong>once-monthly virtual check-ins</strong>, and lab work is re-evaluated <strong>every 3 months</strong> (or sooner if clinically recommended) to adjust dosing and track progress.</p>
+          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">2. Monitoring &amp; Re-Testing</h4>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">Safety and precision come first. You will participate in <strong>once-monthly virtual check-ins</strong>, with follow-up lab evaluations scheduled <strong>every 3 months</strong> (or sooner if recommended) to adjust dosing.</p>
         </div>
 
         <div>
-          <h4 style="color: var(--gold); font-size: 18px; margin-bottom: 8px;">3. Scripts at Cost via Strive</h4>
-          <p style="color: var(--text-muted); font-size: 14.5px;">We do not mark up pharmacy pricing. All compounded prescription medications (Tirzepatide, HRT, Topical GHK-Cu) are fulfilled directly through <strong>Strive Pharmacy</strong> and billed at raw wholesale cost.</p>
+          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">3. Scripts at Cost via Strive</h4>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">We never mark up pharmacy costs. All compounded prescriptions (Tirzepatide, HRT, Topical GHK-Cu) are fulfilled directly through <strong>Strive Pharmacy</strong> and billed at raw wholesale cost.</p>
         </div>
 
         <div>
-          <h4 style="color: var(--gold); font-size: 18px; margin-bottom: 8px;">4. Targeted Supplement Support</h4>
-          <p style="color: var(--text-muted); font-size: 14.5px;">To support your whole body while on prescriptions, required practitioner-grade supplements (Vitamin D, B12, Magnesium, Omegas, Adaptogens) are integrated seamlessly through our <strong>Fullscript dispensary</strong>.</p>
+          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">4. Fullscript Integration</h4>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">To support your whole body, required practitioner-grade supplements (Vitamin D, B12, Magnesium, Omegas, Adaptogens) are integrated seamlessly through our <strong>Fullscript dispensary</strong>.</p>
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line);">
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-gold" style="padding: 16px 36px;">Complete Intake in Malla EHR &rarr;</a>
+      <div style="text-align: center; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line);">
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-rose" style="padding: 18px 42px;">Complete Intake in Malla EHR &rarr;</a>
       </div>
     </div>
   </div>
