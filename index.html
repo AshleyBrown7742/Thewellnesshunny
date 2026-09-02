@@ -60,16 +60,16 @@
     border-color: var(--cream-deep);
   }
 
-  /* Sticky Top Translucent Cream Header Wrapper */
+  /* Ultra-Translucent Cream Top Header */
   .top-header-cream {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(250, 247, 242, 0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(140, 109, 79, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: rgba(250, 247, 242, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(140, 109, 79, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   }
 
   .rx-banner { 
@@ -78,7 +78,7 @@
     padding: 10px 20px; 
     font-size: 13.5px; 
     font-weight: 500; 
-    border-bottom: 1px solid rgba(140, 109, 79, 0.15); 
+    border-bottom: 1px solid rgba(140, 109, 79, 0.12); 
   }
   .rx-banner a { color: var(--tan-deep); text-decoration: underline; margin-left: 6px; font-weight: 600; }
 
@@ -90,10 +90,10 @@
   .nav-links { display: none; }
   @media (min-width: 760px) { 
     .nav-links { display: flex; align-items: center; } 
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-soft); text-decoration: none; margin-left: 20px; transition: color 0.2s; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: none; margin-left: 20px; transition: color 0.2s; }
     .nav-links a:hover { color: var(--tan-deep); }
     .nav-links .rx-link { 
-      background: rgba(235, 210, 192, 0.9);
+      background: rgba(235, 210, 192, 0.65);
       border: 1px solid var(--tan-deep); 
       padding: 7px 18px; 
       border-radius: 999px; 
@@ -103,7 +103,7 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     .nav-links .rx-link:hover {
-      background: var(--cream-deep);
+      background: rgba(235, 210, 192, 0.9);
     }
   }
 
@@ -116,6 +116,8 @@
     color: #ffffff;
     overflow: hidden;
     background-color: #2b231d;
+    margin-top: -120px; /* Pulls video underneath the sticky transparent header */
+    padding-top: 220px;
   }
   .video-bg {
     position: absolute;
@@ -222,7 +224,6 @@
 </head>
 <body>
 
-<!-- TOP TRANSLUCENT CREAM HEADER -->
 <div class="top-header-cream">
   <div class="rx-banner">
     Looking for Medical Weight Loss (GLP-1), HRT &amp; Peptides? <a href="lipbunny-rx.html">Visit Lip Bunny Rx &rarr;</a>
@@ -253,9 +254,9 @@
   <div class="video-overlay"></div>
   <div class="wrap">
     <div class="hero-text">
-      <span class="eyebrow">Virtual Root-Cause Wellness &amp; Advocacy</span>
+      <span class="eyebrow">Virtual Root-Cause Wellness Coaching</span>
       <h1>Feel like <span class="accent">yourself</span> again.</h1>
-      <p class="sub">Structured root-cause coaching, medical support &amp; advocacy, holistic lifestyle protocols, functional lab testing, and direct clinical referrals—tailored to your exact health needs.</p>
+      <p class="sub">Structured root-cause coaching, medical support, holistic lifestyle protocols, functional lab testing, and direct clinical referrals—tailored to your exact health needs.</p>
       <div class="hero-ctas">
         <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary">Complete Pre-Consult Intake</a>
         <a href="lipbunny-rx.html" class="btn btn-ghost">Prescription Therapies (Lip Bunny Rx) &rarr;</a>
@@ -280,7 +281,7 @@
         <strong>Wellness Hunny</strong> exists to guide you back to the foundational basics of physical, mental, and spiritual health. You have the innate ability to tune into your body, listen to what it needs, and take charge of your own healing. You <em>can</em> rewrite your diagnosis, reduce reliance on medications, and step into total vitality—right from home.
       </p>
       <div class="chip-row">
-        <span class="chip">Medical Coaching &amp; Advocacy</span>
+        <span class="chip">Medical Coaching</span>
         <span class="chip">Holistic Lifestyle Protocols</span>
         <span class="chip">Functional Lab Testing</span>
         <span class="chip">Weight Loss &amp; HRT Referrals</span>
@@ -294,14 +295,14 @@
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Ways We Help</span>
-      <h2>Care Pathways &amp; Medical Advocacy</h2>
+      <h2>Care Pathways &amp; Medical Coaching</h2>
       <p>Comprehensive support bridging functional coaching and medical navigation.</p>
     </div>
     <div class="grid-cards">
       <div class="grid-card">
         <div class="num">01</div>
-        <h3>Medical Coaching &amp; Advocacy</h3>
-        <p>Get clarity on confusing diagnoses, evaluate medication side effects, and receive professional prep/guidance to advocate for yourself effectively with your PCP or specialists.</p>
+        <h3>Medical Coaching</h3>
+        <p>Get clarity on confusing diagnoses, evaluate medication side effects, and receive professional prep/guidance to coach yourself effectively through your healthcare journey with your PCP or specialists.</p>
       </div>
       <div class="grid-card">
         <div class="num">02</div>
@@ -372,7 +373,7 @@
       <div class="price-row">
         <div>
           <div class="name">Single 1:1 Consult / Coaching Visit</div>
-          <div class="desc">Standard 60-minute targeted session open to all clients. Use for medical coaching &amp; advocacy, symptom deep-dives, protocol coaching, or prescription referral review. Pre-consult review included.</div>
+          <div class="desc">Standard 60-minute targeted session open to all clients. Use for medical coaching, symptom deep-dives, protocol coaching, or prescription referral review. Pre-consult review included.</div>
         </div>
         <div class="amt">$65 <span style="font-size:15px; font-style:normal;">/ session</span></div>
       </div>
@@ -686,7 +687,7 @@
 
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 The Wellness Hunny. Virtual Root-Cause Coaching, Medical Advocacy &amp; Functional Testing. All rights reserved.</p>
+    <p>&copy; 2026 The Wellness Hunny. Virtual Root-Cause Coaching &amp; Functional Testing. All rights reserved.</p>
   </div>
 </footer>
 
