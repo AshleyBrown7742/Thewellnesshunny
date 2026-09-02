@@ -60,20 +60,51 @@
     border-color: var(--cream-deep);
   }
 
-  .rx-banner { background: var(--ink); color: #fff; text-align: center; padding: 10px 20px; font-size: 13.5px; font-weight: 500; position: relative; z-index: 20; }
-  .rx-banner a { color: var(--tan-light); text-decoration: underline; margin-left: 6px; font-weight: 600; }
+  /* Sticky Top Translucent Cream Header Wrapper */
+  .top-header-cream {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 247, 242, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(140, 109, 79, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
 
-  nav { padding: 26px 0; position: absolute; width: 100%; top: 38px; z-index: 10; }
+  .rx-banner { 
+    color: var(--ink); 
+    text-align: center; 
+    padding: 10px 20px; 
+    font-size: 13.5px; 
+    font-weight: 500; 
+    border-bottom: 1px solid rgba(140, 109, 79, 0.15); 
+  }
+  .rx-banner a { color: var(--tan-deep); text-decoration: underline; margin-left: 6px; font-weight: 600; }
+
+  nav { padding: 16px 0; width: 100%; position: relative; top: 0; }
   nav .wrap { display: flex; justify-content: space-between; align-items: center; }
-  .logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: #fff; font-weight: 600; text-decoration: none; }
-  .logo span { color: transparent; -webkit-text-stroke: 1px var(--tan-light); }
+  .logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: var(--ink); font-weight: 600; text-decoration: none; }
+  .logo span { color: var(--tan-deep); -webkit-text-stroke: 0px; }
   
   .nav-links { display: none; }
   @media (min-width: 760px) { 
     .nav-links { display: flex; align-items: center; } 
-    .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--tan-light); }
-    .nav-links .rx-link { border: 1px solid var(--tan-light); padding: 6px 16px; border-radius: 999px; color: var(--tan-light); }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-soft); text-decoration: none; margin-left: 20px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--tan-deep); }
+    .nav-links .rx-link { 
+      background: rgba(235, 210, 192, 0.9);
+      border: 1px solid var(--tan-deep); 
+      padding: 7px 18px; 
+      border-radius: 999px; 
+      color: var(--ink) !important; 
+      font-weight: 600;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .nav-links .rx-link:hover {
+      background: var(--cream-deep);
+    }
   }
 
   .video-hero {
@@ -81,7 +112,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 0 80px;
+    padding: 100px 0 80px;
     color: #ffffff;
     overflow: hidden;
     background-color: #2b231d;
@@ -191,26 +222,29 @@
 </head>
 <body>
 
-<div class="rx-banner">
-  Looking for Medical Weight Loss (GLP-1), HRT &amp; Peptides? <a href="lipbunny-rx.html">Visit Lip Bunny Rx &rarr;</a>
-</div>
-
-<nav>
-  <div class="wrap">
-    <a href="index.html" class="logo">wellness<span>hunny</span></a>
-    <div class="nav-links">
-      <a href="#philosophy">Philosophy</a>
-      <a href="#services">Services</a>
-      <a href="#how">How it Works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#labs">À La Carte Labs</a>
-      <a href="#blood-menu">Blood Panel Menu</a>
-      <a href="#intake">Intake</a>
-      <a href="#faq">FAQ</a>
-      <a href="lipbunny-rx.html" class="rx-link">Lip Bunny Rx &rarr;</a>
-    </div>
+<!-- TOP TRANSLUCENT CREAM HEADER -->
+<div class="top-header-cream">
+  <div class="rx-banner">
+    Looking for Medical Weight Loss (GLP-1), HRT &amp; Peptides? <a href="lipbunny-rx.html">Visit Lip Bunny Rx &rarr;</a>
   </div>
-</nav>
+
+  <nav>
+    <div class="wrap">
+      <a href="index.html" class="logo">wellness<span>hunny</span></a>
+      <div class="nav-links">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#services">Services</a>
+        <a href="#how">How it Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#labs">À La Carte Labs</a>
+        <a href="#blood-menu">Blood Panel Menu</a>
+        <a href="#intake">Intake</a>
+        <a href="#faq">FAQ</a>
+        <a href="lipbunny-rx.html" class="rx-link">Lip Bunny Rx &rarr;</a>
+      </div>
+    </div>
+  </nav>
+</div>
 
 <div class="video-hero">
   <video class="video-bg" autoplay loop muted playsinline>
@@ -616,36 +650,43 @@
     <div class="section-head center">
       <span class="eyebrow">Got Questions?</span>
       <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about our coaching, referrals, and diagnostic options.</p>
     </div>
-    <div style="max-width: 780px; margin: 0 auto;">
-      <details class="faq-item">
-        <summary>Do I need to see a doctor before ordering lab panels?</summary>
-        <p>No. You can order any of our blood, hair (HTMA), or stool panels directly through our site or Malla EHR intake portal. Your provider will review and order the labs directly for you.</p>
-      </details>
-      <details class="faq-item">
-        <summary>How do prescription referrals work for Weight Loss or HRT?</summary>
-        <p>During or after your 1:1 consult, once required readiness labs are completed, we submit your file directly to our clinical sister practice. You won't need to re-enter your health history or pay duplicate intake fees.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Can I order supplements without booking a 1:1 consultation?</summary>
-        <p>Yes! You can create a free account through our Fullscript dispensary link to access practitioner-grade supplements and preset lifestyle reset protocols anytime.</p>
-      </details>
-    </div>
+
+    <details class="faq-item">
+      <summary>Do I need to see a doctor before booking a coaching session?</summary>
+      <p>No. You can book directly with us at any time. We focus on root-cause coaching, lifestyle protocols, and helping you navigate your options clearly before or alongside traditional healthcare.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How does the Lip Bunny Rx prescription referral work?</summary>
+      <p>If you're interested in GLP-1 weight management or HRT, we complete your initial readiness assessment and baseline lab ordering during your Wellness Hunny session. We then transfer your file directly to Lip Bunny Rx so you can start therapy with no duplicate intake forms.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I order lab panels without scheduling a consultation?</summary>
+      <p>Yes. All functional lab panels (HTMA, Stool, Blood work) are available à la carte directly through our portal. If you'd like expert guidance on interpreting your results, you can add a Lab Interpretation Add-On at any time.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is insurance accepted for sessions or labs?</summary>
+      <p>We operate on a transparent self-pay model to keep our care independent, direct, and unconstrained by insurance limitations. HSA/FSA cards are accepted for applicable services and functional lab testing.</p>
+    </details>
   </div>
 </section>
 
-<section class="cta-final">
+<div class="cta-final">
   <div class="wrap">
-    <span class="eyebrow">Ready to Start?</span>
-    <h2>Take the First Step Toward Root-Cause Healing</h2>
-    <p>Complete your intake, order your lab panels, or book your initial consultation today.</p>
-    <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 18px 42px; font-size: 16px;">Get Started Now &rarr;</a>
+    <span class="eyebrow">Begin Your Path</span>
+    <h2>Ready to take ownership of your health?</h2>
+    <p>Complete your pre-consult assessment in our secure portal to get started.</p>
+    <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 16px 38px;">Start Pre-Consult Intake &rarr;</a>
   </div>
-</section>
+</div>
 
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 The Wellness Hunny. All rights reserved.</p>
+    <p>&copy; 2026 The Wellness Hunny. Virtual Root-Cause Coaching, Medical Advocacy &amp; Functional Testing. All rights reserved.</p>
   </div>
 </footer>
 
