@@ -116,7 +116,7 @@
     color: #ffffff;
     overflow: hidden;
     background-color: #2b231d;
-    margin-top: -120px; /* Pulls video underneath the sticky transparent header */
+    margin-top: -120px;
     padding-top: 220px;
   }
   .video-bg {
@@ -184,12 +184,12 @@
   .lab-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0 0 16px; }
   .lab-card .panel-list { font-size: 13px; color: var(--ink); background: var(--cream); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; line-height: 1.6; }
   .lab-card .panel-list strong { color: var(--tan-deep); font-weight: 600; display: block; margin-bottom: 4px; }
-  .compare-box { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px; margin-top: 24px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+  
+  .compare-box { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px; margin-top: 40px; margin-bottom: 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
   .compare-text { flex: 1 1 300px; }
 
-  .blood-menu-section { background: var(--cream); border-top: 1px solid var(--line); padding: 80px 0; }
   .category-title { margin: 40px 0 20px; border-bottom: 2px solid var(--ink); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline; }
-  .category-title h2 { font-size: 30px; font-style: italic; }
+  .category-title h2 { font-size: 28px; font-style: italic; }
   .category-title span { font-size: 13px; color: var(--tan-deep); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
   .why-box { background: rgba(235, 210, 192, 0.3); border-left: 3px solid var(--tan-deep); padding: 12px 14px; border-radius: 0 10px 10px 0; margin-bottom: 16px; font-size: 13.5px; color: var(--ink); }
   .why-box strong { color: var(--tan-deep); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
@@ -224,6 +224,7 @@
 </head>
 <body>
 
+<!-- TOP TRANSLUCENT CREAM HEADER -->
 <div class="top-header-cream">
   <div class="rx-banner">
     Looking for Medical Weight Loss (GLP-1), HRT &amp; Peptides? <a href="lipbunny-rx.html">Visit Lip Bunny Rx &rarr;</a>
@@ -237,8 +238,7 @@
         <a href="#services">Services</a>
         <a href="#how">How it Works</a>
         <a href="#pricing">Pricing</a>
-        <a href="#labs">À La Carte</a>
-        <a href="#blood-menu">Blood Panel Menu</a>
+        <a href="#labs">À La Carte Labs</a>
         <a href="#intake">Intake</a>
         <a href="#faq">FAQ</a>
         <a href="lipbunny-rx.html" class="rx-link">Lip Bunny Rx &rarr;</a>
@@ -413,12 +413,19 @@
   </div>
 </section>
 
+<!-- COMBINED À LA CARTE LABS & BLOOD PANELS SECTION -->
 <section id="labs">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Diagnostic Testing</span>
-      <h2>À La Carte Diagnostic Options</h2>
-      <p>Order direct-to-consumer lab panels tailored to your health goals without a mandatory initial consult.</p>
+      <h2>À La Carte Lab &amp; Blood Testing Menu</h2>
+      <p>Order direct-to-consumer lab panels and specialized blood work tailored to your health goals without a mandatory initial consult.</p>
+    </div>
+
+    <!-- Specialized Functional Tests -->
+    <div class="category-title" style="margin-top: 0;">
+      <h2>Functional &amp; Specialized Testing</h2>
+      <span>Tissue, Microbiome &amp; Cellular Markers</span>
     </div>
 
     <div class="lab-grid">
@@ -447,19 +454,6 @@
         </div>
         <a href="#intake" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">Order Stool Panel &rarr;</a>
       </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Comprehensive Blood Testing</h3>
-          <div class="lab-price">Panels Starting at $150</div>
-          <p>Systemic blood panels assessing real-time metabolic, hormonal, cardiovascular, and thyroid health.</p>
-          <div class="why-box">
-            <strong>Why Choose Blood Testing?</strong>
-            Provides an instantaneous snapshot of active hormones, systemic inflammation, blood sugar control, thyroid activity, and nutritional markers.
-          </div>
-        </div>
-        <a href="#blood-menu" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">View Blood Labs Menu &darr;</a>
-      </div>
     </div>
 
     <div class="compare-box">
@@ -474,19 +468,10 @@
         </p>
       </div>
     </div>
-  </div>
-</section>
 
-<section id="blood-menu" class="blood-menu-section">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Complete Blood Lab Menu</span>
-      <h2>Categorized Blood Test Options</h2>
-      <p>Browse our complete list of panels grouped by health goal, with clear explanations of why each test is chosen.</p>
-    </div>
-
+    <!-- Blood Lab Menu Category 1 -->
     <div class="category-title">
-      <h2>1. Comprehensive Baseline Panels</h2>
+      <h2>Comprehensive Baseline Blood Panels</h2>
       <span>Essential Annual &amp; Wellness Screening</span>
     </div>
 
@@ -524,8 +509,9 @@
       </div>
     </div>
 
+    <!-- Blood Lab Menu Category 2 -->
     <div class="category-title">
-      <h2>2. Advanced Deep-Dive Panels</h2>
+      <h2>Advanced Deep-Dive Blood Panels</h2>
       <span>Comprehensive Root-Cause &amp; Heavy Metals</span>
     </div>
 
@@ -563,8 +549,9 @@
       </div>
     </div>
 
+    <!-- Blood Lab Menu Category 3 -->
     <div class="category-title">
-      <h2>3. Targeted &amp; Follow-Up Panels</h2>
+      <h2>Targeted &amp; Follow-Up Blood Panels</h2>
       <span>Symptom-Specific &amp; Progress Re-Testing</span>
     </div>
 
