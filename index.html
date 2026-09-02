@@ -89,23 +89,23 @@
     overflow: hidden;
     background-color: #2b231d;
   }
-  .video-bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover; z-index: 1;
-  }
-  .video-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(43, 35, 29, 0.65) 0%, rgba(43, 35, 29, 0.8) 100%);
-    z-index: 1;
-  }
-
-  .hero-text h1 { font-size: 64px; font-style: italic; line-height: 1.05; margin: 20px 0 20px; color: #fff; }
-  .hero-text h1 .accent { color: var(--tan-light); }
-  .hero-text .sub { font-size: 18px; color: rgba(255,255,255,0.9); max-width: 540px; margin: 0 0 30px; }
-  .hero-text .eyebrow { color: var(--tan-light); }
-  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  <div class="video-hero">
+  <video class="video-bg" autoplay loop muted playsinline>
+    <source src="honey.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow">Virtual Root-Cause Wellness &amp; Advocacy</span>
+      <h1>Feel like <span class="accent">yourself</span> again.</h1>
+      <p class="sub">Structured root-cause coaching, medical support &amp; advocacy, holistic lifestyle protocols, functional lab testing, and direct clinical referrals—tailored to your exact health needs.</p>
+      <div class="hero-ctas">
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary">Complete Pre-Consult Intake</a>
+        <a href="#blood-menu" class="btn btn-ghost">View Full Blood Testing Menu &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
 
   section { padding: 80px 0; }
   .section-head { margin-bottom: 40px; }
