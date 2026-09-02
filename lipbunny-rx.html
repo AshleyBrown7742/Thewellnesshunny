@@ -65,6 +65,23 @@
     background: rgba(232, 197, 190, 0.05);
   }
 
+  /* Floating Sticky Book Intake Button */
+  .sticky-intake-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99;
+    padding: 14px 28px;
+    font-size: 13.5px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    animation: fadeInBtn 0.5s ease-in-out;
+  }
+  @keyframes fadeInBtn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   .hunny-banner { 
     background: #181212; 
     color: var(--text-muted); 
@@ -214,10 +231,13 @@
     .hero-text h1 { font-size: 40px; }
     .process-box { padding: 28px; }
     .bottom-video-section { padding: 100px 0; }
+    .sticky-intake-btn { bottom: 16px; right: 16px; padding: 12px 22px; font-size: 12.5px; }
   }
 </style>
 </head>
 <body>
+
+<a href="#intake" class="btn btn-rose sticky-intake-btn">Book Intake &rarr;</a>
 
 <div class="hunny-banner">
   Looking for Root-Cause Coaching &amp; General Functional Labs? <a href="index.html">&larr; Back to The Wellness Hunny</a>
