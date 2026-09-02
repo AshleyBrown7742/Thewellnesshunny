@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WellnessHunny — Root-Cause Wellness Coaching</title>
+<title>The Wellness Hunny — Root-Cause Wellness Coaching</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -38,221 +38,103 @@
     display: inline-block; text-decoration: none; position: relative; overflow: hidden;
     transition: all 0.2s ease; text-align: center;
   }
-  
-  /* Solid Primary Button */
-  .btn-primary {
-    background: var(--tan-deep);
-    color: #ffffff !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  }
-  .btn-primary:hover {
-    background: #6e543b;
-    transform: translateY(-1px);
-  }
+  .btn-primary { background: var(--tan-deep); color: #ffffff !important; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2); }
+  .btn-primary:hover { background: #6e543b; transform: translateY(-1px); }
+  .btn-ghost { background: #ffffff !important; color: var(--ink) !important; border: 1px solid #ffffff; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15); }
+  .btn-ghost:hover { background: var(--cream-deep) !important; border-color: var(--cream-deep); }
 
-  /* Solid Secondary / Ghost Button */
-  .btn-ghost { 
-    background: #ffffff !important; 
-    color: var(--ink) !important; 
-    border: 1px solid #ffffff; 
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-  }
-  .btn-ghost:hover { 
-    background: var(--cream-deep) !important; 
-    border-color: var(--cream-deep);
-  }
+  /* Cross-Promo Banner Header */
+  .rx-banner { background: var(--ink); color: #fff; text-align: center; padding: 10px 20px; font-size: 13.5px; font-weight: 500; }
+  .rx-banner a { color: var(--tan-light); text-decoration: underline; margin-left: 6px; font-weight: 600; }
 
-  nav { padding: 26px 0; position: absolute; width: 100%; top: 0; z-index: 10; }
+  nav { padding: 20px 0; position: absolute; width: 100%; top: 40px; z-index: 10; }
   nav .wrap { display: flex; justify-content: space-between; align-items: center; }
   .logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: #fff; font-weight: 600; text-decoration: none; }
-  
-  /* Transparent outline text for 'hunny' */
-  .logo span { 
-    color: transparent; 
-    -webkit-text-stroke: 1px var(--tan-light); 
-  }
+  .logo span { color: transparent; -webkit-text-stroke: 1px var(--tan-light); }
   
   .nav-links { display: none; }
   @media (min-width: 760px) { 
     .nav-links { display: flex; align-items: center; } 
-    .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 24px; transition: color 0.2s; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; transition: color 0.2s; }
     .nav-links a:hover { color: var(--tan-light); }
+    .nav-links .rx-link { border: 1px solid var(--tan-light); padding: 6px 16px; border-radius: 999px; color: var(--tan-light); }
   }
 
-  .video-hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 120px 0 80px;
-    color: #ffffff;
-    overflow: hidden;
-    background-color: #2b231d;
-  }
-  .video-bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover; z-index: 1;
-  }
-  .video-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(43, 35, 29, 0.65) 0%, rgba(43, 35, 29, 0.8) 100%);
-    z-index: 1;
-  }
-
+  .video-hero { position: relative; min-height: 90vh; display: flex; align-items: center; padding: 120px 0 80px; color: #ffffff; overflow: hidden; background-color: #2b231d; }
+  .video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+  .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(43, 35, 29, 0.65) 0%, rgba(43, 35, 29, 0.8) 100%); z-index: 1; }
   .hero-text h1 { font-size: 64px; font-style: italic; line-height: 1.05; margin: 20px 0 20px; color: #fff; }
   .hero-text h1 .accent { color: var(--tan-light); }
   .hero-text .sub { font-size: 18px; color: rgba(255,255,255,0.9); max-width: 540px; margin: 0 0 30px; }
-  .hero-text .eyebrow { color: var(--tan-light); }
   .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
   section { padding: 80px 0; }
-  .section-head { margin-bottom: 40px; }
-  .section-head.center { text-align: center; }
+  .section-head.center { text-align: center; margin-bottom: 40px; }
   .section-head h2 { font-size: 42px; font-style: italic; }
-  .section-head p { color: var(--ink-soft); font-size: 16px; margin-top: 10px; }
 
-  .philo-section {
-    position: relative;
-    padding: 120px 0;
-    color: #ffffff;
-    overflow: hidden;
-    background-color: #1f1813;
-  }
-  .philo-section h2 { color: #ffffff; }
-  .philo-section p { color: rgba(255, 255, 255, 0.9); }
-  .philo-section .eyebrow { color: var(--tan-light); }
-
+  .philo-section { position: relative; padding: 120px 0; color: #ffffff; overflow: hidden; background-color: #1f1813; }
   .chip-row { display: flex; flex-wrap: wrap; margin-top: 24px; gap: 10px; }
   .chip { background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 999px; }
 
   .grid-cards { display: flex; flex-wrap: wrap; gap: 16px; }
   .grid-card { flex: 1 1 220px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 28px 24px; }
   .grid-card .num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--tan-deep); margin-bottom: 8px; font-weight: 600; }
-  .grid-card h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 17px; margin-bottom: 8px; }
-  .grid-card p { color: var(--ink-soft); font-size: 14px; margin: 0; line-height: 1.6; }
-
-  .steps-row { display: flex; flex-wrap: wrap; }
-  .step-cell { flex: 1 1 220px; padding: 30px 24px; border-top: 1px solid var(--line); }
-  .step-cell:nth-child(-n+4) { border-top: 2px solid var(--ink); }
-  .step-cell .n { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 36px; color: var(--tan-deep); font-weight: 500; }
-  .step-cell h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 17px; margin: 12px 0 8px; }
-  .step-cell p { color: var(--ink-soft); font-size: 14px; margin: 0; line-height: 1.6; }
-
-  .price-card { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 12px 36px; }
-  .price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; gap: 12px; }
-  .price-row:last-child { border-bottom: none; }
-  .price-row .name { font-weight: 600; font-size: 17px; }
-  .price-row .desc { font-size: 14px; color: var(--ink-soft); max-width: 480px; margin-top: 4px; line-height: 1.5; }
-  .price-row .amt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--tan-deep); font-weight: 600; white-space: nowrap; }
-
-  /* Lab Styles */
-  .lab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 24px; }
-  .lab-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
-  .lab-card h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 19px; margin-bottom: 6px; }
-  .lab-card .lab-price { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: var(--tan-deep); font-weight: 600; margin-bottom: 12px; }
-  .lab-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0 0 16px; }
-  .lab-card .panel-list { font-size: 13px; color: var(--ink); background: var(--cream); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; line-height: 1.6; }
-  .lab-card .panel-list strong { color: var(--tan-deep); font-weight: 600; display: block; margin-bottom: 4px; }
-  .compare-box { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px; margin-top: 24px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
-  .compare-text { flex: 1 1 300px; }
-
-  /* Blood Testing Menu Styles */
-  .blood-menu-section { background: var(--cream); border-top: 1px solid var(--line); padding: 80px 0; }
-  .category-title { margin: 40px 0 20px; border-bottom: 2px solid var(--ink); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline; }
-  .category-title h2 { font-size: 30px; font-style: italic; }
-  .category-title span { font-size: 13px; color: var(--tan-deep); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
-  .why-box { background: rgba(235, 210, 192, 0.3); border-left: 3px solid var(--tan-deep); padding: 12px 14px; border-radius: 0 10px 10px 0; margin-bottom: 16px; font-size: 13.5px; color: var(--ink); }
-  .why-box strong { color: var(--tan-deep); display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
-
-  /* Malla Container */
-  .intake-card { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 40px; margin-top: 20px; text-align: center; }
-  .malla-badge { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--tan-deep); font-weight: 500; margin-bottom: 24px; }
-
-  .fullscript-banner { background: var(--cream-deep); border: 1px dashed var(--tan); border-radius: 16px; padding: 20px 24px; margin-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-  .fullscript-banner p { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
-  .fullscript-banner strong { color: var(--ink); }
-
-  .faq-item { border-bottom: 1px solid var(--line); }
-  .faq-item:first-child { border-top: 2px solid var(--ink); }
-  .faq-item summary { cursor: pointer; padding: 24px 0; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: "+"; color: var(--tan-deep); font-size: 24px; font-weight: 400; }
-  .faq-item[open] summary::after { content: "\2212"; }
-  .faq-item p { color: var(--ink-soft); font-size: 15px; padding-bottom: 24px; margin: 0; max-width: 680px; line-height: 1.7; }
-
-  .cta-final { text-align: center; padding: 80px 0; }
-  .cta-final h2 { font-size: 46px; font-style: italic; margin-bottom: 14px; }
-  .cta-final p { color: var(--ink-soft); margin-bottom: 32px; font-size: 17px; }
 
   footer { border-top: 1px solid var(--line); padding: 40px 0; text-align: center; font-size: 13px; color: var(--ink-soft); }
-
-  @media (max-width: 720px) {
-    .hero-text h1 { font-size: 42px; }
-    .price-card, .intake-card { padding: 24px; }
-    .category-title { flex-direction: column; gap: 4px; }
-  }
 </style>
 </head>
 <body>
 
+<div class="rx-banner">
+  Looking for Medical Weight Loss (GLP-1), HRT &amp; Peptides? <a href="lipbunny-rx.html">Visit Lip Bunny Rx &rarr;</a>
+</div>
+
 <nav>
   <div class="wrap">
-    <a href="#" class="logo">wellness<span>hunny</span></a>
+    <a href="index.html" class="logo">wellness<span>hunny</span></a>
     <div class="nav-links">
       <a href="#philosophy">Philosophy</a>
       <a href="#services">Services</a>
-      <a href="#how">How it Works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#labs">À La Carte Labs</a>
-      <a href="#blood-menu">Blood Panel Menu</a>
-      <a href="#intake">Intake</a>
-      <a href="#faq">FAQ</a>
+      <a href="#labs">Functional Labs</a>
+      <a href="lipbunny-rx.html" class="rx-link">Lip Bunny Rx &rarr;</a>
     </div>
   </div>
 </nav>
 
 <div class="video-hero">
   <video class="video-bg" autoplay loop muted playsinline>
-    <source src="honey.mp4" type="video/mp4">
+    <source src="statue-petals.mp4" type="video/mp4">
   </video>
   <div class="video-overlay"></div>
   <div class="wrap">
     <div class="hero-text">
-      <span class="eyebrow">Virtual Root-Cause Wellness &amp; Advocacy</span>
+      <span class="eyebrow" style="color: var(--tan-light);">Root-Cause Wellness Coaching</span>
       <h1>Feel like <span class="accent">yourself</span> again.</h1>
-      <p class="sub">Structured root-cause coaching, medical support &amp; advocacy, holistic lifestyle protocols, functional lab testing, and direct clinical referrals—tailored to your exact health needs.</p>
+      <p class="sub">Structured root-cause coaching, holistic lifestyle protocols, HTMA &amp; functional lab analysis, and natural health advocacy.</p>
       <div class="hero-ctas">
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary">Complete Pre-Consult Intake</a>
-        <a href="#blood-menu" class="btn btn-ghost">View Full Blood Testing Menu &rarr;</a>
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary">Book Consultation</a>
+        <a href="lipbunny-rx.html" class="btn btn-ghost">Prescription Therapies (Lip Bunny Rx) &rarr;</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- PHILOSOPHY SECTION -->
 <section id="philosophy" class="philo-section">
   <video class="video-bg" autoplay loop muted playsinline>
-    <source src="tea.mp4" type="video/mp4">
+    <source src="sculpture-flowers.mp4" type="video/mp4">
   </video>
   <div class="video-overlay" style="background: rgba(31, 24, 19, 0.82);"></div>
   <div class="wrap">
     <div style="max-width: 680px;">
-      <span class="eyebrow">Our Philosophy</span>
-      <h2 style="font-size: 42px; margin: 10px 0 20px;">Health isn’t a luxury item, and healing shouldn't require a medical degree.</h2>
-      <p style="font-size: 17px; line-height: 1.8; margin-bottom: 16px;">
-        In a world full of confusing advice and systemized over-prescribing, we are cutting through the noise.
-      </p>
+      <span class="eyebrow" style="color: var(--tan-light);">Our Philosophy</span>
+      <h2 style="font-size: 42px; margin: 10px 0 20px; color:#fff;">Healing shouldn't require a medical degree.</h2>
       <p style="font-size: 16px; line-height: 1.8; color: rgba(255, 255, 255, 0.85);">
-        <strong>Wellness Hunny</strong> exists to guide you back to the foundational basics of physical, mental, and spiritual health. You have the innate ability to tune into your body, listen to what it needs, and take charge of your own healing. You <em>can</em> rewrite your diagnosis, reduce reliance on medications, and step into total vitality—right from home.
+        <strong>The Wellness Hunny</strong> exists to guide you back to the foundational basics of physical, mental, and spiritual health through cellular nutrition, root-cause lab insights, and holistic lifestyle shifts.
       </p>
       <div class="chip-row">
-        <span class="chip">Medical Coaching &amp; Advocacy</span>
-        <span class="chip">Holistic Lifestyle Protocols</span>
-        <span class="chip">Functional Lab Testing</span>
-        <span class="chip">Weight Loss &amp; HRT Referrals</span>
-        <span class="chip">Natural Therapies</span>
+        <span class="chip">Root-Cause Coaching</span>
+        <span class="chip">HTMA &amp; Stool Labs</span>
+        <span class="chip">Cellular Nutrition</span>
       </div>
     </div>
   </div>
@@ -261,411 +143,32 @@
 <section id="services">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow">Ways We Help</span>
-      <h2>Care Pathways &amp; Medical Advocacy</h2>
-      <p>Comprehensive support bridging functional coaching and medical navigation.</p>
+      <span class="eyebrow">Holistic Care</span>
+      <h2>Wellness Pathways</h2>
     </div>
     <div class="grid-cards">
       <div class="grid-card">
         <div class="num">01</div>
         <h3>Medical Coaching &amp; Advocacy</h3>
-        <p>Get clarity on confusing diagnoses, evaluate medication side effects, and receive professional prep/guidance to advocate for yourself effectively with your PCP or specialists.</p>
+        <p>Get clarity on symptoms, navigate diagnostic results, and build an actionable health plan.</p>
       </div>
       <div class="grid-card">
         <div class="num">02</div>
-        <h3>Structured Reset Protocols</h3>
-        <p>Participate in targeted preset protocols—including Fasting, Detox, Metabolic Resets, Cellular Health, Gut Resets, and Nervous System Recovery—with guided session coaching.</p>
+        <h3>Functional Labs</h3>
+        <p>Analyze hair tissue minerals (HTMA) and gut microbiota (GI Effects) to address root imbalances.</p>
       </div>
       <div class="grid-card">
         <div class="num">03</div>
-        <h3>Weight Loss &amp; HRT Referrals</h3>
-        <p>Obtain seamless readiness labs and direct referrals to start prescription therapies through our clinical sister business with zero redundant intakes or duplicate lab work.</p>
-      </div>
-      <div class="grid-card">
-        <div class="num">04</div>
-        <h3>Functional Labs &amp; Natural Therapies</h3>
-        <p>Explore natural wellness protocols and order targeted testing (HTMA, specialized gut panels, hormone markers) with expert interpretation and protocol design.</p>
+        <h3>Seamless Rx Referral</h3>
+        <p>Need prescription HRT, GLP-1s, or peptides? Direct access to our clinical wing, Lip Bunny Rx.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="how">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">The Client Path</span>
-      <h2>How We Work Together</h2>
-      <p>A streamlined, prepared approach to maximize every minute of your visit.</p>
-    </div>
-    <div class="steps-row">
-      <div class="step-cell">
-        <div class="n">1</div>
-        <h3>Submit Intake via Malla</h3>
-        <p>Access our encrypted portal to detail your symptoms, lab interests, protocol preferences, and medical background.</p>
-      </div>
-      <div class="step-cell">
-        <div class="n">2</div>
-        <h3>Provider Preparation</h3>
-        <p>Your provider thoroughly reads and reviews your complete intake file prior to the call to outline recommendations.</p>
-      </div>
-      <div class="step-cell">
-        <div class="n">3</div>
-        <h3>Targeted Consultation</h3>
-        <p>Meet for your 1:1 virtual session focused entirely on action steps, diagnostic interpretation, or clinical referral execution.</p>
-      </div>
-      <div class="step-cell">
-        <div class="n">4</div>
-        <h3>Flexible Ongoing Support</h3>
-        <p>Use check-in sessions as coaching checkpoints while completing your protocols or navigating ongoing medical care.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="pricing">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Transparent Pricing</span>
-      <h2>À La Carte &amp; Session Options</h2>
-      <p>Choose the option that fits your path—from free consultations and pay-as-you-go sessions to monthly protocol support.</p>
-    </div>
-    <div class="price-card">
-      <div class="price-row">
-        <div>
-          <div class="name">Free 15-Minute Intro Consult</div>
-          <div class="desc">A quick virtual discovery session to chat through your health goals, ask questions, and explore whether our coaching or clinical referral pathways are right for you.</div>
-        </div>
-        <div class="amt">Free</div>
-      </div>
-      <div class="price-row">
-        <div>
-          <div class="name">Single 1:1 Consult / Coaching Visit</div>
-          <div class="desc">Standard 60-minute targeted session open to all clients. Use for medical coaching &amp; advocacy, symptom deep-dives, protocol coaching, or prescription referral review. Pre-consult review included.</div>
-        </div>
-        <div class="amt">$65 <span style="font-size:15px; font-style:normal;">/ session</span></div>
-      </div>
-      <div class="price-row">
-        <div>
-          <div class="name">Monthly Protocol Coaching Package</div>
-          <div class="desc">Includes 4 weekly check-in sessions (30 mins each) for step-by-step guidance, accountability, and real-time adjustments—a great adjunct to Fullscript protocol programs.</div>
-        </div>
-        <div class="amt">$200 <span style="font-size:15px; font-style:normal;">/ mo</span></div>
-      </div>
-      <div class="price-row">
-        <div>
-          <div class="name">Lab Interpretation Add-On</div>
-          <div class="desc">Includes a thorough 45-minute virtual analysis of ordered functional lab panels alongside a custom step-by-step action plan.</div>
-        </div>
-        <div class="amt">+$150 <span style="font-size:15px; font-style:normal;">/ lab set</span></div>
-      </div>
-      <div class="price-row">
-        <div>
-          <div class="name">Prescription Medical Referral (Weight Loss / HRT)</div>
-          <div class="desc">Direct readiness lab ordering and seamless referral to our clinical sister practice to begin medication immediately without additional intakes.</div>
-        </div>
-        <div class="amt">Included <span style="font-size:15px; font-style:normal;">with session</span></div>
-      </div>
-    </div>
-
-    <div class="fullscript-banner">
-      <div>
-        <strong>À La Carte Protocols &amp; Professional-Grade Supplements</strong>
-        <p>Order preset reset protocols and practitioner-grade supplements directly through our Fullscript dispensary—no formal consultation required.</p>
-      </div>
-      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <a href="https://us.fullscript.com/welcome/lipbunnybeauty/signup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px;">Create Account &rarr;</a>
-        <a href="https://us.fullscript.com/s/lipbunnybeauty/shop" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 10px 20px; font-size: 13.5px;">Visit Fullscript Store &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MAIN A LA CARTE LABS SECTION -->
-<section id="labs">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Diagnostic Testing</span>
-      <h2>À La Carte Diagnostic Options</h2>
-      <p>Order direct-to-consumer lab panels tailored to your health goals without a mandatory initial consult.</p>
-    </div>
-
-    <div class="lab-grid">
-      
-      <!-- Option 1: Hair Testing -->
-      <div class="lab-card">
-        <div>
-          <h3>Hair Tissue Mineral Analysis (HTMA)</h3>
-          <div class="lab-price">Trace Elements</div>
-          <p>Measures long-term mineral levels and toxic heavy metal accumulation locked in hair protein over time.</p>
-          <div class="why-box">
-            <strong>Why Choose Hair Testing?</strong>
-            Blood levels stay tightly regulated, but hair tissue acts like a 3-month video recording of cellular stress, chronic mineral depletion, metabolic rate, and heavy metal toxicity (lead, mercury, arsenic).
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">Order HTMA Panel &rarr;</a>
-      </div>
-
-      <!-- Option 2: Stool Testing -->
-      <div class="lab-card">
-        <div>
-          <h3>Genova GI Effects® Stool Profile</h3>
-          <div class="lab-price">$400</div>
-          <p>The gold standard evaluation of gut microbiome health, digestive performance, and inflammation.</p>
-          <div class="why-box">
-            <strong>Why Choose Stool Testing?</strong>
-            Ideal for chronic bloating, IBS/IBD, constipation, food intolerances, and leaky gut. Uncovers hidden gut dysbiosis, bacterial or parasitic infections, and enzyme deficiencies.
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">Order Stool Panel &rarr;</a>
-      </div>
-
-      <!-- Option 3: Blood Testing -->
-      <div class="lab-card">
-        <div>
-          <h3>Comprehensive Blood Testing</h3>
-          <div class="lab-price">Panels Starting at $150</div>
-          <p>Systemic blood panels assessing real-time metabolic, hormonal, cardiovascular, and thyroid health.</p>
-          <div class="why-box">
-            <strong>Why Choose Blood Testing?</strong>
-            Provides an instantaneous snapshot of active hormones, systemic inflammation, blood sugar control, thyroid activity, and nutritional markers.
-          </div>
-        </div>
-        <a href="#blood-menu" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px; width: 100%;">View Blood Labs Menu &darr;</a>
-      </div>
-
-    </div>
-
-    <div class="compare-box">
-      <div class="compare-text">
-        <span class="eyebrow" style="color: var(--tan-deep);">Diagnostic Insight</span>
-        <h3 style="font-size: 26px; margin: 4px 0 12px;">Trace Elements (HTMA) vs. Standard Blood Tests</h3>
-        <p style="margin: 0; color: var(--ink-soft); font-size: 14.5px;">
-          <strong>Why test tissue instead of blood?</strong> A standard blood test provides an instantaneous snapshot of circulating minerals that your body tightly regulates day-to-day. However, blood levels can appear "normal" even when cellular tissues are severely depleted.
-        </p>
-        <p style="margin: 10px 0 0; color: var(--ink-soft); font-size: 14.5px;">
-          <strong>HTMA acts like a 3-month video recording</strong> instead of a single photo. As hair grows, it retains a timeline of stored tissue minerals and toxic heavy metals. This makes HTMA superior for catching chronic stress patterns, slow-developing mineral deficiencies, and heavy metal accumulation that blood draws miss completely.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FULL BLOOD TESTING MENU SECTION -->
-<section id="blood-menu" class="blood-menu-section">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Complete Blood Lab Menu</span>
-      <h2>Categorized Blood Test Options</h2>
-      <p>Browse our complete list of panels grouped by health goal, with clear explanations of why each test is chosen.</p>
-    </div>
-
-    <div class="category-title">
-      <h2>1. Comprehensive Baseline Panels</h2>
-      <span>Essential Annual &amp; Wellness Screening</span>
-    </div>
-
-    <div class="lab-grid">
-      
-      <div class="lab-card">
-        <div>
-          <h3>Comprehensive Male Health Panel</h3>
-          <div class="lab-price">$150</div>
-          <div class="why-box">
-            <strong>Why Choose This Test:</strong>
-            Ideal for men seeking an affordable, thorough yearly health checkup. Evaluates primary metabolic function, key cardiovascular markers, blood sugar control, foundational thyroid activity, and core male hormones.
-          </div>
-          <div class="panel-list">
-            <strong>Key Markers Included:</strong>
-            CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, PSA, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine.
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Comprehensive Female Health Panel</h3>
-          <div class="lab-price">$150</div>
-          <div class="why-box">
-            <strong>Why Choose This Test:</strong>
-            The essential entry panel for women looking to evaluate energy, metabolic health, baseline thyroid function, inflammatory markers, and foundational sex hormones.
-          </div>
-          <div class="panel-list">
-            <strong>Key Markers Included:</strong>
-            CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Total &amp; Free Testosterone, Estradiol, FSH, Lipid Panel, Vitamin D, Vitamin B12, Homocysteine.
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-    </div>
-
-    <div class="category-title">
-      <h2>2. Advanced Deep-Dive Panels</h2>
-      <span>Comprehensive Root-Cause &amp; Heavy Metals</span>
-    </div>
-
-    <div class="lab-grid">
-
-      <div class="lab-card">
-        <div>
-          <h3>Advanced Male Comprehensive Panel</h3>
-          <div class="lab-price">Full Deep-Dive</div>
-          <div class="why-box">
-            <strong>Why Choose This Test:</strong>
-            For men experiencing unexplained fatigue, stubborn weight gain, systemic inflammation, or severe hormonal imbalances. Adds deep heavy metal toxin screening, adrenal stress markers, reverse thyroid metrics, and specialized cardiovascular lipid fractions.
-          </div>
-          <div class="panel-list">
-            <strong>Key Markers Included:</strong>
-            All baseline markers PLUS Reverse T3, Cortisol, Fasting Insulin, DHEA-S, High-Sensitivity CRP, Uric Acid, Copper, Zinc, OmegaCheck (Fatty Acids), and Heavy Metals (Arsenic, Lead, Mercury, Cadmium).
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Advanced Female Comprehensive Panel</h3>
-          <div class="lab-price">Full Deep-Dive</div>
-          <div class="why-box">
-            <strong>Why Choose This Test:</strong>
-            Designed for complex hormone issues, PCOS symptoms, peri-menopause tracking, chronic fatigue, or suspected heavy metal toxicity. Provides the most complete biological blueprint available.
-          </div>
-          <div class="panel-list">
-            <strong>Key Markers Included:</strong>
-            All baseline markers PLUS Reverse T3, Progesterone (LC/MS/MS), Prolactin, Fasting Insulin, Cortisol, DHEA-S, High-Sensitivity CRP, Copper, Zinc, OmegaCheck, AMH (Fertility), and Heavy Metals Panel.
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-    </div>
-
-    <div class="category-title">
-      <h2>3. Targeted &amp; Follow-Up Panels</h2>
-      <span>Symptom-Specific &amp; Progress Re-Testing</span>
-    </div>
-
-    <div class="lab-grid">
-
-      <div class="lab-card">
-        <div>
-          <h3>Extended Thyroid Panel</h3>
-          <div class="lab-price">Targeted Re-Test</div>
-          <div class="why-box">
-            <strong>Why Choose This Test:</strong>
-            Ideal if you are adjusting thyroid medication, managing Hashimoto's, or suffering from persistent brain fog, cold intolerance, and thinning hair despite "normal" basic TSH readings.
-          </div>
-          <div class="panel-list">
-            <strong>Key Markers Included:</strong>
-            TSH, Free T3, Free T4, Reverse T3, Thyroid Peroxidase (TPO) Antibodies, and Selenium levels.
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Menstrual Health &amp; Hormone Panel</h3>
-          <div class="lab-price">Targeted Assessment</div>
-          <div class="why-box">
-            <strong>Why Choose This Test:</strong>
-            Specific to women evaluating cycle irregularities, fertility, PMS/PMDD, or estrogen dominance. Measures complete pituitary-ovarian signaling pathways.
-          </div>
-          <div class="panel-list">
-            <strong>Key Markers Included:</strong>
-            Estradiol, Estrone, Progesterone, FSH, LH, Free &amp; Total Testosterone, Prolactin, Ferritin, and Hemoglobin A1c.
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Micronutrient &amp; Metabolic Panel</h3>
-          <div class="lab-price">Nutritional Focus</div>
-          <div class="why-box">
-            <strong>Why Choose This Test:</strong>
-            Great for optimizing energy, recovery, cellular health, and insulin sensitivity. Pinpoints exact cellular nutrient shortages.
-          </div>
-          <div class="panel-list">
-            <strong>Key Markers Included:</strong>
-            RBC Packed Magnesium, Vitamin D 25-OH, Vitamin B12, Fasting Insulin, Homocysteine, Uric Acid, Lipid Panel, and CMP.
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- INTAKE & PORTAL SECTION -->
-<section id="intake">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Client Portal &amp; Booking</span>
-      <h2>Pre-Consultation Health Assessment</h2>
-      <p>Complete your encrypted intake and schedule your consultation through our secure portal prior to your appointment.</p>
-    </div>
-    
-    <div class="intake-card">
-      <div class="malla-badge">
-        <span>🔒 Secure HIPAA-Compliant Portal powered by Malla EHR</span>
-      </div>
-      <p style="color: var(--ink-soft); max-width: 580px; margin: 0 auto 28px; font-size: 15.5px;">
-        To ensure your provider has ample time to review your symptoms, diagnostic preferences, and referral needs, please register and complete your assessment in Malla EHR below.
-      </p>
-      
-      <iframe src="https://app.malla.co/join/ashley-brown-00659" width="100%" height="650px" style="border: 1px solid var(--line); border-radius:16px; background:#faf7f2; margin-bottom: 20px;"></iframe>
-
-      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 16px 36px;">Open Malla Portal in New Tab &rarr;</a>
-        <a href="https://us.fullscript.com/welcome/lipbunnybeauty/signup" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 16px 36px;">Fullscript Dispensary &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ SECTION -->
-<section id="faq">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Got Questions?</span>
-      <h2>Frequently Asked Questions</h2>
-    </div>
-    <div style="max-width: 780px; margin: 0 auto;">
-      <details class="faq-item">
-        <summary>Do I need to see a doctor before ordering lab panels?</summary>
-        <p>No. You can order any of our blood, hair (HTMA), or stool panels directly through our site or Malla EHR intake portal. Your provider will review and order the labs directly for you.</p>
-      </details>
-      <details class="faq-item">
-        <summary>How do prescription referrals work for Weight Loss or HRT?</summary>
-        <p>During or after your 1:1 consult, once required readiness labs are completed, we submit your file directly to our clinical sister practice. You won't need to re-enter your health history or pay duplicate intake fees.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Can I order supplements without booking a 1:1 consultation?</summary>
-        <p>Yes! You can create a free account through our Fullscript dispensary link to access practitioner-grade supplements and preset lifestyle reset protocols anytime.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CALL TO ACTION -->
-<section class="cta-final">
-  <div class="wrap">
-    <span class="eyebrow">Ready to Start?</span>
-    <h2>Take the First Step Toward Root-Cause Healing</h2>
-    <p>Complete your intake, order your lab panels, or book your initial consultation today.</p>
-    <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 18px 42px; font-size: 16px;">Get Started Now &rarr;</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 WellnessHunny. All rights reserved.</p>
+    <p>&copy; 2026 The Wellness Hunny. All rights reserved.</p>
   </div>
 </footer>
 
