@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lip Bunny Rx — Clinical HRT, Tirzepatide &amp; Topical GHK-Cu</title>
+<title>Lip Bunny Rx — Clinical HRT, Microdose Tirzepatide &amp; Longevity Medicine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -24,8 +24,8 @@
     font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7;
     overflow-x: hidden; letter-spacing: 0.02em;
   }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
-  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; margin: 0; color: #ffffff; letter-spacing: 0.03em; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
+  h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; font-weight: 400; margin: 0; color: #ffffff; letter-spacing: 0.03em; }
   
   .eyebrow {
     font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.22em;
@@ -77,7 +77,6 @@
   .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #fff; font-weight: 400; text-decoration: none; letter-spacing: 0.12em; }
   .logo span { color: var(--rose-gold); font-style: italic; font-weight: 300; }
 
-  /* Expanded Hero Height to reveal full video depth */
   .video-hero {
     position: relative;
     min-height: 125vh;
@@ -101,7 +100,7 @@
     z-index: 1;
   }
 
-  .hero-text { text-align: center; margin: 0 auto; max-width: 800px; }
+  .hero-text { text-align: center; margin: 0 auto; max-width: 820px; }
   .hero-text h1 { font-size: 62px; font-style: italic; margin: 18px 0; font-weight: 300; line-height: 1.1; }
   .hero-text p { color: var(--text-muted); font-size: 17.5px; margin-bottom: 36px; font-weight: 300; line-height: 1.8; }
 
@@ -109,10 +108,13 @@
   .section-head { text-align: center; margin-bottom: 50px; }
   .section-head h2 { font-size: 44px; font-style: italic; font-weight: 300; }
 
-  /* Expanded Philosophy Section Padding to lengthen second video frame */
+  /* Expanded Philosophy Section Height for Longer Video Display */
   .philo-section {
     position: relative;
-    padding: 220px 0;
+    padding: 320px 0;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
     color: #ffffff;
     overflow: hidden;
     background-color: var(--bg-dark);
@@ -156,14 +158,45 @@
     margin-top: 20px; 
     backdrop-filter: blur(16px);
   }
-  .price-highlight { font-family: 'Cormorant Garamond', serif; font-size: 52px; color: var(--rose-gold); font-style: italic; font-weight: 300; }
+  .price-highlight { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--rose-gold); font-style: italic; font-weight: 300; margin: 12px 0; }
+
+  /* Menu Item Specific Scaffolding */
+  .menu-category-title {
+    font-size: 32px;
+    font-style: italic;
+    color: #ffffff;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+    margin: 60px 0 30px;
+  }
+  .menu-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .menu-item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .menu-item-title { font-size: 22px; color: #ffffff; font-style: italic; }
+  .menu-item-price { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--rose-gold); font-style: italic; }
+  .menu-item-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 12px; }
+  .menu-item-bullets { color: var(--blush); font-size: 13.5px; padding-left: 0; list-style: none; margin: 12px 0; }
+  .menu-item-bullets li { position: relative; padding-left: 18px; margin-bottom: 6px; }
+  .menu-item-bullets li::before { content: "✦"; position: absolute; left: 0; color: var(--rose-gold); font-size: 10px; top: 2px; }
+  .menu-meta { font-size: 12.5px; color: var(--rose-gold); opacity: 0.85; border-top: 1px dashed var(--line); padding-top: 8px; margin-top: 12px; }
 
   footer { padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); letter-spacing: 0.04em; }
 
   @media (max-width: 720px) {
     .hero-text h1 { font-size: 44px; }
     .process-box { padding: 28px; }
-    .philo-section { padding: 140px 0; }
+    .philo-section { padding: 180px 0; min-height: 550px; }
   }
 </style>
 </head>
@@ -189,107 +222,212 @@
     <div class="hero-text">
       <span class="eyebrow">Medical Telehealth &amp; Whole-Woman Prescription Protocols</span>
       <h1>Luxe Clinical Medicine for Women.</h1>
-      <p>Precision Tirzepatide, bioidentical HRT, and topical GHK-Cu—supported by complete lab monitoring, whole-woman nutrition, and pharmacy scripts fulfilled at cost via Strive Pharmacy.</p>
-      <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-rose">Begin $85/Mo Clinical Intake &rarr;</a>
+      <p>Bioidentical HRT, Full-Dose &amp; Microdosed Tirzepatide, and GHK-Cu Functional Aesthetics—backed by precise diagnostic lab monitoring and pharmacy scripts at wholesale cost via Strive Pharmacy.</p>
+      <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-rose">Begin Clinical Intake &rarr;</a>
     </div>
   </div>
 </div>
 
+<!-- Philosophy Section with Increased Vertical Spacing -->
 <section class="philo-section">
   <video class="video-bg" autoplay loop muted playsinline>
     <source src="./sculpture-flowers.mp4" type="video/mp4">
   </video>
-  <div class="video-overlay" style="background: rgba(18, 14, 14, 0.88);"></div>
+  <div class="video-overlay" style="background: rgba(18, 14, 14, 0.85);"></div>
   <div class="wrap">
-    <div style="max-width: 740px; margin: 0 auto; text-align: center;">
+    <div style="max-width: 760px; margin: 0 auto; text-align: center;">
       <span class="eyebrow">Addressing the Entire Woman</span>
       <h2 style="font-size: 44px; margin: 14px 0 22px;">We don't just write prescriptions. We optimize your biology.</h2>
       <p style="font-size: 16.5px; color: var(--text-muted); line-height: 1.85;">
-        True clinical longevity requires looking at the entire body. Alongside your prescription therapies, we actively monitor and balance Vitamin D, Thyroid health, B12, Magnesium, Omegas, and targeted Adaptogens based on your individual lab work—ensuring your body has the foundational health required to thrive.
+        True clinical longevity requires looking at the entire body. Alongside your prescription therapies, we actively monitor Vitamin D, Thyroid health, B12, Magnesium, Omegas, and targeted Adaptogens based on your lab work—ensuring your system has the raw bio-foundational support needed to thrive.
       </p>
     </div>
   </div>
 </section>
 
+<!-- Pricing Tiers Section -->
 <section>
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Prescription Offerings</span>
-      <h2>Targeted Clinical Therapies</h2>
+      <span class="eyebrow">Transparent Membership</span>
+      <h2>Clinical Care Membership Models</h2>
     </div>
-    <div class="grid">
-      <div class="card">
-        <div>
-          <span class="tag">Metabolic Health</span>
-          <h3>Tirzepatide Protocol</h3>
-          <p>Advanced dual GLP-1/GIP therapy for sustainable body composition, metabolic repair, and insulin regulation. Prescriptions are fulfilled at cost through Strive Pharmacy.</p>
-        </div>
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="width:100%;">Get Started &rarr;</a>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 32px;">
+      
+      <div class="card" style="text-align: center; align-items: center;">
+        <span class="tag">Single Protocol</span>
+        <h3>Tirzepatide / GLP Care</h3>
+        <p>Covers continuous medical oversight, monthly virtual check-ins, lab monitoring, and Strive Pharmacy script management for standard or microdosed protocols.</p>
+        <div class="price-highlight">$85 <span style="font-size: 16px; color: var(--text-muted); font-style: normal;">/ month</span></div>
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="width:100%; font-size:12px;">Start GLP-1 Care</a>
       </div>
 
-      <div class="card">
-        <div>
-          <span class="tag">Hormone Optimization</span>
-          <h3>Female Bioidentical HRT</h3>
-          <p>Tailored bioidentical hormone replacement designed specifically for women to restore energy, muscle tone, sleep, and libido while gracefully navigating peri-menopause.</p>
-        </div>
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="width:100%;">Get Started &rarr;</a>
+      <div class="card" style="text-align: center; align-items: center;">
+        <span class="tag">Single Protocol</span>
+        <h3>Bioidentical HRT</h3>
+        <p>Comprehensive female hormone optimization, ongoing monitoring, dosing adjustments, and direct Strive Pharmacy script coordination.</p>
+        <div class="price-highlight">$85 <span style="font-size: 16px; color: var(--text-muted); font-style: normal;">/ month</span></div>
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="width:100%; font-size:12px;">Start HRT Care</a>
       </div>
 
-      <div class="card">
+      <div class="card" style="text-align: center; align-items: center; border-color: var(--rose-gold); background: rgba(232, 197, 190, 0.05);">
+        <span class="tag" style="background: var(--rose-gold); color: #120e0e;">Best Value • Dual Care</span>
+        <h3>Combined Protocol</h3>
+        <p>Simultaneous Tirzepatide (Full/Micro) &amp; Bioidentical HRT clinical management. Full metabolic and hormonal balance under one unified care plan.</p>
+        <div class="price-highlight" style="color: #ffffff;">$120 <span style="font-size: 16px; color: var(--rose-gold); font-style: normal;">/ month</span></div>
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-rose" style="width:100%; font-size:12px;">Start Combined Care</a>
+      </div>
+
+    </div>
+
+    <div class="process-box" style="margin-top: 0;">
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
         <div>
-          <span class="tag">Peptide Therapy</span>
-          <h3>Topical GHK-Cu</h3>
-          <p>Elegantly formulated topical copper peptide therapy to stimulate tissue repair, boost collagen synthesis, enhance elasticity, and promote radiant skin vitality.</p>
+          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">1. Initial Diagnostic Labs</h4>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">Comprehensive blood work is required before initiating therapy. Choose from our baseline blood panels or upload recent qualifying records.</p>
         </div>
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="width:100%;">Get Started &rarr;</a>
+
+        <div>
+          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">2. Monitoring &amp; Re-Testing</h4>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">Safety comes first. Monthly virtual check-ins with follow-up lab evaluations scheduled every 3 months (or as clinically needed) to fine-tune your dosing.</p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">3. Wholesale Scripts via Strive</h4>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">We never mark up medication prices. All compounded prescriptions are fulfilled directly through <strong>Strive Pharmacy</strong> and billed to you at wholesale cost.</p>
+        </div>
+
+        <div>
+          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">4. Targeted Fullscript Support</h4>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">To support your whole body, required practitioner-grade supplements (Vitamin D, B12, Magnesium, Omegas, Adaptogens) are integrated seamlessly via Fullscript.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Streamlined Treatment Options Menu -->
 <section>
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Transparent &amp; Simple</span>
-      <h2>How Your Care Model Works</h2>
+      <span class="eyebrow">Focused Clinical Menu</span>
+      <h2>Prescription Protocol Options</h2>
     </div>
 
-    <div class="process-box">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 28px; margin-bottom: 28px;">
-        <div>
-          <h3 style="font-size: 34px; color: #ffffff; font-style: italic;">Monthly Clinical Membership</h3>
-          <p style="color: var(--text-muted); margin: 4px 0 0; font-size: 15px;">Covers monthly telehealth check-ins, continuous medical management, and protocol optimization.</p>
-        </div>
-        <div class="price-highlight">$85 <span style="font-size: 18px; color: var(--text-muted); font-style: normal;">/ month</span></div>
+    <!-- 1. TIRZEPATIDE & METABOLIC CARE -->
+    <h3 class="menu-category-title">1. Tirzepatide &amp; Metabolic Protocols</h3>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Microdosed Tirzepatide / Glycine / B12 (10mg/5mg/500mcg/mL)</span>
+        <span class="menu-item-price">$117.95 / 1mL Vial (4-Wk Supply)</span>
       </div>
-
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-        <div>
-          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">1. Initial &amp; Required Labs</h4>
-          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">Comprehensive blood work is required before starting medication. Our standard <strong>$150 Female Baseline Panel</strong> serves as the Lip Bunny initial panel—assessing thyroid, hormones, metabolism, and micronutrients.</p>
-        </div>
-
-        <div>
-          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">2. Monitoring &amp; Re-Testing</h4>
-          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">Safety and precision come first. You will participate in <strong>once-monthly virtual check-ins</strong>, with follow-up lab evaluations scheduled <strong>every 3 months</strong> (or sooner if recommended) to adjust dosing.</p>
-        </div>
-
-        <div>
-          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">3. Scripts at Cost via Strive</h4>
-          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">We never mark up pharmacy costs. All compounded prescriptions (Tirzepatide, HRT, Topical GHK-Cu) are fulfilled directly through <strong>Strive Pharmacy</strong> and billed at raw wholesale cost.</p>
-        </div>
-
-        <div>
-          <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">4. Fullscript Integration</h4>
-          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">To support your whole body, required practitioner-grade supplements (Vitamin D, B12, Magnesium, Omegas, Adaptogens) are integrated seamlessly through our <strong>Fullscript dispensary</strong>.</p>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line);">
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-rose" style="padding: 18px 42px;">Complete Intake in Malla EHR &rarr;</a>
-      </div>
+      <div class="menu-item-desc">Low-dose tirzepatide tailored for subtle metabolic enhancement, inflammation control, and anti-aging without aggressive weight loss. Maintained flat rather than titrated up[cite: 1].</div>
+      <ul class="menu-item-bullets">
+        <li>GLP-1/GIP receptor activation at lower intensity[cite: 1]</li>
+        <li>Glycine reduces GI side effects while supporting gut lining, sleep, and recovery[cite: 1]</li>
+        <li>B12 for cellular energy and neurological support[cite: 1]</li>
+      </ul>
+      <div class="menu-meta">How Used: Inject 20 units (2mg) SQ once weekly[cite: 1]. Fulfilled via Strive Pharmacy (Includes cold shipping + supplies)[cite: 1].</div>
     </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Titrated Tirzepatide / Glycine / B12 (Weight Loss Protocol)</span>
+        <span class="menu-item-price">$117.95 – $338.95 / stage</span>
+      </div>
+      <div class="menu-item-desc">Standard escalating GLP-1/GIP protocol for weight loss and metabolic repair[cite: 1]. Dosing increases every 4 weeks per clinical response[cite: 1].</div>
+      <ul class="menu-item-bullets">
+        <li>Weeks 1–4 (2mg/wk — 1mL vial): $117.95[cite: 1]</li>
+        <li>Weeks 5–8 (4mg/wk — 2mL vial): $173.95[cite: 1]</li>
+        <li>Weeks 9–12 (7mg/wk — 3mL vial): $223.95[cite: 1]</li>
+        <li>Weeks 13–16 (9mg/wk — 4mL vial): $266.45[cite: 1]</li>
+        <li>Weeks 17–20+ (12–14mg/wk — 6mL vial): $338.95[cite: 1]</li>
+      </ul>
+      <div class="menu-meta">How Used: Weekly SQ injection[cite: 1]. Vials discarded after 28 days per USP compliance[cite: 1].</div>
+    </div>
+
+    <!-- 2. BIOIDENTICAL HRT -->
+    <h3 class="menu-category-title">2. Bioidentical HRT &amp; Hormone Optimization</h3>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">BIEST Cream Ht 50/50 (Estradiol / Estriol)</span>
+        <span class="menu-item-price">$73.95 – $103.75 (8–12 Wks)</span>
+      </div>
+      <div class="menu-item-desc">Balanced bi-estrogen cream for menopausal symptom management, bone density, and cognitive clarity[cite: 1]. Estriol buffers tissue proliferation while strengthening vaginal/urethral tissue[cite: 1].</div>
+      <div class="menu-meta">Doses available: 0.25mg/day, 0.5mg/day, 1mg/day, 2mg/day, and 4mg/day[cite: 1]. Applied daily to inner forearm/wrist[cite: 1].</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Estradiol Cream Ht</span>
+        <span class="menu-item-price">$68.95 – $104.95 (8–12 Wks)</span>
+      </div>
+      <div class="menu-item-desc">Bioidentical topical estradiol cream for hot flashes, sleep support, mood stabilization, and cardiovascular health[cite: 1].</div>
+      <div class="menu-meta">Doses available: 0.25mg/day up to 4mg/day[cite: 1]. Matched concentration to keep daily volume to ~1g[cite: 1].</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Bioidentical Progesterone Capsules (Standard &amp; Extended Release E4M)</span>
+        <span class="menu-item-price">$54.95 – $59.95 (~7-Wk Supply)</span>
+      </div>
+      <div class="menu-item-desc">Oral progesterone for deep sleep promotion, uterine lining protection, anxiety reduction, and PMS/PMDD relief[cite: 1]. E4M extended-release offers smoother overnight levels[cite: 1].</div>
+      <div class="menu-meta">Strengths: 50mg, 100mg, 150mg, 200mg, 250mg, 300mg[cite: 1]. Taken at bedtime[cite: 1].</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Testosterone Cream 4mg/g (Versabase)</span>
+        <span class="menu-item-price">$27.95 – $35.15 (4-Wk Supply)</span>
+      </div>
+      <div class="menu-item-desc">Targeted micro-dose testosterone cream for female libido restoration, energy, lean body composition, and mental clarity[cite: 1].</div>
+      <div class="menu-meta">Dosing: 0.5mg/day to 10mg/day applied daily to inner forearm[cite: 1].</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">DHEA Oral Capsules</span>
+        <span class="menu-item-price">$54.95 – $90.95 (30–90 Day Supply)</span>
+      </div>
+      <div class="menu-item-desc">Adrenal androgen precursor supporting motivation, energy, libido, and immune balance[cite: 1].</div>
+      <div class="menu-meta">Strengths: 10mg to 100mg[cite: 1]. Taken daily in AM[cite: 1].</div>
+    </div>
+
+    <!-- 3. GHK-CU & FUNCTIONAL SKINCARE -->
+    <h3 class="menu-category-title">3. GHK-Cu &amp; Functional Peptide Skincare</h3>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">STELLA+ &amp; STELLA LIGHT (Estriol / GHK-Cu / Tretinoin / Niacinamide)</span>
+        <span class="menu-item-price">$113.95 – $218.95</span>
+      </div>
+      <div class="menu-item-desc">Advanced estrogen-receptor topical creams designed specifically for perimenopausal skin changes, elasticity loss, and collagen building[cite: 1].</div>
+      <ul class="menu-item-bullets">
+        <li>STELLA+ (3% GHK-Cu / 0.3% Estriol / 0.01% Tretinoin): $143.95 (30-day max supply)[cite: 1]</li>
+        <li>STELLA LIGHT (1% GHK-Cu / 0.3% Estriol / 4% Niacinamide / 0.01% Tretinoin): $113.95 – $218.95 (30–90g)[cite: 1]</li>
+      </ul>
+      <div class="menu-meta">How Used: Pea-sized amount applied topically at bedtime[cite: 1].</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Cashmere Cream (Caffeine / GHK-Cu / Tretinoin / Niacinamide 1/3/0.01%)</span>
+        <span class="menu-item-price">$143.95 (6-Wk Supply)</span>
+      </div>
+      <div class="menu-item-desc">Potent multi-active cream for fine line reduction, pore refinement, microcirculation, and structural collagen stimulation[cite: 1].</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">AquaBiome &amp; Skin Rejuvenation GHK-Cu Creams (0.5% – 3%)</span>
+        <span class="menu-item-price">$108.95 – $166.95</span>
+      </div>
+      <div class="menu-item-desc">Non-retinoid topical copper peptide formulations for collagen induction, skin repair, fine lines, and anti-inflammation—safe for sensitive skin[cite: 1].</div>
+    </div>
+
   </div>
 </section>
 
