@@ -114,15 +114,13 @@
   .section-head { text-align: center; margin-bottom: 50px; }
   .section-head h2 { font-size: 44px; font-style: italic; font-weight: 300; }
 
-  .philo-section {
+  .bottom-video-section {
     position: relative;
-    padding: 260px 0;
-    min-height: 700px;
-    display: flex;
-    align-items: center;
+    padding: 140px 0;
     color: #ffffff;
     overflow: hidden;
     background-color: var(--bg-dark);
+    border-bottom: 1px solid var(--line);
   }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
@@ -211,7 +209,7 @@
   @media (max-width: 720px) {
     .hero-text h1 { font-size: 40px; }
     .process-box { padding: 28px; }
-    .philo-section { padding: 180px 0; min-height: 550px; }
+    .bottom-video-section { padding: 100px 0; }
   }
 </style>
 </head>
@@ -225,7 +223,6 @@
   <div class="wrap">
     <a href="lipbunny-rx.html" class="logo">LIP BUNNY <span>Rx</span></a>
     <ul class="nav-links">
-      <li><a href="#philosophy">Philosophy</a></li>
       <li><a href="#pricing">Care Models</a></li>
       <li><a href="#labs">Required Labs</a></li>
       <li><a href="#menu">Prescription Menu</a></li>
@@ -252,23 +249,6 @@
     </div>
   </div>
 </div>
-
-<!-- Philosophy Section -->
-<section id="philosophy" class="philo-section">
-  <video class="video-bg" autoplay loop muted playsinline>
-    <source src="./sculpture-flowers.mp4" type="video/mp4">
-  </video>
-  <div class="video-overlay" style="background: rgba(18, 14, 14, 0.85);"></div>
-  <div class="wrap">
-    <div style="max-width: 760px; margin: 0 auto; text-align: center;">
-      <span class="eyebrow">Complete Biological Optimization</span>
-      <h2 style="font-size: 44px; margin: 14px 0 22px;">We don't just write prescriptions. We optimize your system.</h2>
-      <p style="font-size: 16.5px; color: var(--text-muted); line-height: 1.85;">
-        True clinical longevity requires evaluating the complete biological picture. Alongside your prescription therapies, we actively monitor the need for Vitamin D, Thyroid health, B12, Magnesium, Omegas, and targeted Adaptogens based on your lab work—ensuring your body has the foundational support needed to thrive.
-      </p>
-    </div>
-  </div>
-</section>
 
 <!-- Pricing Tiers Section -->
 <section id="pricing">
@@ -575,8 +555,12 @@
   </div>
 </section>
 
-<!-- Lead Capture & Final Call-to-Action Section -->
-<section id="get-started" style="padding: 120px 0; background: linear-gradient(180deg, rgba(18, 14, 14, 0.8) 0%, rgba(24, 18, 18, 0.95) 100%);">
+<!-- Lead Capture & Final Call-to-Action Section with Background Video -->
+<section id="get-started" class="bottom-video-section">
+  <video class="video-bg" autoplay loop muted playsinline>
+    <source src="./sculpture-flowers.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay" style="background: rgba(18, 14, 14, 0.85);"></div>
   <div class="wrap">
     <div style="max-width: 800px; margin: 0 auto; text-align: center; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 32px; padding: 60px 40px; backdrop-filter: blur(16px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);">
       
@@ -608,7 +592,7 @@
 
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 Lip Bunny Rx. All medical prescriptions and clinical telehealth evaluations provided through licensed medical partner networks. Prescriptions fulfilled via Strive Pharmacy.</p>
+    <p>&copy; 2026 Lip Bunny Rx. All medical prescriptions and clinical telehealth evaluations provided through licensed medical partner networks.</p>
   </div>
 </footer>
 
