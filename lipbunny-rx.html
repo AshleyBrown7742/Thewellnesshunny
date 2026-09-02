@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lip Bunny Rx — Clinical HRT, Microdose Tirzepatide &amp; Longevity Medicine</title>
+<title>Lip Bunny Rx — Clinical Longevity, Metabolic Care &amp; Functional Aesthetics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
     --line: rgba(232, 197, 190, 0.15);
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0; background: var(--bg-dark); color: var(--blush);
     font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7;
@@ -72,10 +73,15 @@
   }
   .hunny-banner a { color: var(--rose-gold); text-decoration: none; margin-left: 6px; font-weight: 400; border-bottom: 1px solid var(--rose-gold); }
 
-  nav { padding: 26px 0; border-bottom: 1px solid var(--line); position: absolute; width: 100%; top: 41px; z-index: 10; }
-  nav .wrap { display: flex; justify-content: space-between; align-items: center; }
-  .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #fff; font-weight: 400; text-decoration: none; letter-spacing: 0.12em; }
+  /* Navigation Bar */
+  nav { padding: 22px 0; border-bottom: 1px solid var(--line); position: absolute; width: 100%; top: 41px; z-index: 10; background: rgba(18, 14, 14, 0.6); backdrop-filter: blur(10px); }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; font-weight: 400; text-decoration: none; letter-spacing: 0.12em; flex-shrink: 0; }
   .logo span { color: var(--rose-gold); font-style: italic; font-weight: 300; }
+
+  .nav-links { display: flex; gap: 24px; align-items: center; list-style: none; margin: 0; padding: 0; }
+  .nav-links a { color: var(--blush); text-decoration: none; font-size: 13.5px; font-weight: 400; letter-spacing: 0.04em; transition: color 0.3s ease; }
+  .nav-links a:hover { color: var(--rose-gold); }
 
   .video-hero {
     position: relative;
@@ -100,8 +106,8 @@
     z-index: 1;
   }
 
-  .hero-text { text-align: center; margin: 0 auto; max-width: 820px; }
-  .hero-text h1 { font-size: 62px; font-style: italic; margin: 18px 0; font-weight: 300; line-height: 1.1; }
+  .hero-text { text-align: center; margin: 0 auto; max-width: 860px; }
+  .hero-text h1 { font-size: 58px; font-style: italic; margin: 18px 0; font-weight: 300; line-height: 1.15; }
   .hero-text p { color: var(--text-muted); font-size: 17.5px; margin-bottom: 36px; font-weight: 300; line-height: 1.8; }
 
   section { padding: 100px 0; border-bottom: 1px solid var(--line); }
@@ -110,8 +116,8 @@
 
   .philo-section {
     position: relative;
-    padding: 320px 0;
-    min-height: 800px;
+    padding: 260px 0;
+    min-height: 700px;
     display: flex;
     align-items: center;
     color: #ffffff;
@@ -199,8 +205,11 @@
 
   footer { padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); letter-spacing: 0.04em; }
 
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+  }
   @media (max-width: 720px) {
-    .hero-text h1 { font-size: 44px; }
+    .hero-text h1 { font-size: 40px; }
     .process-box { padding: 28px; }
     .philo-section { padding: 180px 0; min-height: 550px; }
   }
@@ -215,7 +224,14 @@
 <nav>
   <div class="wrap">
     <a href="lipbunny-rx.html" class="logo">LIP BUNNY <span>Rx</span></a>
-    <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-rose" style="padding: 10px 22px; font-size: 12.5px;">Client Portal</a>
+    <ul class="nav-links">
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#pricing">Care Models</a></li>
+      <li><a href="#labs">Required Labs</a></li>
+      <li><a href="#menu">Prescription Menu</a></li>
+      <li><a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="padding: 8px 18px; font-size: 12px;">Intake Portal</a></li>
+      <li><a href="index.html" class="btn btn-rose" style="padding: 8px 18px; font-size: 12px;">The Wellness Hunny &rarr;</a></li>
+    </ul>
   </div>
 </nav>
 
@@ -226,37 +242,40 @@
   <div class="video-overlay"></div>
   <div class="wrap">
     <div class="hero-text">
-      <span class="eyebrow">Medical Telehealth &amp; Whole-Woman Prescription Protocols</span>
-      <h1>Luxe Clinical Medicine for Women.</h1>
-      <p>Bioidentical HRT, Full-Dose &amp; Microdosed Tirzepatide, and GHK-Cu Functional Aesthetics—backed by precise diagnostic lab monitoring and pharmacy scripts at wholesale cost via Strive Pharmacy.</p>
+      <span class="eyebrow">Medical Telehealth &amp; In-Person Clinical Care</span>
+      <h1>Clinical Longevity, Metabolic Care &amp; Functional Aesthetics.</h1>
+      <p>Precision Bioidentical HRT, Full-Dose &amp; Microdosed Tirzepatide, and GHK-Cu Functional Aesthetics—available via virtual telehealth nationwide or in-person at Lip Bunny Beauty. Backed by diagnostic lab monitoring and scripts at wholesale cost via Strive Pharmacy.</p>
       <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-rose">Begin Clinical Intake &rarr;</a>
     </div>
   </div>
 </div>
 
 <!-- Philosophy Section -->
-<section class="philo-section">
+<section id="philosophy" class="philo-section">
   <video class="video-bg" autoplay loop muted playsinline>
     <source src="./sculpture-flowers.mp4" type="video/mp4">
   </video>
   <div class="video-overlay" style="background: rgba(18, 14, 14, 0.85);"></div>
   <div class="wrap">
     <div style="max-width: 760px; margin: 0 auto; text-align: center;">
-      <span class="eyebrow">Addressing the Entire Woman</span>
-      <h2 style="font-size: 44px; margin: 14px 0 22px;">We don't just write prescriptions. We optimize your biology.</h2>
+      <span class="eyebrow">Complete Biological Optimization</span>
+      <h2 style="font-size: 44px; margin: 14px 0 22px;">We don't just write prescriptions. We optimize your system.</h2>
       <p style="font-size: 16.5px; color: var(--text-muted); line-height: 1.85;">
-        True clinical longevity requires looking at the entire body. Alongside your prescription therapies, we actively monitor Vitamin D, Thyroid health, B12, Magnesium, Omegas, and targeted Adaptogens based on your lab work—ensuring your system has the raw bio-foundational support needed to thrive.
+        True clinical longevity requires evaluating the complete biological picture. Alongside your prescription therapies, we actively monitor the need for Vitamin D, Thyroid health, B12, Magnesium, Omegas, and targeted Adaptogens based on your lab work—ensuring your body has the foundational support needed to thrive.
       </p>
     </div>
   </div>
 </section>
 
 <!-- Pricing Tiers Section -->
-<section>
+<section id="pricing">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Transparent Membership</span>
       <h2>Clinical Care Membership Models</h2>
+      <p style="color: var(--text-muted); max-width: 620px; margin: 12px auto 0; font-size: 15px;">
+        Flexible care delivered via nationwide telehealth or in-person consultations at Lip Bunny Beauty (Fall River).
+      </p>
     </div>
 
     <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 32px;">
@@ -264,7 +283,7 @@
       <div class="card" style="text-align: center; align-items: center;">
         <span class="tag">Single Protocol</span>
         <h3>Tirzepatide / GLP Care</h3>
-        <p>Covers continuous medical oversight, monthly virtual check-ins, lab monitoring, and Strive Pharmacy script management for standard or microdosed protocols.</p>
+        <p>Covers continuous medical oversight, monthly check-ins, lab monitoring, and Strive Pharmacy script management for standard or microdosed protocols. (Available for Women &amp; Men)</p>
         <div class="price-highlight">$85 <span style="font-size: 16px; color: var(--text-muted); font-style: normal;">/ month</span></div>
         <div class="card-disclaimer">*Clinical membership fee only. Excludes wholesale medication cost billed separately via Strive Pharmacy.</div>
         <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="width:100%; font-size:12px;">Start GLP-1 Care</a>
@@ -317,13 +336,13 @@
 </section>
 
 <!-- Required Diagnostic Lab Panels Section -->
-<section>
+<section id="labs">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Diagnostic Safety Standards</span>
       <h2>Required Clinical Lab Panels</h2>
       <p style="color: var(--text-muted); max-width: 680px; margin: 12px auto 0; font-size: 15px;">
-        To ensure maximum safety and efficacy, baseline labs are required before initiating therapy. Results are typically returned within 24 hours. Drawn in-clinic at Lip Bunny Beauty (Fall River) or +~$45 at remote Access Points.
+        To ensure safety and optimal treatment outcomes, baseline blood work is required prior to initiating therapy. Labs can be drawn in-person at Lip Bunny Beauty (Fall River) or via remote lab access points nationwide (+$45 draw fee). Results are typically available within 24 hours.
       </p>
     </div>
 
@@ -336,15 +355,15 @@
           <span class="menu-item-price">$233.50</span>
         </div>
         <div class="menu-item-desc">
-          Required entry baseline panel for women evaluating energy, metabolic health, thyroid function, and foundational sex hormones prior to starting HRT or GLP-1 therapy[cite: 1].
+          Required entry baseline panel for women evaluating energy, metabolic health, thyroid function, and foundational sex hormones prior to starting HRT or GLP-1 therapy.
         </div>
         <ul class="menu-item-bullets">
-          <li><strong>Metabolic &amp; Blood:</strong> CBC ($5), CMP ($5.50), HbA1c ($11), Lipid Panel ($9)[cite: 1]</li>
-          <li><strong>Hormones:</strong> Estradiol ($15), FSH ($15), Free &amp; Total Testosterone w/ SHBG ($28)[cite: 1]</li>
-          <li><strong>Thyroid:</strong> TSH ($15), Free T3 ($15), Free T4 ($15), TPO Antibodies ($20)[cite: 1]</li>
-          <li><strong>Nutrients &amp; Markers:</strong> Vitamin D 25-OH ($33), Vitamin B12 ($8), Homocysteine ($39)[cite: 1]</li>
+          <li><strong>Metabolic &amp; Blood:</strong> Complete Blood Count (CBC), Comprehensive Metabolic Panel (CMP), HbA1c, Lipid Panel</li>
+          <li><strong>Hormones:</strong> Estradiol, FSH, Free &amp; Total Testosterone with SHBG</li>
+          <li><strong>Thyroid Health:</strong> TSH, Free T3, Free T4, TPO Antibodies</li>
+          <li><strong>Nutrients &amp; Inflammatory Markers:</strong> Vitamin D (25-OH), Vitamin B12, Homocysteine</li>
         </ul>
-        <div class="menu-meta">Required baseline before initiating HRT or Tirzepatide protocols[cite: 1].</div>
+        <div class="menu-meta">Drawn in-clinic at Lip Bunny Beauty ($233.50) or +$45 at a remote Access Point. Required prior to HRT or Tirzepatide protocols.</div>
       </div>
 
       <!-- Male Initial Panel -->
@@ -354,15 +373,15 @@
           <span class="menu-item-price">$243.50</span>
         </div>
         <div class="menu-item-desc">
-          Required initial checkup panel establishing baseline metabolic health, prostate markers, thyroid function, and androgen status[cite: 1].
+          Initial baseline screening establishing metabolic health, thyroid function, nutrient levels, and prostate/androgen status.
         </div>
         <ul class="menu-item-bullets">
-          <li><strong>Metabolic &amp; Blood:</strong> CBC ($5), CMP ($5.50), HbA1c ($11), Lipid Panel ($9)[cite: 1]</li>
-          <li><strong>Hormones &amp; Prostate:</strong> Free &amp; Total Testosterone w/ SHBG ($28), Estradiol ($15), Free &amp; Total PSA ($25)[cite: 1]</li>
-          <li><strong>Thyroid:</strong> TSH ($15), Free T3 ($15), Free T4 ($15), TPO Antibodies ($20)[cite: 1]</li>
-          <li><strong>Nutrients &amp; Markers:</strong> Vitamin D 25-OH ($33), Vitamin B12 ($8), Homocysteine ($39)[cite: 1]</li>
+          <li><strong>Metabolic &amp; Blood:</strong> Complete Blood Count (CBC), Comprehensive Metabolic Panel (CMP), HbA1c, Lipid Panel</li>
+          <li><strong>Hormones &amp; Prostate:</strong> Free &amp; Total Testosterone with SHBG, Estradiol, Free &amp; Total PSA</li>
+          <li><strong>Thyroid Health:</strong> TSH, Free T3, Free T4, TPO Antibodies</li>
+          <li><strong>Nutrients &amp; Inflammatory Markers:</strong> Vitamin D (25-OH), Vitamin B12, Homocysteine</li>
         </ul>
-        <div class="menu-meta">Required baseline before initiating male optimization protocols[cite: 1].</div>
+        <div class="menu-meta">Drawn in-clinic at Lip Bunny Beauty ($243.50) or +$45 at a remote Access Point. Note: Used for screening; ongoing TRT management is referred to a specialized provider.</div>
       </div>
 
     </div>
@@ -377,18 +396,18 @@
         Required progress panel performed every 3 to 6 months depending on clinical recommendations, therapy stage, and individual medical needs.
       </div>
       <ul class="menu-item-bullets">
-        <li>Monitors key liver, kidney, and metabolic markers to ensure patient safety</li>
-        <li>Evaluates ongoing hormone/GLP response to fine-tune ongoing medication dosing</li>
-        <li>Assesses nutrient status to maintain whole-body optimization</li>
+        <li>Monitors key liver, kidney, and metabolic markers to maintain ongoing safety</li>
+        <li>Evaluates hormone and GLP response to fine-tune maintenance dosing</li>
+        <li>Assesses nutrient status to maintain long-term balance</li>
       </ul>
-      <div class="menu-meta">Schedule: Every 3–6 months per medical provider direction. Billed separately at lab cost.</div>
+      <div class="menu-meta">Schedule: Every 3–6 months per medical provider direction. Drawn in-clinic ($95.00) or +$45 at a remote Access Point.</div>
     </div>
 
   </div>
 </section>
 
 <!-- Streamlined Treatment Options Menu -->
-<section>
+<section id="menu">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Focused Clinical Menu</span>
