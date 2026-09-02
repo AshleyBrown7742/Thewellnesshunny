@@ -77,12 +77,13 @@
   .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #fff; font-weight: 400; text-decoration: none; letter-spacing: 0.12em; }
   .logo span { color: var(--rose-gold); font-style: italic; font-weight: 300; }
 
+  /* Expanded Hero Height to reveal full video depth */
   .video-hero {
     position: relative;
-    min-height: 92vh;
+    min-height: 125vh;
     display: flex;
     align-items: center;
-    padding: 150px 0 90px;
+    padding: 180px 0 120px;
     color: #ffffff;
     overflow: hidden;
     background-color: var(--bg-dark);
@@ -96,7 +97,7 @@
   .video-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(18, 14, 14, 0.75) 0%, rgba(18, 14, 14, 0.92) 100%);
+    background: linear-gradient(180deg, rgba(18, 14, 14, 0.72) 0%, rgba(18, 14, 14, 0.92) 100%);
     z-index: 1;
   }
 
@@ -104,13 +105,14 @@
   .hero-text h1 { font-size: 62px; font-style: italic; margin: 18px 0; font-weight: 300; line-height: 1.1; }
   .hero-text p { color: var(--text-muted); font-size: 17.5px; margin-bottom: 36px; font-weight: 300; line-height: 1.8; }
 
-  section { padding: 90px 0; border-bottom: 1px solid var(--line); }
+  section { padding: 100px 0; border-bottom: 1px solid var(--line); }
   .section-head { text-align: center; margin-bottom: 50px; }
   .section-head h2 { font-size: 44px; font-style: italic; font-weight: 300; }
 
+  /* Expanded Philosophy Section Padding to lengthen second video frame */
   .philo-section {
     position: relative;
-    padding: 110px 0;
+    padding: 220px 0;
     color: #ffffff;
     overflow: hidden;
     background-color: var(--bg-dark);
@@ -161,6 +163,7 @@
   @media (max-width: 720px) {
     .hero-text h1 { font-size: 44px; }
     .process-box { padding: 28px; }
+    .philo-section { padding: 140px 0; }
   }
 </style>
 </head>
@@ -196,7 +199,7 @@
   <video class="video-bg" autoplay loop muted playsinline>
     <source src="./sculpture-flowers.mp4" type="video/mp4">
   </video>
-  <div class="video-overlay" style="background: rgba(18, 14, 14, 0.9);"></div>
+  <div class="video-overlay" style="background: rgba(18, 14, 14, 0.88);"></div>
   <div class="wrap">
     <div style="max-width: 740px; margin: 0 auto; text-align: center;">
       <span class="eyebrow">Addressing the Entire Woman</span>
