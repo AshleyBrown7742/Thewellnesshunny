@@ -16,8 +16,6 @@
             --blush: #f7ece9;
             --text-muted: #bdaeab;
             --line: rgba(232, 197, 190, 0.15);
-            --cream-pill-bg: rgba(247, 236, 233, 0.82);
-            --cream-pill-hover: rgba(255, 245, 242, 0.95);
         }
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -31,7 +29,7 @@
             overflow-x: hidden; 
             letter-spacing: 0.02em;
         }
-        .wrap { max-width: 1200px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
+        .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
         h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; font-weight: 400; margin: 0; color: #ffffff; letter-spacing: 0.03em; }
         
         .eyebrow {
@@ -76,107 +74,20 @@
             color: var(--rose-gold) !important; 
         }
 
-        /* Top Announcement Banner */
-        .top-banner { 
+        .rx-banner { 
             background: #181212; 
             color: var(--text-muted); 
             text-align: center; 
-            padding: 10px 20px; 
+            padding: 11px 20px; 
             font-size: 13px; 
             border-bottom: 1px solid var(--line); 
-            letter-spacing: 0.04em;
         }
-        .top-banner a { 
-            color: var(--rose-gold); 
-            text-decoration: none; 
-            margin-left: 6px; 
-            border-bottom: 1px solid var(--rose-gold); 
-            transition: opacity 0.2s;
-        }
-        .top-banner a:hover { opacity: 0.8; }
+        .rx-banner a { color: var(--rose-gold); text-decoration: none; margin-left: 6px; border-bottom: 1px solid var(--rose-gold); }
 
-        /* Navigation Header */
-        nav { 
-            padding: 16px 0; 
-            border-bottom: 1px solid var(--line); 
-            background: rgba(18, 14, 14, 0.85); 
-            backdrop-filter: blur(12px); 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-        }
-        nav .wrap { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-        .logo { 
-            font-family: 'Cormorant Garamond', serif; 
-            font-size: 24px; 
-            color: #fff; 
-            text-decoration: none; 
-            letter-spacing: 0.15em; 
-            text-transform: uppercase;
-        }
-        .logo span { 
-            color: var(--rose-gold); 
-            font-style: italic; 
-            text-transform: none;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-        }
-        .nav-links a.nav-item {
-            color: var(--blush);
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 0.05em;
-            transition: color 0.2s;
-        }
-        .nav-links a.nav-item:hover {
-            color: var(--rose-gold);
-        }
-
-        /* Outline Button */
-        .btn-nav-outline {
-            border: 1px solid var(--card-border);
-            color: var(--blush);
-            background: transparent;
-            padding: 9px 20px;
-            border-radius: 999px;
-            font-size: 13px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .btn-nav-outline:hover {
-            border-color: var(--rose-gold);
-            color: var(--rose-gold);
-        }
-
-        /* Translucent Cream Pill */
-        .btn-cream-pill {
-            background: var(--cream-pill-bg);
-            color: #1a1211 !important;
-            padding: 10px 22px;
-            border-radius: 999px;
-            font-size: 13.5px;
-            font-weight: 400;
-            text-decoration: none;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .btn-cream-pill:hover {
-            background: var(--cream-pill-hover);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(232, 197, 190, 0.25);
-        }
+        nav { padding: 22px 0; border-bottom: 1px solid var(--line); background: rgba(18, 14, 14, 0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
+        nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; text-decoration: none; letter-spacing: 0.12em; }
+        .logo span { color: var(--rose-gold); font-style: italic; }
 
         section { padding: 80px 0; border-bottom: 1px solid var(--line); }
 
@@ -332,23 +243,15 @@
 </head>
 <body>
 
-<!-- TOP BANNER -->
-<div class="top-banner">
-    Looking for Prescription HRT &amp; Tirzepatide Protocols? <a href="#">&larr; Visit Lip Bunny Rx</a>
+<div class="rx-banner">
+    Looking for Prescription HRT &amp; Tirzepatide Protocol Management? <a href="#">Visit Lip Bunny Rx &rarr;</a>
 </div>
 
-<!-- NAVIGATION HEADER -->
 <nav>
     <div class="wrap">
         <a href="index.html" class="logo">THE WELLNESS <span>HUNNY</span></a>
-        
-        <div class="nav-links">
-            <a href="#blood-menu" class="nav-item">Philosophy</a>
-            <a href="#blood-menu" class="nav-item">Care Models</a>
-            <a href="#blood-menu" class="nav-item">Required Labs</a>
-            <a href="#blood-menu" class="nav-item">Lab Menu</a>
-            <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn-nav-outline">Intake Portal</a>
-            <a href="#blood-menu" class="btn-cream-pill">The Wellness Hunny &rarr;</a>
+        <div>
+            <a href="#blood-menu" class="btn btn-outline" style="padding: 8px 16px; font-size: 12px;">Lab Testing Menu</a>
         </div>
     </div>
 </nav>
