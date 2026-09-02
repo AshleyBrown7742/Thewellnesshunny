@@ -21,11 +21,16 @@
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    margin: 0; background: var(--bg-dark); color: var(--blush);
-    font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7;
-    overflow-x: hidden; letter-spacing: 0.02em;
+    margin: 0; 
+    background-color: var(--bg-dark); 
+    color: var(--blush);
+    font-family: 'Jost', sans-serif; 
+    font-weight: 300; 
+    line-height: 1.7;
+    overflow-x: hidden; 
+    letter-spacing: 0.02em;
   }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 5; }
   h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; font-weight: 400; margin: 0; color: #ffffff; letter-spacing: 0.03em; }
   
   .eyebrow {
@@ -74,7 +79,7 @@
   .hunny-banner a { color: var(--rose-gold); text-decoration: none; margin-left: 6px; font-weight: 400; border-bottom: 1px solid var(--rose-gold); }
 
   /* Navigation Bar */
-  nav { padding: 18px 0; border-bottom: 1px solid var(--line); position: absolute; width: 100%; top: 41px; z-index: 10; background: rgba(18, 14, 14, 0.75); backdrop-filter: blur(10px); }
+  nav { padding: 18px 0; border-bottom: 1px solid var(--line); position: absolute; width: 100%; top: 41px; z-index: 10; background: rgba(18, 14, 14, 0.85); backdrop-filter: blur(10px); }
   nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
   .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; font-weight: 400; text-decoration: none; letter-spacing: 0.12em; flex-shrink: 0; }
   .logo span { color: var(--rose-gold); font-style: italic; font-weight: 300; }
@@ -91,26 +96,26 @@
     padding: 180px 0 120px;
     color: #ffffff;
     overflow: hidden;
-    background-color: var(--bg-dark);
+    background: #120e0e linear-gradient(180deg, #181212 0%, #120e0e 100%);
   }
   .video-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     object-fit: cover; z-index: 1;
-    filter: brightness(0.75) contrast(1.05);
+    filter: brightness(0.65) contrast(1.05);
   }
   .video-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(18, 14, 14, 0.72) 0%, rgba(18, 14, 14, 0.92) 100%);
-    z-index: 1;
+    background: linear-gradient(180deg, rgba(18, 14, 14, 0.6) 0%, rgba(18, 14, 14, 0.9) 100%);
+    z-index: 2;
   }
 
-  .hero-text { text-align: center; margin: 0 auto; max-width: 860px; }
+  .hero-text { text-align: center; margin: 0 auto; max-width: 860px; position: relative; z-index: 5; }
   .hero-text h1 { font-size: 58px; font-style: italic; margin: 18px 0; font-weight: 300; line-height: 1.15; }
   .hero-text p { color: var(--text-muted); font-size: 17.5px; margin-bottom: 36px; font-weight: 300; line-height: 1.8; }
 
-  section { padding: 100px 0; border-bottom: 1px solid var(--line); }
+  section { padding: 100px 0; border-bottom: 1px solid var(--line); position: relative; z-index: 5; background-color: var(--bg-dark); }
   .section-head { text-align: center; margin-bottom: 50px; }
   .section-head h2 { font-size: 44px; font-style: italic; font-weight: 300; }
 
@@ -119,7 +124,7 @@
     padding: 140px 0;
     color: #ffffff;
     overflow: hidden;
-    background-color: var(--bg-dark);
+    background: #120e0e;
     border-bottom: 1px solid var(--line);
   }
 
@@ -162,4 +167,115 @@
 
   .process-box { 
     background: var(--card-bg); 
-    border: 1px solid var(--card
+    border: 1px solid var(--card-border); 
+    border-radius: 28px; 
+    padding: 48px; 
+    margin-top: 20px; 
+    backdrop-filter: blur(16px);
+  }
+  .price-highlight { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--rose-gold); font-style: italic; font-weight: 300; margin: 8px 0; }
+
+  .menu-category-title {
+    font-size: 32px;
+    font-style: italic;
+    color: #ffffff;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+    margin: 60px 0 30px;
+  }
+  .menu-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .menu-item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .menu-item-title { font-size: 22px; color: #ffffff; font-style: italic; }
+  .menu-item-price { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--rose-gold); font-style: italic; }
+  .menu-item-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 12px; }
+  .menu-item-bullets { color: var(--blush); font-size: 13.5px; padding-left: 0; list-style: none; margin: 12px 0; }
+  .menu-item-bullets li { position: relative; padding-left: 18px; margin-bottom: 6px; }
+  .menu-item-bullets li::before { content: "✦"; position: absolute; left: 0; color: var(--rose-gold); font-size: 10px; top: 2px; }
+  .menu-meta { font-size: 12.5px; color: var(--rose-gold); opacity: 0.85; border-top: 1px dashed var(--line); padding-top: 8px; margin-top: 12px; }
+
+  footer { padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); letter-spacing: 0.04em; position: relative; z-index: 5; background: var(--bg-dark); }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+  }
+  @media (max-width: 720px) {
+    .hero-text h1 { font-size: 40px; }
+    .process-box { padding: 28px; }
+    .bottom-video-section { padding: 100px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hunny-banner">
+  Looking for Root-Cause Coaching &amp; General Functional Labs? <a href="index.html">&larr; Back to The Wellness Hunny</a>
+</div>
+
+<nav>
+  <div class="wrap">
+    <a href="lipbunny-rx.html" class="logo">LIP BUNNY <span>Rx</span></a>
+    <ul class="nav-links">
+      <li><a href="#pricing">Care Models</a></li>
+      <li><a href="#labs">Required Labs</a></li>
+      <li><a href="#menu">Prescription Menu</a></li>
+      <li><a href="#intake">Book Intake</a></li>
+      <li><a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose" style="padding: 10px 22px; font-size: 13px;">Malla Portal &rarr;</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="video-hero">
+  <video class="video-bg" autoplay loop muted playsinline>
+    <source src="statue-petals.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow">Medical Telehealth &amp; In-Person Clinical Care</span>
+      <h1>We don't just write prescriptions, we optimize quality of life.</h1>
+      <p>Precision Bioidentical HRT, Full-Dose &amp; Microdosed Tirzepatide, and GHK-Cu Functional Aesthetics—available via virtual telehealth serving clients across Massachusetts or in-person at Lip Bunny Beauty. Backed by diagnostic lab monitoring and scripts at wholesale cost via Strive Pharmacy.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="#pricing" class="btn btn-rose">Explore Care Models &rarr;</a>
+        <a href="#intake" class="btn btn-outline">Book Intake</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Transparent Membership</span>
+      <h2>Clinical Care Membership Models</h2>
+      <p style="color: var(--text-muted); max-width: 620px; margin: 12px auto 0; font-size: 15px;">
+        Flexible care delivered via virtual telehealth across Massachusetts or in-person consultations at Lip Bunny Beauty (Fall River).
+      </p>
+    </div>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 32px;">
+      
+      <div class="card" style="text-align: center; align-items: center;">
+        <span class="tag">Single Protocol</span>
+        <h3>Tirzepatide / GLP Care</h3>
+        <p>Covers continuous medical oversight, monthly check-ins, lab monitoring, and Strive Pharmacy script management for standard or microdosed protocols. (Available for Women &amp; Men)</p>
+        <div class="price-highlight">$85 <span style="font-size: 16px; color: var(--text-muted); font-style: normal;">/ month</span></div>
+        <div class="card-disclaimer">*Clinical membership fee only. Excludes wholesale medication cost billed separately via Strive Pharmacy.</div>
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%; font-size:12px;">Book GLP-1 Care</a>
+      </div>
+
+      <div class="card" style="text-align: center; align-items: center;">
+        <span class="tag">Single Protocol</span>
+        <h3>Bioidentical HRT</h3>
+        <p>Comprehensive female hormone optimization, ongoing
