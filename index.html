@@ -23,7 +23,7 @@
   body {
     margin: 0; background: var(--cream); color: var(--ink);
     font-family: 'Jost', sans-serif; font-weight: 400; line-height: 1.7;
-    overflow-x: hidden;
+    overflow-x: hidden; padding-bottom: 60px; /* Space for mobile sticky nav */
   }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
   h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; margin: 0; color: var(--ink); }
@@ -99,10 +99,10 @@
 
   .video-hero {
     position: relative;
-    min-height: 85vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
-    padding: 140px 0 80px;
+    padding: 120px 0 80px;
     color: #ffffff;
     overflow: hidden;
     background-color: #2b231d;
@@ -124,6 +124,32 @@
   .hero-text .sub { font-size: 18px; color: rgba(255,255,255,0.9); max-width: 540px; margin: 0 0 28px; }
   .hero-text .eyebrow { color: var(--tan-light); }
   .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* DUAL CARE HYBRID BANNER */
+  .dual-care-section {
+    background: #1f1813;
+    border-top: 1px solid var(--tan-deep);
+    border-bottom: 1px solid var(--tan-deep);
+    color: #fff;
+    padding: 40px 0;
+  }
+  .dual-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    margin-top: 24px;
+  }
+  .dual-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(227, 210, 192, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+  }
+  .dual-box h3 { color: var(--tan-light); font-size: 20px; font-style: italic; margin-bottom: 6px; }
+  .dual-box p { font-size: 13px; color: rgba(255, 255, 255, 0.8); margin: 0; line-height: 1.4; }
+  .dual-plus { font-size: 28px; color: var(--tan-light); font-family: 'Cormorant Garamond', serif; }
 
   section { padding: 70px 0; }
   .section-head { margin-bottom: 36px; }
@@ -154,12 +180,6 @@
   .grid-card h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 16.5px; margin-bottom: 6px; }
   .grid-card p { color: var(--ink-soft); font-size: 13.5px; margin: 0; line-height: 1.6; }
 
-  .steps-row { display: flex; flex-wrap: wrap; }
-  .step-cell { flex: 1 1 200px; padding: 24px 20px; border-top: 2px solid var(--ink); }
-  .step-cell .n { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 32px; color: var(--tan-deep); font-weight: 500; }
-  .step-cell h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 16px; margin: 8px 0 6px; }
-  .step-cell p { color: var(--ink-soft); font-size: 13.5px; margin: 0; line-height: 1.5; }
-
   .price-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 8px 32px; }
   .price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; gap: 12px; }
   .price-row:last-child { border-bottom: none; }
@@ -170,13 +190,22 @@
   .notice-banner { background: rgba(235, 210, 192, 0.4); border: 1px solid var(--tan); border-radius: 14px; padding: 16px 20px; margin-bottom: 28px; font-size: 13.5px; color: var(--ink); }
   .notice-banner strong { color: var(--tan-deep); }
 
+  /* FILTER BUTTONS FOR LABS */
+  .lab-filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+  .filter-btn { background: #fff; border: 1px solid var(--line); padding: 8px 18px; border-radius: 999px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+  .filter-btn.active, .filter-btn:hover { background: var(--tan-deep); color: #fff; border-color: var(--tan-deep); }
+
   .lab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 16px; }
-  .lab-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; }
+  .lab-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
   .lab-card h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 18px; margin-bottom: 4px; }
-  .lab-card .lab-price { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--tan-deep); font-weight: 600; margin-bottom: 8px; }
+  .lab-card .lab-price { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--tan-deep); font-weight: 600; margin-bottom: 4px; }
+  .lab-card .turnaround { font-size: 11px; font-weight: 600; color: var(--tan-deep); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
   .lab-card p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; margin: 0 0 14px; }
-  .lab-card .panel-list { font-size: 12.5px; color: var(--ink); background: var(--cream); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; line-height: 1.5; }
-  .lab-card .panel-list strong { color: var(--tan-deep); font-weight: 600; display: block; margin-bottom: 2px; }
+  
+  /* ACCORDION MARKERS */
+  .lab-card details { background: var(--cream); border-radius: 10px; padding: 8px 12px; margin-bottom: 16px; font-size: 12.5px; }
+  .lab-card summary { font-weight: 600; color: var(--tan-deep); cursor: pointer; outline: none; }
+  .lab-card .panel-list-content { margin-top: 8px; color: var(--ink); line-height: 1.5; }
 
   .category-title { margin: 32px 0 16px; border-bottom: 1.5px solid var(--ink); padding-bottom: 6px; display: flex; justify-content: space-between; align-items: baseline; }
   .category-title h2 { font-size: 24px; font-style: italic; }
@@ -224,10 +253,28 @@
 
   footer { border-top: 1px solid var(--line); padding: 30px 0; text-align: center; font-size: 12.5px; color: var(--ink-soft); }
 
+  /* STICKY MOBILE ACTION BAR */
+  .mobile-bar {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #1f1813;
+    border-top: 1px solid var(--tan-deep);
+    padding: 10px 16px;
+    z-index: 999;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mobile-bar-text { color: #fff; font-size: 12px; }
+  .mobile-bar-text strong { color: var(--tan-light); display: block; font-size: 13px; }
+
   @media (max-width: 720px) {
     .hero-text h1 { font-size: 38px; }
     .price-card, .malla-card-container { padding: 30px 20px; }
     .nav-links { display: none; }
+    .dual-grid { grid-template-columns: 1fr; gap: 10px; }
+    .dual-plus { display: none; }
+    .mobile-bar { display: flex; }
   }
 </style>
 </head>
@@ -267,6 +314,32 @@
       <div class="hero-ctas">
         <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary">Complete Pre-Consult Intake</a>
         <a href="lipbunny-rx.html" class="btn btn-ghost">Prescription Therapies (Lip Bunny Rx) &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dual-care-section">
+  <div class="wrap">
+    <div class="section-head center" style="margin-bottom: 0;">
+      <span class="eyebrow">The Complete Solution</span>
+      <h2 style="color: #fff; font-size: 32px;">Combine Root-Cause Coaching + Medical Therapies</h2>
+      <p style="color: rgba(255,255,255,0.8); max-width: 650px; margin: 8px auto 0;">You don't have to choose between functional health and clinical medicine. Combine both pathways seamlessly with zero duplicate paperwork.</p>
+    </div>
+    <div class="dual-grid">
+      <div class="dual-box">
+        <h3>Wellness Hunny</h3>
+        <p><strong>The Lifestyle Engine:</strong> Root-cause gut resets, mineral balancing, nutrition, &amp; lifestyle optimization.</p>
+      </div>
+      <div class="dual-plus">+</div>
+      <div class="dual-box">
+        <h3>Lip Bunny Rx</h3>
+        <p><strong>The Clinical Accelerator:</strong> Targeted GLP-1 weight loss, bioidentical HRT, &amp; therapeutic peptides.</p>
+      </div>
+      <div class="dual-plus">=</div>
+      <div class="dual-box" style="border-color: var(--tan);">
+        <h3 style="color: #fff;">Optimal Synergy</h3>
+        <p>Protect muscle mass, reduce prescription side effects, and maintain long-term results effortlessly.</p>
       </div>
     </div>
   </div>
@@ -318,7 +391,7 @@
       <div class="grid-card">
         <div class="num">03</div>
         <h3>Weight Loss &amp; HRT Referrals</h3>
-        <p>Obtain readiness labs and direct referrals to start prescription therapies through our sister business with zero duplicate intakes.</p>
+        <p>Obtain readiness labs and direct referrals to start prescription therapies through Lip Bunny Rx with zero duplicate intakes.</p>
       </div>
       <div class="grid-card">
         <div class="num">04</div>
@@ -379,7 +452,6 @@
   </div>
 </section>
 
-<!-- STREAMLINED LABS SECTION -->
 <section id="labs">
   <div class="wrap">
     <div class="section-head center">
@@ -389,21 +461,27 @@
     </div>
 
     <div class="notice-banner">
-      <strong>Massachusetts Patients &amp; Draw Details:</strong> Direct blood draws are exclusive to <strong>MA patients</strong>[cite: 1]. In-person draws at <strong>Lip Bunny Beauty (Fall River, MA)</strong> have no extra site fee[cite: 1]. Draws at remote Access Points incur a flat <strong>~$45 fee</strong> per visit[cite: 1]. At-home saliva and tissue kits ship directly to your door with no site visit needed[cite: 1].
+      <strong>Massachusetts Patients &amp; Draw Details:</strong> Direct blood draws are exclusive to <strong>MA patients</strong>. In-person draws at <strong>Lip Bunny Beauty (Fall River, MA)</strong> have no extra site fee. Draws at remote Access Points incur a flat <strong>~$45 fee</strong> per visit. At-home saliva and tissue kits ship directly to your door with no site visit needed.
     </div>
 
-    <!-- Functional Kits -->
-    <div class="category-title" style="margin-top: 0;">
+    <div class="lab-filters">
+      <button class="filter-btn active" onclick="filterLabs('all')">All Labs</button>
+      <button class="filter-btn" onclick="filterLabs('at-home')">At-Home Kits</button>
+      <button class="filter-btn" onclick="filterLabs('blood')">Blood Panels (MA)</button>
+    </div>
+
+    <div class="category-title lab-cat-athome" style="margin-top: 0;">
       <h2>At-Home Functional Kits</h2>
       <span>Tissue, Microbiome &amp; Saliva</span>
     </div>
 
-    <div class="lab-grid">
+    <div class="lab-grid lab-cat-athome">
       <div class="lab-card">
         <div>
           <h3>Hair Tissue Mineral Analysis (HTMA)</h3>
           <div class="lab-price">$125</div>
-          <p>Measures long-term mineral levels and toxic heavy metal accumulation locked in tissue over time[cite: 1]. Superior to blood for tracking 3-month cellular stress patterns[cite: 1].</p>
+          <div class="turnaround">⏱ Results in 7–10 Business Days</div>
+          <p>Measures long-term mineral levels and toxic heavy metal accumulation locked in tissue over time. Superior to blood for tracking 3-month cellular stress patterns.</p>
         </div>
         <a href="#intake" class="btn btn-primary" style="padding: 9px 16px; font-size: 13px; width: 100%;">Order HTMA &rarr;</a>
       </div>
@@ -412,7 +490,8 @@
         <div>
           <h3>Genova GI Effects® Stool Profile</h3>
           <div class="lab-price">$339</div>
-          <p>The standard for evaluating microbiome balance, digestive efficiency, inflammation, and hidden gut infections[cite: 1]. Ideal for chronic bloating or leaky gut[cite: 1].</p>
+          <div class="turnaround">⏱ Results in 10–14 Business Days</div>
+          <p>The standard for evaluating microbiome balance, digestive efficiency, inflammation, and hidden gut infections. Ideal for chronic bloating or leaky gut.</p>
         </div>
         <a href="#intake" class="btn btn-primary" style="padding: 9px 16px; font-size: 13px; width: 100%;">Order GI Panel &rarr;</a>
       </div>
@@ -421,193 +500,19 @@
         <div>
           <h3>Adrenal Fatigue Panel (Saliva x4)</h3>
           <div class="lab-price">$99</div>
-          <p>At-home saliva kit mapping daily cortisol flow (AM, Noon, Evening, Night) to evaluate adrenal stress and fatigue[cite: 1].</p>
-          <div class="panel-list">
-            <strong>Key Markers:</strong> Cortisol (4x daily curve), DHEA, 17-OH Progesterone[cite: 1].
-          </div>
+          <div class="turnaround">⏱ Results in 5–7 Business Days</div>
+          <p>At-home saliva kit mapping daily cortisol flow (AM, Noon, Evening, Night) to evaluate adrenal stress and fatigue.</p>
+          <details>
+            <summary>View Panel Key Markers</summary>
+            <div class="panel-list-content">Cortisol (4x daily curve), DHEA, 17-OH Progesterone.</div>
+          </details>
         </div>
         <a href="#intake" class="btn btn-primary" style="padding: 9px 16px; font-size: 13px; width: 100%;">Order Adrenal Kit &rarr;</a>
       </div>
     </div>
 
-    <!-- Targeted Blood Panels -->
-    <div class="category-title">
+    <div class="category-title lab-cat-blood">
       <h2>Comprehensive Blood Panels</h2>
       <span>Blood Draws (MA Patients)</span>
     </div>
-
-    <div class="lab-grid">
-      <div class="lab-card">
-        <div>
-          <h3>Male Comprehensive Panel</h3>
-          <div class="lab-price">$243.50</div>
-          <p>Full health baseline for energy, cardiovascular health, thyroid, and hormones[cite: 1].</p>
-          <div class="panel-list">
-            <strong>Key Markers:</strong> CBC, CMP, HbA1c, TSH, Free T3/T4, Testosterone (Free/Total), SHBG, Estradiol, Lipids, B12, Vit D, Homocysteine[cite: 1].
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Female Comprehensive Panel</h3>
-          <div class="lab-price">$233.50</div>
-          <p>Core evaluation of metabolic health, energy, thyroid function, and sex hormones[cite: 1].</p>
-          <div class="panel-list">
-            <strong>Key Markers:</strong> CBC, CMP, HbA1c, TSH, Free T3/T4, Testosterone, Estradiol, FSH, Lipids, Vit D, B12, Homocysteine[cite: 1].
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Complete Thyroid Panel</h3>
-          <div class="lab-price">$195</div>
-          <p>Comprehensive diagnostic thyroid workup covering metabolic signaling and antibodies[cite: 1].</p>
-          <div class="panel-list">
-            <strong>Key Markers:</strong> TSH, Free T3, Free T4, Reverse T3, TPO &amp; Thyroglobulin Antibodies[cite: 1].
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Menstrual &amp; Hormone Panel</h3>
-          <div class="lab-price">$175</div>
-          <p>Evaluates cycle regularity, PMS, androgen activity, and overall estrogen balance[cite: 1].</p>
-          <div class="panel-list">
-            <strong>Key Markers:</strong> HbA1c, Testosterone, FSH, LH, Estradiol, Progesterone, Fasting Insulin, Prolactin, DHT[cite: 1].
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>CardioPro Advanced Panel</h3>
-          <div class="lab-price">$285</div>
-          <p>Advanced cardiovascular risk evaluation going far beyond standard cholesterol testing[cite: 1].</p>
-          <div class="panel-list">
-            <strong>Key Markers:</strong> Lipids, sd-LDL, hs-CRP, Homocysteine, Lp(a), Apo A-1, Apo B, Fasting Insulin, Vit D[cite: 1].
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Autoimmune &amp; Inflammation Panel</h3>
-          <div class="lab-price">$185</div>
-          <p>Screens for systemic inflammation and markers related to joint pain or auto-antibody activity[cite: 1].</p>
-          <div class="panel-list">
-            <strong>Key Markers:</strong> hs-CRP, ESR (Sed Rate), ANA Titer, Rheumatoid Factor, Complement C3/C4[cite: 1].
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>COVID-19 Spike Antibody</h3>
-          <div class="lab-price">$135</div>
-          <p>Evaluates lingering post-viral fatigue or neutral antibody presence[cite: 1].</p>
-          <div class="panel-list">
-            <strong>Key Markers:</strong> SARS-CoV-2 Spike (S1-RBD) Antibodies[cite: 1].
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Anemia Panel</h3>
-          <div class="lab-price">$95</div>
-          <p>Targeted evaluation for chronic low energy, pale skin, dizziness, or iron status[cite: 1].</p>
-          <div class="panel-list">
-            <strong>Key Markers:</strong> CBC and complete iron status markers[cite: 1].
-          </div>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INTAKE SECTION WITH NATIVE MALLA CTA CARD -->
-<section id="intake">
-  <div class="wrap">
-    <div class="malla-card-container">
-      <span class="malla-badge-pill">🔒 Secure HIPAA-Compliant Portal</span>
-      
-      <h2 style="color: #ffffff; font-size: 42px; font-style: italic; margin-bottom: 16px;">
-        Ready to Elevate Your Health &amp; Longevity?
-      </h2>
-      
-      <p style="color: rgba(255, 255, 255, 0.85); font-size: 16px; max-width: 620px; margin: 0 auto 32px auto; line-height: 1.7;">
-        Take the first step toward personalized root-cause coaching, gut microbiome restoration, or functional testing. Schedule your intake assessment today through the Malla Portal.
-      </p>
-
-      <div style="display: flex; justify-content: center; margin-bottom: 32px;">
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 16px 36px; font-weight: 600;">
-          Book via Malla Portal &rarr;
-        </a>
-      </div>
-
-      <div style="border-top: 1px dashed rgba(227, 210, 192, 0.3); padding-top: 22px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; color: var(--tan-light); font-size: 13px;">
-        <span>✦ Virtual Telehealth Care</span>
-        <span>✦ In-Person Draws at Lip Bunny Beauty</span>
-        <span>✦ Root-Cause Functional Analysis</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Got Questions?</span>
-      <h2>Frequently Asked Questions</h2>
-    </div>
-
-    <details class="faq-item">
-      <summary>Do I need to see a doctor before booking a coaching session?</summary>
-      <p>No. You can book directly with us at any time. We focus on root-cause coaching, lifestyle protocols, and helping you navigate your options clearly before or alongside traditional healthcare.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>How does the Lip Bunny Rx prescription referral work?</summary>
-      <p>If you're interested in GLP-1 weight management or HRT, we complete your initial readiness assessment and baseline lab ordering during your Wellness Hunny session. We then transfer your file directly to Lip Bunny Rx so you can start therapy with no duplicate intake forms.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>Can I order lab panels without scheduling a consultation?</summary>
-      <p>Yes. All functional lab panels (HTMA, Stool, Blood work) are available à la carte directly through our portal. If you'd like expert guidance on interpreting your results, you can add a Lab Interpretation Add-On at any time.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>Where do I get my blood drawn and are there extra fees?</summary>
-      <p>Direct-to-consumer blood draws are currently available for Massachusetts patients only[cite: 1]. Blood draws are included with no additional site fee when drawn in-person at Lip Bunny Beauty in Fall River, MA[cite: 1]. If you choose to draw at a remote Access Point, a ~$45 fee applies per visit[cite: 1]. At-home saliva and urine kits require no facility visit[cite: 1].</p>
-    </details>
-  </div>
-</section>
-
-<div class="cta-final">
-  <div class="wrap">
-    <span class="eyebrow">Begin Your Path</span>
-    <h2>Ready to take ownership of your health?</h2>
-    <p>Complete your pre-consult assessment in our secure portal to get started.</p>
-    <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 15px 34px;">Start Pre-Consult Intake &rarr;</a>
-  </div>
-</div>
-
-<footer>
-  <div class="wrap">
-    <p>&copy; 2026 The Wellness Hunny. Virtual Root-Cause Coaching &amp; Functional Testing. All rights reserved.</p>
-  </div>
-</footer>
-
-</body>
-</html>
+    
