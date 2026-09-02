@@ -182,6 +182,28 @@
     font-style: italic;
   }
 
+  .holistic-banner {
+    background: linear-gradient(135deg, rgba(232, 197, 190, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 32px 36px;
+    margin-bottom: 50px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+  }
+  .holistic-banner h3 {
+    font-size: 30px;
+    font-style: italic;
+    color: var(--rose-gold);
+    margin-bottom: 10px;
+  }
+  .holistic-banner p {
+    color: var(--blush);
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
   .process-box { 
     background: var(--card-bg); 
     border: 1px solid var(--card-border); 
@@ -232,12 +254,12 @@
     .process-box { padding: 28px; }
     .bottom-video-section { padding: 100px 0; }
     .sticky-intake-btn { bottom: 16px; right: 16px; padding: 12px 22px; font-size: 12.5px; }
+    .holistic-banner { padding: 24px 20px; }
   }
 </style>
 </head>
 <body>
 
-<!-- Floating Sticky Book Intake Button -->
 <a href="#intake" class="btn btn-rose sticky-intake-btn">Book Intake &rarr;</a>
 
 <div class="hunny-banner">
@@ -275,9 +297,14 @@
   </div>
 </div>
 
-<!-- Pricing Tiers Section -->
 <section id="pricing">
   <div class="wrap">
+    
+    <div class="holistic-banner">
+      <h3>Complete Total-Body Clinical Care</h3>
+      <p>We believe true medical wellness goes beyond single prescriptions. All Lip Bunny Rx membership models incorporate comprehensive total-body oversight—monitoring and optimizing key nutrients like Vitamin D and B12, thyroid function, lipid/cholesterol profiles, and metabolic blood sugar markers directly alongside your hormone and weight management protocols.</p>
+    </div>
+
     <div class="section-head">
       <span class="eyebrow">Transparent Membership</span>
       <h2>Clinical Care Membership Models</h2>
@@ -343,7 +370,6 @@
   </div>
 </section>
 
-<!-- Required Diagnostic Lab Panels Section -->
 <section id="labs">
   <div class="wrap">
     <div class="section-head">
@@ -356,7 +382,6 @@
 
     <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin-bottom: 32px;">
       
-      <!-- Female Initial Panel -->
       <div class="menu-item" style="margin-bottom: 0;">
         <div class="menu-item-head">
           <span class="menu-item-title">Comprehensive Female Health Panel</span>
@@ -374,7 +399,6 @@
         <div class="menu-meta">Drawn in-clinic at Lip Bunny Beauty ($245) or +$50 at a remote Access Point. Required baseline &amp; annually while on HRT or GLP protocols.</div>
       </div>
 
-      <!-- Male Initial Panel -->
       <div class="menu-item" style="margin-bottom: 0;">
         <div class="menu-item-head">
           <span class="menu-item-title">Comprehensive Male Health Panel</span>
@@ -394,7 +418,6 @@
 
     </div>
 
-    <!-- Follow-Up Monitoring Panel -->
     <div class="menu-item" style="border-color: var(--rose-gold); background: rgba(232, 197, 190, 0.04);">
       <div class="menu-item-head">
         <span class="menu-item-title">Clinical Follow-Up Monitoring Panel</span>
@@ -414,7 +437,6 @@
   </div>
 </section>
 
-<!-- Streamlined Treatment Options Menu -->
 <section id="menu">
   <div class="wrap">
     <div class="section-head">
@@ -422,7 +444,6 @@
       <h2>Prescription Protocol Options</h2>
     </div>
 
-    <!-- TIRZEPATIDE & METABOLIC CARE -->
     <h3 class="menu-category-title">Tirzepatide &amp; Metabolic Protocols</h3>
 
     <div class="menu-item">
@@ -430,11 +451,12 @@
         <span class="menu-item-title">Microdosed Tirzepatide / Glycine / B12</span>
         <span class="menu-item-price">$120 / 1mL Vial (4-Wk Supply)</span>
       </div>
-      <div class="menu-item-desc">Low-dose tirzepatide tailored for subtle metabolic enhancement, inflammation control, and anti-aging without aggressive weight loss. Maintained flat rather than titrated up.</div>
+      <div class="menu-item-desc">Low-dose tirzepatide tailored for subtle metabolic enhancement, moderate weight loss, reduced bloating, puffiness, and systemic inflammation reduction without aggressive titration. Maintained flat for optimal anti-aging and physiological support.</div>
       <ul class="menu-item-bullets">
-        <li>GLP-1/GIP receptor activation at lower intensity</li>
+        <li>Promotes moderate, steady weight loss while reducing bloating and water retention</li>
+        <li>Targeted systemic inflammation reduction and metabolic health maintenance</li>
         <li>Glycine reduces GI side effects while supporting gut lining, sleep, and recovery</li>
-        <li>B12 for cellular energy and neurological support</li>
+        <li>B12 for cellular energy, metabolic balance, and neurological support</li>
       </ul>
       <div class="menu-meta">How Used: Weekly SQ injection. Fulfilled via Strive Pharmacy (Includes cold shipping + supplies).</div>
     </div>
@@ -455,7 +477,6 @@
       <div class="menu-meta">How Used: Weekly SQ injection. Vials discarded after 28 days per USP compliance.</div>
     </div>
 
-    <!-- BIOIDENTICAL HRT -->
     <h3 class="menu-category-title">Bioidentical HRT &amp; Hormone Optimization</h3>
 
     <div class="menu-item">
@@ -487,14 +508,13 @@
 
     <div class="menu-item">
       <div class="menu-item-head">
-        <span class="menu-item-title">Testosterone Cream (Versabase)</span>
+        <span class="menu-item-title">Testosterone Cream</span>
         <span class="menu-item-price">$30 – $38 (4-Wk Supply)</span>
       </div>
-      <div class="menu-item-desc">Targeted micro-dose testosterone cream for female libido restoration, energy, lean body composition, and mental clarity.</div>
+      <div class="menu-item-desc">Targeted micro-dose topical testosterone cream designed specifically for female libido restoration, physical energy, lean body composition, and mental clarity.</div>
       <div class="menu-meta">Applied daily to inner forearm. Dose titrated based on androgen levels.</div>
     </div>
 
-    <!-- GHK-CU & FUNCTIONAL SKINCARE -->
     <h3 class="menu-category-title">GHK-Cu &amp; Functional Peptide Skincare</h3>
 
     <div class="menu-item">
@@ -526,7 +546,6 @@
       <div class="menu-item-desc">Non-retinoid topical copper peptide formulations for collagen induction, skin repair, fine lines, and anti-inflammation—safe for sensitive skin.</div>
     </div>
 
-    <!-- INJECTABLES & IV THERAPY -->
     <h3 class="menu-category-title">Injectables &amp; Hydration IV Therapy</h3>
 
     <div class="menu-item">
@@ -580,7 +599,6 @@
   </div>
 </section>
 
-<!-- Final Intake Section -->
 <section id="intake" class="bottom-video-section">
   <video class="video-bg" autoplay loop muted playsinline>
     <source src="sculpture-flowers.mp4" type="video/mp4">
