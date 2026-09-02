@@ -1,426 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Wellness Hunny — Symptom-Based Functional Lab Menu</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg-dark: #120e0e;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(230, 201, 197, 0.18);
-    --rose-gold: #e8c5be;
-    --blush: #f7ece9;
-    --blush-soft: #fcf8f7;
-    --text-muted: #bdaeab;
-    --line: rgba(232, 197, 190, 0.15);
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0; background: var(--bg-dark); color: var(--blush);
-    font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7;
-    overflow-x: hidden; letter-spacing: 0.02em;
-  }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
-  h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; font-weight: 400; margin: 0; color: #ffffff; letter-spacing: 0.03em; }
-  
-  .eyebrow {
-    font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.22em;
-    font-size: 11px; font-weight: 500; color: var(--rose-gold);
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Lab Testing Menu | WellnessHunny</title>
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --accent: #D4AF37;
+            --bg-light: #F8F9FA;
+            --card-border: #E2E8F0;
+            --text-main: #333333;
+            --text-muted: #666666;
+        }
 
-  .btn {
-    font-family: 'Jost', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: 0.08em;
-    border: none; cursor: pointer; border-radius: 999px; padding: 14px 28px;
-    display: inline-block; text-decoration: none; transition: all 0.3s ease; text-align: center;
-  }
-  .btn-rose { 
-    background: linear-gradient(135deg, #ebd0ca 0%, #d4aba3 100%); 
-    color: #1a1211 !important; 
-    box-shadow: 0 4px 20px rgba(232, 197, 190, 0.2);
-  }
-  .btn-rose:hover { 
-    background: linear-gradient(135deg, #f5ded8 0%, #e0b8b0 100%); 
-    transform: translateY(-2px); 
-  }
-  .btn-outline { 
-    background: rgba(255, 255, 255, 0.02); 
-    color: var(--blush) !important; 
-    border: 1px solid var(--card-border); 
-  }
-  .btn-outline:hover { 
-    border-color: var(--rose-gold); 
-    color: var(--rose-gold) !important; 
-  }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+        }
 
-  .rx-banner { 
-    background: #181212; 
-    color: var(--text-muted); 
-    text-align: center; 
-    padding: 11px 20px; 
-    font-size: 13px; 
-    border-bottom: 1px solid var(--line); 
-  }
-  .rx-banner a { color: var(--rose-gold); text-decoration: none; margin-left: 6px; border-bottom: 1px solid var(--rose-gold); }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-  nav { padding: 22px 0; border-bottom: 1px solid var(--line); background: rgba(18, 14, 14, 0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
-  nav .wrap { display: flex; justify-content: space-between; align-items: center; }
-  .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; text-decoration: none; letter-spacing: 0.12em; }
-  .logo span { color: var(--rose-gold); font-style: italic; }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 2em;
+        }
 
-  section { padding: 80px 0; border-bottom: 1px solid var(--line); }
-  .section-head { text-align: center; margin-bottom: 40px; }
-  .section-head h2 { font-size: 42px; font-style: italic; }
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            font-style: italic;
+        }
 
-  .notice-box {
-    background: rgba(232, 197, 190, 0.04);
-    border: 1px solid var(--card-border);
-    border-radius: 16px;
-    padding: 20px 24px;
-    margin-bottom: 40px;
-    font-size: 13.5px;
-    color: var(--text-muted);
-  }
+        .info-box {
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
-  
-  .menu-category-title {
-    font-size: 30px;
-    font-style: italic;
-    color: #ffffff;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 10px;
-    margin: 50px 0 24px;
-  }
+        .info-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.1em;
+        }
 
-  .menu-item {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 24px;
-    backdrop-filter: blur(12px);
-  }
-  .menu-item-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
-  }
-  .menu-item-title { font-size: 24px; color: #ffffff; font-style: italic; }
-  .menu-item-price { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--rose-gold); font-style: italic; }
-  .symptom-tag {
-    display: inline-block;
-    background: rgba(232, 197, 190, 0.08);
-    color: var(--rose-gold);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 4px 12px;
-    border-radius: 999px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(232, 197, 190, 0.2);
-  }
-  .menu-item-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 14px; line-height: 1.6; }
-  .menu-item-bullets { color: var(--blush); font-size: 13.5px; padding-left: 0; list-style: none; margin: 12px 0; }
-  .menu-item-bullets li { position: relative; padding-left: 18px; margin-bottom: 6px; }
-  .menu-item-bullets li::before { content: "✦"; position: absolute; left: 0; color: var(--rose-gold); font-size: 10px; top: 2px; }
-  .menu-meta { font-size: 12.5px; color: var(--rose-gold); opacity: 0.85; border-top: 1px dashed var(--line); padding-top: 10px; margin-top: 14px; }
+        .info-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
 
-  footer { padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); }
-</style>
+        .info-box li {
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .section-title {
+            color: var(--primary);
+            border-bottom: 2px solid var(--card-border);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .panel-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .panel-grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .panel-card {
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .panel-name {
+            font-weight: bold;
+            font-size: 1.15em;
+            color: var(--primary);
+        }
+
+        .panel-price {
+            font-weight: bold;
+            font-size: 1.15em;
+            color: #10B981;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+
+        .panel-desc {
+            font-size: 0.95em;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .panel-markers {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            border-top: 1px dashed var(--card-border);
+            padding-top: 10px;
+            margin-top: auto;
+        }
+
+        .panel-markers span {
+            font-weight: 600;
+        }
+
+        .panel-details {
+            font-size: 0.8em;
+            color: var(--primary);
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        /* Table styles for targeted panels */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        th {
+            background-color: var(--bg-light);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #F8FAFC;
+        }
+
+        .td-price {
+            font-weight: bold;
+            color: #10B981;
+            white-space: nowrap;
+        }
+    </style>
 </head>
 <body>
 
-<div class="rx-banner">
-  Looking for Prescription HRT &amp; Tirzepatide Protocol Management? <a href="lipbunny-rx.html">Visit Lip Bunny Rx &rarr;</a>
+<div class="container">
+
+    <h1>Functional Lab Testing Menu</h1>
+    <div class="subtitle">Symptom-First Diagnostic Panels & Root-Cause Testing</div>
+
+    <div class="info-box">
+        <h3>Patient Information & Location Policies</h3>
+        <ul>
+            <li><strong>Eligibility:</strong> Currently available to Massachusetts residents only[cite: 3].</li>
+            <li><strong>In-Person Blood Draws:</strong> Performed locally at <strong>Lip Bunny Beauty</strong> (484 Highland Ave, Fall River, MA)[cite: 3].</li>
+            <li><strong>Remote Access Points:</strong> If drawn at a remote Access Point instead, a flat <strong>~$45 draw fee</strong> applies per visit[cite: 3].</li>
+            <li><strong>Lab Interpretation:</strong> Labs are offered à la carte[cite: 3]. Pair any test with our <strong>$150 Lab Interpretation Consultation</strong> for a expert functional review[cite: 3].</li>
+        </ul>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section-title">1. Foundational Baseline Panels</div>
+    <div class="panel-grid panel-grid-2">
+        
+        <div class="panel-card">
+            <div>
+                <div class="panel-header">
+                    <span class="panel-name">Comprehensive Female Health Panel</span>
+                    <span class="panel-price">$235</span>
+                </div>
+                <div class="panel-desc">Recommended entry point for evaluating energy, metabolic health, thyroid function, and foundational sex hormones[cite: 3]. Optional baseline for HRT or GLP-1 therapy[cite: 3].</div>
+            </div>
+            <div>
+                <div class="panel-markers">
+                    <span>Key Markers:</span> CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Free & Total Testosterone w/ SHBG, Estradiol, FSH, Lipid Panel, Vitamin D (25-OH), Vitamin B12, Homocysteine[cite: 3].
+                </div>
+                <div class="panel-details">In-Person Draw at Lip Bunny Beauty | 24-hr Results[cite: 3]</div>
+            </div>
+        </div>
+
+        <div class="panel-card">
+            <div>
+                <div class="panel-header">
+                    <span class="panel-name">Comprehensive Male Health Panel</span>
+                    <span class="panel-price">$245</span>
+                </div>
+                <div class="panel-desc">Comprehensive annual-style checkup for men evaluating metabolic health, androgen status, and cardiovascular health prior to starting protocols[cite: 3].</div>
+            </div>
+            <div>
+                <div class="panel-markers">
+                    <span>Key Markers:</span> CBC, CMP, HbA1c, TSH, Free T3, Free T4, TPO Antibodies, Free & Total Testosterone w/ SHBG, Estradiol, Free & Total PSA, Lipid Panel, Vitamin D (25-OH), Vitamin B12, Homocysteine[cite: 3].
+                </div>
+                <div class="panel-details">In-Person Draw at Lip Bunny Beauty | 24-hr Results[cite: 3]</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section-title">2. Targeted Symptom Panels</div>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Panel Name</th>
+                    <th>Target Symptoms / Focus</th>
+                    <th>Included Markers</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Menstrual Health & Hormone</strong></td>
+                    <td>Irregular cycles, PMS/PMDD, fertility, suspected estrogen dominance[cite: 3].</td>
+                    <td>HbA1c, Free & Total Testosterone w/ SHBG, FSH, LH, Estradiol, Estrone, Progesterone, Fasting Insulin, Prolactin, DHT[cite: 3].</td>
+                    <td class="td-price">$175</td>
+                </tr>
+                <tr>
+                    <td><strong>Thyroid Panel</strong></td>
+                    <td>Brain fog, fatigue, cold intolerance, hair thinning, weight changes[cite: 3].</td>
+                    <td>TSH, Free T3, Free T4, Reverse T3, TPO Antibodies, Thyroglobulin Antibodies[cite: 3].</td>
+                    <td class="td-price">$195</td>
+                </tr>
+                <tr>
+                    <td><strong>Autoimmune & Inflammation</strong></td>
+                    <td>Persistent joint pain, chronic swelling, unexplained rashes, family history[cite: 3].</td>
+                    <td>hs-CRP, ESR (Sed Rate), ANA w/ Reflex Titer, Rheumatoid Factor, Complement C3, Complement C4[cite: 3].</td>
+                    <td class="td-price">$185</td>
+                </tr>
+                <tr>
+                    <td><strong>CardioPro Advanced</strong></td>
+                    <td>Cardiovascular risk, family history of heart disease, longevity tracking[cite: 3].</td>
+                    <td>Triglycerides, Total/HDL/LDL, Cholesterol/HDL Ratio, sd LDL, hs-CRP, Homocysteine, Lipoprotein(a), Apo A-1, Apo B, Fasting Insulin, Lp-PLA2, Vitamin D 25-OH[cite: 3].</td>
+                    <td class="td-price">$285</td>
+                </tr>
+                <tr>
+                    <td><strong>COVID-19 Spike Antibody</strong></td>
+                    <td>Lingering post-viral fatigue or post-vaccination immune tracking[cite: 3].</td>
+                    <td>SARS-CoV-2 Spike Protein (S1-RBD) Neutralizing Antibody[cite: 3].</td>
+                    <td class="td-price">$135</td>
+                </tr>
+                <tr>
+                    <td><strong>Anemia Panel</strong></td>
+                    <td>Fatigue, pale skin, dizziness, shortness of breath[cite: 3].</td>
+                    <td>Comprehensive anemia screening markers to differentiate iron deficiency[cite: 3].</td>
+                    <td class="td-price">$95</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section-title">3. At-Home Stress & Adrenal Testing</div>
+    <div class="panel-grid">
+        <div class="panel-card">
+            <div>
+                <div class="panel-header">
+                    <span class="panel-name">Adrenal Fatigue Panel (Saliva x4)</span>
+                    <span class="panel-price">$100</span>
+                </div>
+                <div class="panel-desc">Non-invasive saliva collection designed to evaluate chronic stress, burnout, adrenal exhaustion, and diurnal rhythm disruptions[cite: 3].</div>
+            </div>
+            <div>
+                <div class="panel-markers">
+                    <span>Key Markers:</span> 4-point diurnal cortisol curve (AM, Noon, Evening, Night), DHEA, 17-OH Progesterone[cite: 3].
+                </div>
+                <div class="panel-details">Self-Collected at Home | Kit Shipped Directly to You[cite: 3]</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section-title">4. Specialty Functional Testing</div>
+    <div class="panel-grid panel-grid-2">
+        
+        <div class="panel-card">
+            <div>
+                <div class="panel-header">
+                    <span class="panel-name">Genova GI Effects® Stool Profile</span>
+                    <span class="panel-price">$340</span>
+                </div>
+                <div class="panel-desc">Gold-standard microbiome mapping for chronic bloating, IBS/IBD, constipation, food intolerances, and suspected leaky gut[cite: 3].</div>
+            </div>
+            <div>
+                <div class="panel-markers">
+                    <span>Key Markers:</span> Full microbiome DNA analysis (bacteria, yeast, parasites), digestion/absorption markers, calprotectin, secretory IgA, short-chain fatty acids[cite: 3].
+                </div>
+                <div class="panel-details">At-Home Stool Collection | Results in ~2–3 Weeks[cite: 3]</div>
+            </div>
+        </div>
+
+        <div class="panel-card">
+            <div>
+                <div class="panel-header">
+                    <span class="panel-name">Hair Tissue Mineral Analysis (HTMA)</span>
+                    <span class="panel-price">$125</span>
+                </div>
+                <div class="panel-desc">A 3-month lookback at tissue mineral balance and long-term heavy metal accumulation[cite: 3]. Ideal for chronic mineral depletion and slow metabolism[cite: 3].</div>
+            </div>
+            <div>
+                <div class="panel-markers">
+                    <span>Key Markers:</span> 35 elements including Calcium, Magnesium, Sodium, Potassium, Copper, Zinc, Lead, Mercury, Cadmium, and Aluminum[cite: 3].
+                </div>
+                <div class="panel-details">In-Office Hair Collection | Results in ~1–2 Weeks *(Not available to NY residents)*[cite: 3]</div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
-
-<nav>
-  <div class="wrap">
-    <a href="index.html" class="logo">THE WELLNESS <span>HUNNY</span></a>
-    <div>
-      <a href="#baseline" class="btn btn-outline" style="padding: 8px 16px; font-size: 12px;">Baseline Panels</a>
-      <a href="#symptoms" class="btn btn-outline" style="padding: 8px 16px; font-size: 12px;">Symptom Panels</a>
-      <a href="#athome" class="btn btn-outline" style="padding: 8px 16px; font-size: 12px;">At-Home Kits</a>
-      <a href="#specialty" class="btn btn-outline" style="padding: 8px 16px; font-size: 12px;">Specialty Labs</a>
-    </div>
-  </div>
-</nav>
-
-<section style="padding: 60px 0 20px;">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Self-Service Diagnostic Menu</span>
-      <h1 style="font-size: 52px; font-style: italic; margin-top: 10px;">Symptom-Based Blood &amp; Functional Labs</h1>
-      <p style="color: var(--text-muted); max-width: 680px; margin: 14px auto 0; font-size: 16px;">
-        Root-cause diagnostic testing tailored around what you are actually feeling. Currently available to Massachusetts patients.
-      </p>
-    </div>
-
-    <div class="notice-box">
-      <strong>Patient Notice &amp; Pricing Policies:</strong>
-      <ul style="margin: 8px 0 0; padding-left: 20px;">
-        <li><strong>Location:</strong> Blood draws are performed in-person at Lip Bunny Beauty (Fall River). Remote Access Point draws incur a single ~$45 draw fee per visit.</li>
-        <li><strong>Eligibility &amp; Care Scope:</strong> All panels are à la carte. WellnessHunny determines eligibility only — ongoing HRT and GLP-1 management is handled via referral providers.</li>
-        <li><strong>Optional Interpretation:</strong> Consider pairing any lab with our optional $150 Lab Interpretation Consultation for personalized root-cause guidance.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 1: BASELINE PANELS -->
-<section id="baseline">
-  <div class="wrap">
-    <span class="eyebrow">Comprehensive Baseline Testing</span>
-    <h2 class="menu-category-title">1. Foundational Wellness &amp; Screening Panels</h2>
-
-    <div class="grid">
-      <!-- Female Baseline -->
-      <div class="menu-item">
-        <span class="symptom-tag">Female Energy, Metabolism &amp; Hormones</span>
-        <div class="menu-item-head">
-          <span class="menu-item-title">Comprehensive Female Health Panel</span>
-          <span class="menu-item-price">$233.50</span>
-        </div>
-        <div class="menu-item-desc">An entry panel for women evaluating energy, metabolic health, thyroid function, and foundational sex hormones. Also serves as a helpful optional baseline for those exploring HRT or GLP-1 eligibility.</div>
-        <ul class="menu-item-bullets">
-          <li><strong>Blood &amp; Metabolism:</strong> CBC, CMP, HbA1c, Lipid Panel</li>
-          <li><strong>Thyroid Pathway:</strong> TSH, Free T3, Free T4, TPO Antibodies</li>
-          <li><strong>Hormones:</strong> Estradiol, FSH, Free &amp; Total Testosterone w/ SHBG</li>
-          <li><strong>Nutrients &amp; Inflammation:</strong> Vitamin D (25-OH), Vitamin B12, Homocysteine</li>
-        </ul>
-        <div class="menu-meta">Drawn at Lip Bunny Beauty (Fall River) • Results in 24 hrs • Remote Access Point +~$45</div>
-      </div>
-
-      <!-- Male Baseline -->
-      <div class="menu-item">
-        <span class="symptom-tag">Male Energy, Androgens &amp; Cardiovascular</span>
-        <div class="menu-item-head">
-          <span class="menu-item-title">Comprehensive Male Health Panel</span>
-          <span class="menu-item-price">$243.50</span>
-        </div>
-        <div class="menu-item-desc">An annual-style checkup and a helpful optional baseline for men evaluating metabolic health, androgen status, and heart markers prior to considering therapy protocols.</div>
-        <ul class="menu-item-bullets">
-          <li><strong>Blood &amp; Metabolism:</strong> CBC, CMP, HbA1c, Lipid Panel</li>
-          <li><strong>Thyroid Pathway:</strong> TSH, Free T3, Free T4, TPO Antibodies</li>
-          <li><strong>Hormones &amp; Prostate:</strong> Estradiol, Free &amp; Total Testosterone w/ SHBG, Free &amp; Total PSA</li>
-          <li><strong>Nutrients &amp; Inflammation:</strong> Vitamin D (25-OH), Vitamin B12, Homocysteine</li>
-        </ul>
-        <div class="menu-meta">Drawn at Lip Bunny Beauty (Fall River) • Results in 24 hrs • Remote Access Point +~$45</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 2: TARGETED SYMPTOM PANELS -->
-<section id="symptoms">
-  <div class="wrap">
-    <span class="eyebrow">Focused Diagnostic Panels</span>
-    <h2 class="menu-category-title">2. Targeted Symptom-Based Panels</h2>
-
-    <div class="menu-item">
-      <span class="symptom-tag">Irregular Cycles • PMS/PMDD • Fertility Concerns</span>
-      <div class="menu-item-head">
-        <span class="menu-item-title">Menstrual Health &amp; Hormone Panel</span>
-        <span class="menu-item-price">$175 suggested</span>
-      </div>
-      <div class="menu-item-desc">Maps the full pituitary-ovarian signaling pathway for women evaluating cycle irregularity, fertility, severe PMS/PMDD, or suspected estrogen dominance.</div>
-      <ul class="menu-item-bullets">
-        <li><strong>Markers:</strong> HbA1c, Free &amp; Total Testosterone w/ SHBG, FSH, LH, Estradiol, Estrone, Progesterone, Fasting Insulin, Prolactin, DHT</li>
-      </ul>
-      <div class="menu-meta">Drawn at Lip Bunny Beauty (Fall River) • Results in 24–72 hrs • Access Point +~$45</div>
-    </div>
-
-    <div class="menu-item">
-      <span class="symptom-tag">Brain Fog • Fatigue • Cold Intolerance • Hair Thinning</span>
-      <div class="menu-item-head">
-        <span class="menu-item-title">Thyroid Panel</span>
-        <span class="menu-item-price">$195 suggested</span>
-      </div>
-      <div class="menu-item-desc">A full diagnostic thyroid workup going far beyond a bare TSH check. Uncovers conversion issues and autoimmune Hashimoto's activity.</div>
-      <ul class="menu-item-bullets">
-        <li><strong>Markers:</strong> TSH, Free T3, Free T4, Reverse T3, TPO Antibodies, Thyroglobulin Antibodies</li>
-      </ul>
-      <div class="menu-meta">Drawn at Lip Bunny Beauty (Fall River) • Results in 24 hrs • Access Point +~$45</div>
-    </div>
-
-    <div class="menu-item">
-      <span class="symptom-tag">Joint Pain • Chronic Swelling • Autoimmune Suspicions</span>
-      <div class="menu-item-head">
-        <span class="menu-item-title">Autoimmune &amp; Inflammation Panel</span>
-        <span class="menu-item-price">$185 suggested</span>
-      </div>
-      <div class="menu-item-desc">Screens for systemic inflammation and key autoimmune antibodies for persistent joint discomfort, unexplained rashes, or strong family history.</div>
-      <ul class="menu-item-bullets">
-        <li><strong>Markers:</strong> hs-CRP, ESR (Sed Rate), ANA with Reflex Titer, Rheumatoid Factor, Complement C3, Complement C4</li>
-      </ul>
-      <div class="menu-meta">Drawn at Lip Bunny Beauty (Fall River) • Results in 24–48 hrs • Access Point +~$45</div>
-    </div>
-
-    <div class="menu-item">
-      <span class="symptom-tag">Cardiovascular Risk • Family History • Longevity</span>
-      <div class="menu-item-head">
-        <span class="menu-item-title">CardioPro Advanced Panel</span>
-        <span class="menu-item-price">$285 suggested</span>
-      </div>
-      <div class="menu-item-desc">Advanced cardiac risk screening going significantly deeper than basic cholesterol testing to evaluate particle counts, plaque activity, and vascular inflammation.</div>
-      <ul class="menu-item-bullets">
-        <li><strong>Markers:</strong> Triglycerides, Total/HDL/LDL, sd LDL, hs-CRP, Homocysteine, Lipoprotein(a), Apo A-1, Apo B, Fasting Insulin, Lp-PLA2, Vitamin D 25-OH</li>
-      </ul>
-      <div class="menu-meta">Drawn at Lip Bunny Beauty (Fall River) • Results in 24 hrs • Access Point +~$45</div>
-    </div>
-
-    <div class="grid">
-      <div class="menu-item">
-        <span class="symptom-tag">Post-Viral Fatigue • Immune Status</span>
-        <div class="menu-item-head">
-          <span class="menu-item-title">COVID-19 Spike Antibody Panel</span>
-          <span class="menu-item-price">$135 suggested</span>
-        </div>
-        <div class="menu-item-desc">Confirms neutralising antibody immune response for lingering post-viral fatigue or post-vaccination tracking.</div>
-        <div class="menu-meta">Results in 2–4 days • Access Point +~$45</div>
-      </div>
-
-      <div class="menu-item">
-        <span class="symptom-tag">Fatigue • Pale Skin • Shortness of Breath</span>
-        <div class="menu-item-head">
-          <span class="menu-item-title">Anemia Panel</span>
-          <span class="menu-item-price">$95 suggested</span>
-        </div>
-        <div class="menu-item-desc">Differentiates iron-deficiency anemia from nutrient or red blood cell production issues.</div>
-        <div class="menu-meta">Results in 24 hrs • Access Point +~$45</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 3: AT-HOME KITS -->
-<section id="athome">
-  <div class="wrap">
-    <span class="eyebrow">Self-Collected — Direct to Door</span>
-    <h2 class="menu-category-title">3. At-Home Saliva, Urine &amp; Fingerstick Kits</h2>
-
-    <div class="grid">
-      <div class="menu-item">
-        <span class="symptom-tag">Saliva Collection</span>
-        <div class="menu-item-head">
-          <span class="menu-item-title">Male / Female Hormone Panels</span>
-          <span class="menu-item-price">$185</span>
-        </div>
-        <div class="menu-item-desc">Non-invasive circadian hormone tracking shipped straight to your home.</div>
-        <ul class="menu-item-bullets">
-          <li><strong>Female:</strong> Estradiol, Estriol, Estrone, Progesterone, Testosterone, Cortisol, DHEA, Melatonin</li>
-          <li><strong>Male:</strong> Testosterone, DHEA, Melatonin, DHT, Cortisol</li>
-        </ul>
-      </div>
-
-      <div class="menu-item">
-        <span class="symptom-tag">Saliva Collection</span>
-        <div class="menu-item-head">
-          <span class="menu-item-title">Menopause &amp; Andropause Panels</span>
-          <span class="menu-item-price">$175 – $199</span>
-        </div>
-        <div class="menu-item-desc">Evaluates sex steroid and adrenal shifts during mid-life hormonal transitions. (Note: TRT is not prescribed via WellnessHunny).</div>
-      </div>
-
-      <div class="menu-item">
-        <span class="symptom-tag">4x Saliva Collection</span>
-        <div class="menu-item-head">
-          <span class="menu-item-title">Adrenal Fatigue Panel</span>
-          <span class="menu-item-price">$99</span>
-        </div>
-        <div class="menu-item-desc">Maps 4-point diurnal cortisol (AM, Noon, Evening, Night) alongside DHEA and 17-OH Progesterone for chronic stress and burnout.</div>
-      </div>
-
-      <div class="menu-item">
-        <span class="symptom-tag">4-Day Saliva Mapping</span>
-        <div class="menu-item-head">
-          <span class="menu-item-title">Hormone BluePrint Panel</span>
-          <span class="menu-item-price">$399</span>
-        </div>
-        <div class="menu-item-desc">Comprehensive 4-day multi-hormone mapping for complex or overlapping endocrine symptoms.</div>
-      </div>
-
-      <div class="menu-item">
-        <span class="symptom-tag">Urine Collection</span>
-        <div class="menu-item-head">
-          <span class="menu-item-title">Heavy Metal Basic &amp; Plus</span>
-          <span class="menu-item-price">$169 – $199</span>
-        </div>
-        <div class="menu-item-desc">Measures environmental toxic metal excretion (Basic), or adds 16 essential nutritional minerals (Plus).</div>
-      </div>
-
-      <div class="menu-item">
-        <span class="symptom-tag">At-Home Blood Fingerstick</span>
-        <div class="menu-item-head">
-          <span class="menu-item-title">Biobox Fingerstick Panels</span>
-          <span class="menu-item-price">$150 – $300 (est.)</span>
-        </div>
-        <div class="menu-item-desc">25+ functional panels requiring under 1mL of blood with fast 24–48 hour turnaround.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 4: SPECIALTY LABS -->
-<section id="specialty">
-  <div class="wrap">
-    <span class="eyebrow">Advanced Outside Partners</span>
-    <h2 class="menu-category-title">4. Specialty Functional Testing</h2>
-
-    <div class="menu-item">
-      <span class="symptom-tag">Genova Diagnostics • Stool Collection</span>
-      <div class="menu-item-head">
-        <span class="menu-item-title">Genova GI Effects® Stool Profile</span>
-        <span class="menu-item-price">$339</span>
-      </div>
-      <div class="menu-item-desc">The gold-standard gut microbiome workup for chronic bloating, IBS/IBD, constipation, food intolerances, or leaky gut. Uncovers dysbiosis, pathogens, and enzyme status.</div>
-      <ul class="menu-item-bullets">
-        <li><strong>Markers:</strong> Full microbiome DNA analysis (bacteria, yeast, parasites), digestion/absorption markers, calprotectin, secretory IgA, and short-chain fatty acids.</li>
-      </ul>
-      <div class="menu-meta">At-home stool kit • Results in ~2–3 weeks</div>
-    </div>
-
-    <div class="menu-item">
-      <span class="symptom-tag">Trace Elements Inc. • In-Office Hair Collection</span>
-      <div class="menu-item-head">
-        <span class="menu-item-title">Hair Tissue Mineral Analysis (HTMA)</span>
-        <span class="menu-item-price">$125 suggested</span>
-      </div>
-      <div class="menu-item-desc">A 3-month look-back at mineral status and heavy metal accumulation in tissue. Ideal for chronic mineral depletion, slow metabolic rate, and long-term toxic exposures.</div>
-      <ul class="menu-item-bullets">
-        <li><strong>Markers:</strong> 35 elements including Calcium, Magnesium, Sodium, Potassium, Zinc, Copper, Lead, Mercury, Cadmium, and Aluminum.</li>
-      </ul>
-      <div class="menu-meta">In-office collection • Results in ~1–2 weeks (Not NY-eligible)</div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CALL TO ACTION -->
-<section style="background: linear-gradient(180deg, rgba(18, 14, 14, 0.8) 0%, rgba(24, 18, 18, 0.95) 100%); padding: 100px 0;">
-  <div class="wrap" style="text-align: center; max-width: 760px;">
-    <span class="eyebrow">Take Action</span>
-    <h2 style="font-size: 44px; font-style: italic; margin: 12px 0 20px;">Ready to uncover your root cause?</h2>
-    <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 32px;">
-      Order your chosen lab panel or schedule a consultation with our team to help select the right testing plan for your unique symptoms.
-    </p>
-    <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-rose" style="padding: 16px 38px; font-size: 15px;">
-      Schedule Lab Appointment / Consultation &rarr;
-    </a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <p>&copy; 2026 The Wellness Hunny. Available to Massachusetts residents. All diagnostic labs offered à la carte for root-cause health exploration.</p>
-  </div>
-</footer>
 
 </body>
 </html>
