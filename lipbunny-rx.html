@@ -108,7 +108,6 @@
   .section-head { text-align: center; margin-bottom: 50px; }
   .section-head h2 { font-size: 44px; font-style: italic; font-weight: 300; }
 
-  /* Expanded Philosophy Section Height for Longer Video Display */
   .philo-section {
     position: relative;
     padding: 320px 0;
@@ -134,7 +133,7 @@
   }
   .card:hover { transform: translateY(-4px); border-color: rgba(232, 197, 190, 0.4); }
   .card h3 { font-size: 28px; margin: 10px 0 14px; color: var(--blush-soft); font-style: italic; }
-  .card p { color: var(--text-muted); font-size: 14.5px; margin-bottom: 24px; line-height: 1.7; }
+  .card p { color: var(--text-muted); font-size: 14.5px; margin-bottom: 16px; line-height: 1.7; }
   .card .tag { 
     background: rgba(232, 197, 190, 0.08); 
     color: var(--rose-gold); 
@@ -149,6 +148,13 @@
     margin-bottom: 14px; 
     align-self: flex-start; 
   }
+  .card-disclaimer {
+    font-size: 12px;
+    color: var(--rose-gold);
+    opacity: 0.85;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
 
   .process-box { 
     background: var(--card-bg); 
@@ -158,7 +164,7 @@
     margin-top: 20px; 
     backdrop-filter: blur(16px);
   }
-  .price-highlight { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--rose-gold); font-style: italic; font-weight: 300; margin: 12px 0; }
+  .price-highlight { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--rose-gold); font-style: italic; font-weight: 300; margin: 8px 0; }
 
   /* Menu Item Specific Scaffolding */
   .menu-category-title {
@@ -228,7 +234,7 @@
   </div>
 </div>
 
-<!-- Philosophy Section with Increased Vertical Spacing -->
+<!-- Philosophy Section -->
 <section class="philo-section">
   <video class="video-bg" autoplay loop muted playsinline>
     <source src="./sculpture-flowers.mp4" type="video/mp4">
@@ -260,6 +266,7 @@
         <h3>Tirzepatide / GLP Care</h3>
         <p>Covers continuous medical oversight, monthly virtual check-ins, lab monitoring, and Strive Pharmacy script management for standard or microdosed protocols.</p>
         <div class="price-highlight">$85 <span style="font-size: 16px; color: var(--text-muted); font-style: normal;">/ month</span></div>
+        <div class="card-disclaimer">*Clinical membership fee only. Excludes wholesale medication cost billed separately via Strive Pharmacy.</div>
         <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="width:100%; font-size:12px;">Start GLP-1 Care</a>
       </div>
 
@@ -268,6 +275,7 @@
         <h3>Bioidentical HRT</h3>
         <p>Comprehensive female hormone optimization, ongoing monitoring, dosing adjustments, and direct Strive Pharmacy script coordination.</p>
         <div class="price-highlight">$85 <span style="font-size: 16px; color: var(--text-muted); font-style: normal;">/ month</span></div>
+        <div class="card-disclaimer">*Clinical membership fee only. Excludes wholesale medication cost billed separately via Strive Pharmacy.</div>
         <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-outline" style="width:100%; font-size:12px;">Start HRT Care</a>
       </div>
 
@@ -276,6 +284,7 @@
         <h3>Combined Protocol</h3>
         <p>Simultaneous Tirzepatide (Full/Micro) &amp; Bioidentical HRT clinical management. Full metabolic and hormonal balance under one unified care plan.</p>
         <div class="price-highlight" style="color: #ffffff;">$120 <span style="font-size: 16px; color: var(--rose-gold); font-style: normal;">/ month</span></div>
+        <div class="card-disclaimer">*Clinical membership fee only. Excludes wholesale medication cost billed separately via Strive Pharmacy.</div>
         <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" class="btn btn-rose" style="width:100%; font-size:12px;">Start Combined Care</a>
       </div>
 
@@ -295,7 +304,7 @@
 
         <div>
           <h4 style="color: var(--rose-gold); font-size: 20px; margin-bottom: 8px; font-style: italic;">3. Wholesale Scripts via Strive</h4>
-          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">We never mark up medication prices. All compounded prescriptions are fulfilled directly through <strong>Strive Pharmacy</strong> and billed to you at wholesale cost.</p>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">We never mark up medication prices. All compounded prescriptions are fulfilled directly through <strong>Strive Pharmacy</strong> and billed directly to you at wholesale cost.</p>
         </div>
 
         <div>
@@ -320,32 +329,32 @@
 
     <div class="menu-item">
       <div class="menu-item-head">
-        <span class="menu-item-title">Microdosed Tirzepatide / Glycine / B12 (10mg/5mg/500mcg/mL)</span>
+        <span class="menu-item-title">Microdosed Tirzepatide / Glycine / B12</span>
         <span class="menu-item-price">$117.95 / 1mL Vial (4-Wk Supply)</span>
       </div>
-      <div class="menu-item-desc">Low-dose tirzepatide tailored for subtle metabolic enhancement, inflammation control, and anti-aging without aggressive weight loss. Maintained flat rather than titrated up[cite: 1].</div>
+      <div class="menu-item-desc">Low-dose tirzepatide tailored for subtle metabolic enhancement, inflammation control, and anti-aging without aggressive weight loss. Maintained flat rather than titrated up.</div>
       <ul class="menu-item-bullets">
-        <li>GLP-1/GIP receptor activation at lower intensity[cite: 1]</li>
-        <li>Glycine reduces GI side effects while supporting gut lining, sleep, and recovery[cite: 1]</li>
-        <li>B12 for cellular energy and neurological support[cite: 1]</li>
+        <li>GLP-1/GIP receptor activation at lower intensity</li>
+        <li>Glycine reduces GI side effects while supporting gut lining, sleep, and recovery</li>
+        <li>B12 for cellular energy and neurological support</li>
       </ul>
-      <div class="menu-meta">How Used: Inject 20 units (2mg) SQ once weekly[cite: 1]. Fulfilled via Strive Pharmacy (Includes cold shipping + supplies)[cite: 1].</div>
+      <div class="menu-meta">How Used: Weekly SQ injection. Fulfilled via Strive Pharmacy (Includes cold shipping + supplies).</div>
     </div>
 
     <div class="menu-item">
       <div class="menu-item-head">
         <span class="menu-item-title">Titrated Tirzepatide / Glycine / B12 (Weight Loss Protocol)</span>
-        <span class="menu-item-price">$117.95 – $338.95 / stage</span>
+        <span class="menu-item-price">$117.95 – $338.95 / vial</span>
       </div>
-      <div class="menu-item-desc">Standard escalating GLP-1/GIP protocol for weight loss and metabolic repair[cite: 1]. Dosing increases every 4 weeks per clinical response[cite: 1].</div>
+      <div class="menu-item-desc">Standard GLP-1/GIP protocol for weight loss and metabolic repair. Your dosage is titrated gradually to your unique needs based on progress and clinical response.</div>
       <ul class="menu-item-bullets">
-        <li>Weeks 1–4 (2mg/wk — 1mL vial): $117.95[cite: 1]</li>
-        <li>Weeks 5–8 (4mg/wk — 2mL vial): $173.95[cite: 1]</li>
-        <li>Weeks 9–12 (7mg/wk — 3mL vial): $223.95[cite: 1]</li>
-        <li>Weeks 13–16 (9mg/wk — 4mL vial): $266.45[cite: 1]</li>
-        <li>Weeks 17–20+ (12–14mg/wk — 6mL vial): $338.95[cite: 1]</li>
+        <li>Starting Dose (1mL vial): $117.95</li>
+        <li>Level 1 (2mL vial): $173.95</li>
+        <li>Level 2 (3mL vial): $223.95</li>
+        <li>Level 3 (4mL vial): $266.45</li>
+        <li>Level 4 (6mL vial): $338.95</li>
       </ul>
-      <div class="menu-meta">How Used: Weekly SQ injection[cite: 1]. Vials discarded after 28 days per USP compliance[cite: 1].</div>
+      <div class="menu-meta">How Used: Weekly SQ injection. Vials discarded after 28 days per USP compliance.</div>
     </div>
 
     <!-- 2. BIOIDENTICAL HRT -->
@@ -356,8 +365,8 @@
         <span class="menu-item-title">BIEST Cream Ht 50/50 (Estradiol / Estriol)</span>
         <span class="menu-item-price">$73.95 – $103.75 (8–12 Wks)</span>
       </div>
-      <div class="menu-item-desc">Balanced bi-estrogen cream for menopausal symptom management, bone density, and cognitive clarity[cite: 1]. Estriol buffers tissue proliferation while strengthening vaginal/urethral tissue[cite: 1].</div>
-      <div class="menu-meta">Doses available: 0.25mg/day, 0.5mg/day, 1mg/day, 2mg/day, and 4mg/day[cite: 1]. Applied daily to inner forearm/wrist[cite: 1].</div>
+      <div class="menu-item-desc">Balanced bi-estrogen cream for menopausal symptom management, bone density, and cognitive clarity. Estriol buffers tissue proliferation while strengthening vaginal/urethral tissue.</div>
+      <div class="menu-meta">Applied daily to inner forearm/wrist. Strengths customized to clinical lab response.</div>
     </div>
 
     <div class="menu-item">
@@ -365,8 +374,8 @@
         <span class="menu-item-title">Estradiol Cream Ht</span>
         <span class="menu-item-price">$68.95 – $104.95 (8–12 Wks)</span>
       </div>
-      <div class="menu-item-desc">Bioidentical topical estradiol cream for hot flashes, sleep support, mood stabilization, and cardiovascular health[cite: 1].</div>
-      <div class="menu-meta">Doses available: 0.25mg/day up to 4mg/day[cite: 1]. Matched concentration to keep daily volume to ~1g[cite: 1].</div>
+      <div class="menu-item-desc">Bioidentical topical estradiol cream for hot flashes, sleep support, mood stabilization, and cardiovascular health.</div>
+      <div class="menu-meta">Applied daily to inner forearm. Concentrated to maintain comfortable application volume.</div>
     </div>
 
     <div class="menu-item">
@@ -374,26 +383,17 @@
         <span class="menu-item-title">Bioidentical Progesterone Capsules (Standard &amp; Extended Release E4M)</span>
         <span class="menu-item-price">$54.95 – $59.95 (~7-Wk Supply)</span>
       </div>
-      <div class="menu-item-desc">Oral progesterone for deep sleep promotion, uterine lining protection, anxiety reduction, and PMS/PMDD relief[cite: 1]. E4M extended-release offers smoother overnight levels[cite: 1].</div>
-      <div class="menu-meta">Strengths: 50mg, 100mg, 150mg, 200mg, 250mg, 300mg[cite: 1]. Taken at bedtime[cite: 1].</div>
+      <div class="menu-item-desc">Oral progesterone for deep sleep promotion, uterine lining protection, anxiety reduction, and PMS/PMDD relief. E4M extended-release offers smoother overnight levels.</div>
+      <div class="menu-meta">Taken orally at bedtime. Dose tailored based on hormone testing.</div>
     </div>
 
     <div class="menu-item">
       <div class="menu-item-head">
-        <span class="menu-item-title">Testosterone Cream 4mg/g (Versabase)</span>
+        <span class="menu-item-title">Testosterone Cream (Versabase)</span>
         <span class="menu-item-price">$27.95 – $35.15 (4-Wk Supply)</span>
       </div>
-      <div class="menu-item-desc">Targeted micro-dose testosterone cream for female libido restoration, energy, lean body composition, and mental clarity[cite: 1].</div>
-      <div class="menu-meta">Dosing: 0.5mg/day to 10mg/day applied daily to inner forearm[cite: 1].</div>
-    </div>
-
-    <div class="menu-item">
-      <div class="menu-item-head">
-        <span class="menu-item-title">DHEA Oral Capsules</span>
-        <span class="menu-item-price">$54.95 – $90.95 (30–90 Day Supply)</span>
-      </div>
-      <div class="menu-item-desc">Adrenal androgen precursor supporting motivation, energy, libido, and immune balance[cite: 1].</div>
-      <div class="menu-meta">Strengths: 10mg to 100mg[cite: 1]. Taken daily in AM[cite: 1].</div>
+      <div class="menu-item-desc">Targeted micro-dose testosterone cream for female libido restoration, energy, lean body composition, and mental clarity.</div>
+      <div class="menu-meta">Applied daily to inner forearm. Dose titrated based on androgen levels.</div>
     </div>
 
     <!-- 3. GHK-CU & FUNCTIONAL SKINCARE -->
@@ -404,28 +404,28 @@
         <span class="menu-item-title">STELLA+ &amp; STELLA LIGHT (Estriol / GHK-Cu / Tretinoin / Niacinamide)</span>
         <span class="menu-item-price">$113.95 – $218.95</span>
       </div>
-      <div class="menu-item-desc">Advanced estrogen-receptor topical creams designed specifically for perimenopausal skin changes, elasticity loss, and collagen building[cite: 1].</div>
+      <div class="menu-item-desc">Advanced estrogen-receptor topical creams designed specifically for perimenopausal skin changes, elasticity loss, and collagen building.</div>
       <ul class="menu-item-bullets">
-        <li>STELLA+ (3% GHK-Cu / 0.3% Estriol / 0.01% Tretinoin): $143.95 (30-day max supply)[cite: 1]</li>
-        <li>STELLA LIGHT (1% GHK-Cu / 0.3% Estriol / 4% Niacinamide / 0.01% Tretinoin): $113.95 – $218.95 (30–90g)[cite: 1]</li>
+        <li>STELLA+ (GHK-Cu / Estriol / Tretinoin): $143.95 (30-day max supply)</li>
+        <li>STELLA LIGHT (GHK-Cu / Estriol / Niacinamide / Tretinoin): $113.95 – $218.95 (30–90g)</li>
       </ul>
-      <div class="menu-meta">How Used: Pea-sized amount applied topically at bedtime[cite: 1].</div>
+      <div class="menu-meta">How Used: Pea-sized amount applied topically at bedtime.</div>
     </div>
 
     <div class="menu-item">
       <div class="menu-item-head">
-        <span class="menu-item-title">Cashmere Cream (Caffeine / GHK-Cu / Tretinoin / Niacinamide 1/3/0.01%)</span>
+        <span class="menu-item-title">Cashmere Cream (Caffeine / GHK-Cu / Tretinoin / Niacinamide)</span>
         <span class="menu-item-price">$143.95 (6-Wk Supply)</span>
       </div>
-      <div class="menu-item-desc">Potent multi-active cream for fine line reduction, pore refinement, microcirculation, and structural collagen stimulation[cite: 1].</div>
+      <div class="menu-item-desc">Potent multi-active cream for fine line reduction, pore refinement, microcirculation, and structural collagen stimulation.</div>
     </div>
 
     <div class="menu-item">
       <div class="menu-item-head">
-        <span class="menu-item-title">AquaBiome &amp; Skin Rejuvenation GHK-Cu Creams (0.5% – 3%)</span>
+        <span class="menu-item-title">AquaBiome &amp; Skin Rejuvenation GHK-Cu Creams</span>
         <span class="menu-item-price">$108.95 – $166.95</span>
       </div>
-      <div class="menu-item-desc">Non-retinoid topical copper peptide formulations for collagen induction, skin repair, fine lines, and anti-inflammation—safe for sensitive skin[cite: 1].</div>
+      <div class="menu-item-desc">Non-retinoid topical copper peptide formulations for collagen induction, skin repair, fine lines, and anti-inflammation—safe for sensitive skin.</div>
     </div>
 
   </div>
