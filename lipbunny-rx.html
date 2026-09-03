@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Wellness Hunny — Root-Cause Wellness Coaching</title>
+<title>Lip Bunny Rx — Bunny Rx Club Clinical Care</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -65,6 +65,7 @@
     background: rgba(232, 197, 190, 0.05);
   }
 
+  /* Floating Sticky Book Intake Button */
   .sticky-intake-btn {
     position: fixed;
     bottom: 24px;
@@ -74,6 +75,11 @@
     font-size: 13.5px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
+    animation: fadeInBtn 0.5s ease-in-out;
+  }
+  @keyframes fadeInBtn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .hunny-banner { 
@@ -89,6 +95,7 @@
   }
   .hunny-banner a { color: var(--rose-gold); text-decoration: none; margin-left: 6px; font-weight: 400; border-bottom: 1px solid var(--rose-gold); }
 
+  /* Navigation Bar */
   nav { padding: 18px 0; border-bottom: 1px solid var(--line); position: absolute; width: 100%; top: 41px; z-index: 10; background: rgba(18, 14, 14, 0.85); backdrop-filter: blur(10px); }
   nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
   .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; font-weight: 400; text-decoration: none; letter-spacing: 0.12em; flex-shrink: 0; }
@@ -129,6 +136,15 @@
   .section-head { text-align: center; margin-bottom: 50px; }
   .section-head h2 { font-size: 44px; font-style: italic; font-weight: 300; }
 
+  .bottom-video-section {
+    position: relative;
+    padding: 140px 0;
+    color: #ffffff;
+    overflow: hidden;
+    background: #120e0e;
+    border-bottom: 1px solid var(--line);
+  }
+
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
   .card { 
     background: var(--card-bg); 
@@ -158,6 +174,13 @@
     margin-bottom: 14px; 
     align-self: flex-start; 
   }
+  .card-disclaimer {
+    font-size: 12px;
+    color: var(--rose-gold);
+    opacity: 0.85;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
 
   .holistic-banner {
     background: linear-gradient(135deg, rgba(232, 197, 190, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
@@ -181,7 +204,45 @@
     margin: 0;
   }
 
+  .process-box { 
+    background: var(--card-bg); 
+    border: 1px solid var(--card-border); 
+    border-radius: 28px; 
+    padding: 48px; 
+    margin-top: 20px; 
+    backdrop-filter: blur(16px);
+  }
   .price-highlight { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--rose-gold); font-style: italic; font-weight: 300; margin: 8px 0; }
+
+  .menu-category-title {
+    font-size: 32px;
+    font-style: italic;
+    color: #ffffff;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+    margin: 60px 0 30px;
+  }
+  .menu-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .menu-item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .menu-item-title { font-size: 22px; color: #ffffff; font-style: italic; }
+  .menu-item-price { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--rose-gold); font-style: italic; }
+  .menu-item-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 12px; }
+  .menu-item-bullets { color: var(--blush); font-size: 13.5px; padding-left: 0; list-style: none; margin: 12px 0; }
+  .menu-item-bullets li { position: relative; padding-left: 18px; margin-bottom: 6px; }
+  .menu-item-bullets li::before { content: "✦"; position: absolute; left: 0; color: var(--rose-gold); font-size: 10px; top: 2px; }
+  .menu-meta { font-size: 12.5px; color: var(--rose-gold); opacity: 0.85; border-top: 1px dashed var(--line); padding-top: 8px; margin-top: 12px; }
 
   footer { padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); letter-spacing: 0.04em; position: relative; z-index: 5; background: var(--bg-dark); }
 
@@ -190,6 +251,8 @@
   }
   @media (max-width: 720px) {
     .hero-text h1 { font-size: 40px; }
+    .process-box { padding: 28px; }
+    .bottom-video-section { padding: 100px 0; }
     .sticky-intake-btn { bottom: 16px; right: 16px; padding: 12px 22px; font-size: 12.5px; }
     .holistic-banner { padding: 24px 20px; }
   }
@@ -197,100 +260,315 @@
 </head>
 <body>
 
-<a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose sticky-intake-btn">Book Coaching &rarr;</a>
+<a href="#intake" class="btn btn-rose sticky-intake-btn">Book Intake &rarr;</a>
 
 <div class="hunny-banner">
-  Looking for Prescription GLP-1, HRT &amp; Medical Clinical Care? <a href="lipbunny-rx.html">Visit Lip Bunny Rx &rarr;</a>
+  Looking for Root-Cause Wellness Coaching &amp; Protocols? <a href="https://www.thewellnesshunny.com" target="_blank" rel="noopener">&larr; Visit The Wellness Hunny</a>
 </div>
 
 <nav>
   <div class="wrap">
-    <a href="./" class="logo">THE WELLNESS <span>HUNNY</span></a>
+    <a href="lipbunny-rx.html" class="logo">LIP BUNNY <span>Rx</span></a>
     <ul class="nav-links">
-      <li><a href="#coaching">Coaching Options</a></li>
-      <li><a href="#functional-testing">Functional Labs</a></li>
-      <li><a href="lipbunny-rx.html">Lip Bunny Rx Care</a></li>
-      <li><a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose" style="padding: 10px 22px; font-size: 13px;">Client Portal &rarr;</a></li>
+      <li><a href="#pricing">Bunny Rx Club</a></li>
+      <li><a href="#labs">Lab Options</a></li>
+      <li><a href="#menu">Prescription Menu</a></li>
+      <li><a href="#intake">Book Intake</a></li>
+      <li><a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose" style="padding: 10px 22px; font-size: 13px;">Malla Portal &rarr;</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="video-hero">
   <video class="video-bg" autoplay loop muted playsinline>
-    <source src="sculpture-flowers.mp4" type="video/mp4">
+    <source src="statue-petals.mp4" type="video/mp4">
   </video>
   <div class="video-overlay"></div>
   <div class="wrap">
     <div class="hero-text">
-      <span class="eyebrow">Root-Cause Wellness &amp; Functional Protocol Coaching</span>
-      <h1>Nourish your body at the cellular level.</h1>
-      <p>Customized root-cause wellness coaching, gut health optimization, targeted nutrition protocols, and advanced functional lab testing—designed to revitalize your energy, balance your system, and optimize your vitality.</p>
+      <span class="eyebrow">Medical Telehealth &amp; In-Person Clinical Care</span>
+      <h1>We don't just write prescriptions, we optimize quality of life.</h1>
+      <p>Precision Bioidentical HRT, Full-Dose &amp; Microdosed Tirzepatide, and GHK-Cu Functional Aesthetics—available via 100% virtual appointments across Massachusetts or in-person at Lip Bunny Beauty. Backed by direct 24/7 provider access and prescriptions billed at wholesale cost.</p>
       <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-        <a href="#coaching" class="btn btn-rose">Explore Coaching &rarr;</a>
-        <a href="lipbunny-rx.html" class="btn btn-outline">Looking for Clinical Rx?</a>
+        <a href="#pricing" class="btn btn-rose">Explore Bunny Rx Club &rarr;</a>
+        <a href="#intake" class="btn btn-outline">Book Intake</a>
       </div>
     </div>
   </div>
 </div>
 
-<section id="coaching">
+<section id="pricing">
   <div class="wrap">
     
     <div class="holistic-banner">
-      <h3>Root-Cause Protocol &amp; Lifestyle Design</h3>
-      <p>True wellness begins when we address the underlying drivers of imbalance. Through personalized nutritional strategy, lifestyle recalibration, and specialized functional testing, we craft targeted protocols that support your long-term vitality and resilience.</p>
+      <h3>Complete Total-Body Clinical Oversight</h3>
+      <p>We believe true medical wellness goes beyond single prescriptions. The <strong>Bunny Rx Club</strong> provides mandatory clinical oversight for GLP-1 and HRT therapies—incorporating monthly 30-minute virtual check-ins, direct 24/7 on-call provider access, symptom management, ongoing lab monitoring, and nutrition support. <em>Serving Massachusetts residents only.</em></p>
     </div>
 
     <div class="section-head">
-      <span class="eyebrow">Personalized Wellness Services</span>
-      <h2>Wellness Coaching Options</h2>
+      <span class="eyebrow">Mandatory Clinical Oversight</span>
+      <h2>Bunny Rx Club Membership</h2>
       <p style="color: var(--text-muted); max-width: 620px; margin: 12px auto 0; font-size: 15px;">
-        Flexible, 1-on-1 root-cause coaching available virtually or in-person. Choose between single drop-in visits or ongoing monthly support.
+        Required for all GLP-1 and HRT patients. Flexible care delivered via 100% virtual appointments with in-person or remote lab options.
       </p>
     </div>
 
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 32px;">
       
       <div class="card" style="text-align: center; align-items: center;">
-        <span class="tag">Flexible Support</span>
-        <h3>Drop-In Coaching Visit</h3>
-        <p>A focused 30-minute 1-on-1 consultation ideal for targeted protocol reviews, dietary adjustments, gut support strategy, or quick troubleshooting.</p>
-        <div class="price-highlight">$65 <span style="font-size: 16px; color: var(--text-muted); font-style: normal;">/ 30-min visit</span></div>
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%; font-size:12px;">Book Drop-In Session</a>
+        <span class="tag">Required Membership</span>
+        <h3>GLP-1 Membership</h3>
+        <p>Covers 1-hr initial consult, 1-hr lab review, 30-min virtual monthly check-ins, lab monitoring, 24/7 on-call provider access, and medication coordination.</p>
+        <div class="price-highlight">$85 <span style="font-size: 16px; color: var(--text-muted); font-style: normal;">/ month</span></div>
+        <div class="card-disclaimer">*Clinical membership fee only. Prescriptions are sold at cost and shipped directly to your door.</div>
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%; font-size:12px;">Join GLP-1 Club</a>
+      </div>
+
+      <div class="card" style="text-align: center; align-items: center;">
+        <span class="tag">Required Membership</span>
+        <h3>HRT Membership</h3>
+        <p>Comprehensive female hormone oversight, 30-min monthly virtual check-ins, continuous dosing adjustments, 24/7 on-call provider access, and prescription coordination.</p>
+        <div class="price-highlight">$85 <span style="font-size: 16px; color: var(--text-muted); font-style: normal;">/ month</span></div>
+        <div class="card-disclaimer">*Clinical membership fee only. Prescriptions are sold at cost and shipped directly to your door.</div>
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%; font-size:12px;">Join HRT Club</a>
       </div>
 
       <div class="card" style="text-align: center; align-items: center; border-color: var(--rose-gold); background: rgba(232, 197, 190, 0.05);">
-        <span class="tag" style="background: var(--rose-gold); color: #120e0e;">Most Popular • Continuous Care</span>
-        <h3>Monthly Wellness Pass</h3>
-        <p>Includes weekly 30-minute 1-on-1 coaching sessions, continuous protocol adjustments, direct messaging support, and ongoing accountability for total transformation.</p>
-        <div class="price-highlight" style="color: #ffffff;">$200 <span style="font-size: 16px; color: var(--rose-gold); font-style: normal;">/ month</span></div>
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose" style="width:100%; font-size:12px;">Get Monthly Pass</a>
+        <span class="tag" style="background: var(--rose-gold); color: #120e0e;">Best Value • Dual Care</span>
+        <h3>Combination Membership</h3>
+        <p>Unified GLP-1 + HRT clinical management. Includes 1-hr initial consult, 1-hr lab review, 30-min monthly check-ins, 24/7 provider access, and dual protocol tracking.</p>
+        <div class="price-highlight" style="color: #ffffff;">$120 <span style="font-size: 16px; color: var(--rose-gold); font-style: normal;">/ month</span></div>
+        <div class="card-disclaimer">*Clinical membership fee only. Prescriptions are sold at cost and shipped directly to your door.</div>
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose" style="width:100%; font-size:12px;">Join Combination Club</a>
       </div>
 
+    </div>
+
+    <!-- WHAT'S INCLUDED & PROCESS BOX -->
+    <div class="process-box" style="margin-top: 0;">
+      <h3 style="font-size: 28px; font-style: italic; color: var(--rose-gold); margin-bottom: 24px; text-align: center;">What's Included in Every Bunny Rx Membership</h3>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); text-align: center;">
+        <div>
+          <h4 style="color: #ffffff; font-size: 18px; margin-bottom: 6px;">1-Hour Consult &amp; Review</h4>
+          <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6;">Includes comprehensive 1-hour initial virtual consultation plus 1-hour comprehensive lab review session.</p>
+        </div>
+        <div>
+          <h4 style="color: #ffffff; font-size: 18px; margin-bottom: 6px;">30-Min Monthly Check-Ins</h4>
+          <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6;">Regular virtual check-ins for tracking, prescription adjustments, symptom management, and nutrition support.</p>
+        </div>
+        <div>
+          <h4 style="color: #ffffff; font-size: 18px; margin-bottom: 6px;">24/7 Direct Provider Access</h4>
+          <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6;">Direct 24/7 on-call access to your care provider whenever questions or symptom adjustments arise.</p>
+        </div>
+        <div>
+          <h4 style="color: #ffffff; font-size: 18px; margin-bottom: 6px;">At-Cost Prescriptions</h4>
+          <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6;">Medications sold strictly at wholesale cost and shipped directly from compounding pharmacy to your home.</p>
+        </div>
+      </div>
     </div>
 
   </div>
 </section>
 
-<section id="functional-testing">
+<section id="labs">
   <div class="wrap">
-    
-    <div class="holistic-banner" style="border-color: var(--rose-gold); background: rgba(232, 197, 190, 0.08);">
-      <h3>Medical Prescriptions &amp; Clinical Telehealth</h3>
-      <p style="margin-bottom: 16px;">
-        Need clinical prescription care, Bioidentical HRT, or full-dose GLP-1 weight loss protocols? Explore our medical sister-brand, <strong>Lip Bunny Rx</strong>.
+    <div class="section-head">
+      <span class="eyebrow">Diagnostic Options</span>
+      <h2>Lab Draw Locations &amp; Options</h2>
+      <p style="color: var(--text-muted); max-width: 680px; margin: 12px auto 0; font-size: 15px;">
+        All appointments are 100% virtual, but lab draws require blood collection. We offer three convenient draw options across Massachusetts.
       </p>
-      <a href="lipbunny-rx.html" class="btn btn-rose">
-        Explore Lip Bunny Rx &rarr;
+    </div>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-bottom: 32px;">
+      
+      <div class="menu-item" style="margin-bottom: 0; text-align: center;">
+        <h3 class="menu-item-title" style="font-size: 24px;">1. In-Person HQ Location</h3>
+        <div class="menu-item-price" style="margin: 10px 0;">Included in Membership</div>
+        <div class="menu-item-desc">
+          Visit our primary office in <strong>Fall River, MA</strong> for your required lab draws. <em>(Boston location coming soon!)</em>
+        </div>
+      </div>
+
+      <div class="menu-item" style="margin-bottom: 0; text-align: center; border-color: var(--rose-gold);">
+        <h3 class="menu-item-title" style="font-size: 24px;">2. Access Hotspots</h3>
+        <div class="menu-item-price" style="margin: 10px 0;">+$45 Draw Fee</div>
+        <div class="menu-item-desc">
+          Visit any partner <strong>Labcorp Patient Service Center</strong> or Access Medical Labs draw station throughout Massachusetts.
+        </div>
+        <a href="https://www.labcorp.com/labs-and-appointments" target="_blank" rel="noopener" class="btn btn-rose" style="padding: 8px 18px; font-size: 12px; margin-top: 10px;">
+          Find Nearby Labcorp Draw Site &rarr;
+        </a>
+      </div>
+
+      <div class="menu-item" style="margin-bottom: 0; text-align: center;">
+        <h3 class="menu-item-title" style="font-size: 24px;">3. Remote Mobile Draw</h3>
+        <div class="menu-item-price" style="margin: 10px 0;">+$200+ Draw Fee</div>
+        <div class="menu-item-desc">
+          A licensed mobile phlebotomist comes directly to your home or office. Available in qualifying MA areas upon request.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- WELLNESS HUNNY PROMOTIONAL CALLOUT -->
+    <div class="holistic-banner" style="margin-bottom: 0; border-color: var(--rose-gold); background: rgba(232, 197, 190, 0.08);">
+      <h3>Looking for Root-Cause Coaching &amp; Functional Testing?</h3>
+      <p style="margin-bottom: 16px;">
+        Enhance your journey with holistic wellness coaching, diet optimization, gut health protocols, and heavy metal/nutrient testing through <strong>The Wellness Hunny</strong>.
+      </p>
+      <p style="font-size: 14px; color: var(--rose-gold); margin-bottom: 20px;">
+        <strong>Drop-In Coaching Visit:</strong> $65 / 30-min session &nbsp;|&nbsp; <strong>Monthly Wellness Pass:</strong> $200 / month (Weekly 30-min check-ins)
+      </p>
+      <a href="https://www.thewellnesshunny.com" target="_blank" rel="noopener" class="btn btn-rose">
+        Visit The Wellness Hunny &rarr;
       </a>
     </div>
 
   </div>
 </section>
 
+<section id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Focused Clinical Menu</span>
+      <h2>Prescription Protocol Options</h2>
+    </div>
+
+    <h3 class="menu-category-title">Tirzepatide &amp; Metabolic Protocols</h3>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Microdosed Tirzepatide / Glycine / B12</span>
+        <span class="menu-item-price">$120 / 1mL Vial (At Cost)</span>
+      </div>
+      <div class="menu-item-desc">Low-dose tirzepatide tailored for subtle metabolic enhancement, moderate weight loss, reduced bloating, puffiness, and systemic inflammation reduction without aggressive titration. Maintained flat for optimal anti-aging and physiological support.</div>
+      <ul class="menu-item-bullets">
+        <li>Promotes moderate, steady weight loss while reducing bloating and water retention</li>
+        <li>Targeted systemic inflammation reduction and metabolic health maintenance</li>
+        <li>Glycine reduces GI side effects while supporting gut lining, sleep, and recovery</li>
+        <li>B12 for cellular energy, metabolic balance, and neurological support</li>
+      </ul>
+      <div class="menu-meta">How Used: Weekly SQ injection. Shipped directly from compounding pharmacy at cost.</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Titrated Tirzepatide / Glycine / B12 (Weight Loss Protocol)</span>
+        <span class="menu-item-price">$120 – $340 / vial (At Cost)</span>
+      </div>
+      <div class="menu-item-desc">Standard GLP-1/GIP protocol for weight loss and metabolic repair. Your dosage is titrated gradually to your unique needs based on progress and clinical response.</div>
+      <ul class="menu-item-bullets">
+        <li>Starting Dose (1mL vial): $120</li>
+        <li>Level 1 (2mL vial): $175</li>
+        <li>Level 2 (3mL vial): $225</li>
+        <li>Level 3 (4mL vial): $270</li>
+        <li>Level 4 (6mL vial): $340</li>
+      </ul>
+      <div class="menu-meta">How Used: Weekly SQ injection. Sold at wholesale cost and shipped directly to patient.</div>
+    </div>
+
+    <h3 class="menu-category-title">Bioidentical HRT &amp; Hormone Optimization</h3>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">BIEST Cream Ht 50/50 (Estradiol / Estriol)</span>
+        <span class="menu-item-price">$75 – $105 (At Cost)</span>
+      </div>
+      <div class="menu-item-desc">Balanced bi-estrogen cream for menopausal symptom management, bone density, and cognitive clarity. Estriol buffers tissue proliferation while strengthening tissue.</div>
+      <div class="menu-meta">Applied daily. Strengths customized to clinical lab response.</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Bioidentical Progesterone Capsules</span>
+        <span class="menu-item-price">$55 – $60 (At Cost)</span>
+      </div>
+      <div class="menu-item-desc">Oral progesterone for deep sleep promotion, uterine lining protection, anxiety reduction, and PMS/PMDD relief.</div>
+      <div class="menu-meta">Taken orally at bedtime. Dose tailored based on hormone testing.</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Testosterone Cream</span>
+        <span class="menu-item-price">$30 – $38 (At Cost)</span>
+      </div>
+      <div class="menu-item-desc">Targeted micro-dose topical testosterone cream designed specifically for female libido restoration, physical energy, lean body composition, and mental clarity.</div>
+      <div class="menu-meta">Applied daily. Dose titrated based on androgen levels.</div>
+    </div>
+
+    <h3 class="menu-category-title">GHK-Cu &amp; Functional Peptide Skincare</h3>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Estriol / GHK-Cu / Tretinoin Topical Cream</span>
+        <span class="menu-item-price">$115 – $220 (At Cost)</span>
+      </div>
+      <div class="menu-item-desc">Advanced estrogen-receptor topical cream combining estriol, GHK-Cu copper peptide, and tretinoin for perimenopausal skin changes, elasticity, and collagen building.</div>
+      <div class="menu-meta">Supply: 30-Day to 90-Day Options available. Shipped directly at cost.</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">Caffeine / GHK-Cu / Tretinoin / Niacinamide Cream (1% / 3% / 0.01%)</span>
+        <span class="menu-item-price">$143.95 (At Cost)</span>
+      </div>
+      <div class="menu-item-desc">Multi-active topical cream combining caffeine, GHK-Cu peptide, tretinoin, and niacinamide for collagen stimulation, microcirculation, pore refinement, and brightening.</div>
+      <div class="menu-meta">Supply: 6-Week Supply (30gm tube). Cold shipping included.</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">GHK-Cu Copper Peptide Cream (3%)</span>
+        <span class="menu-item-price">$128.95 (At Cost)</span>
+      </div>
+      <div class="menu-item-desc">Topical copper peptide cream for collagen/elastin induction, skin repair, anti-inflammation, and fine line reduction with no photosensitivity risk.</div>
+      <div class="menu-meta">Supply: 6-Week Supply (30gm bottle). Cold shipping included.</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-item-head">
+        <span class="menu-item-title">GHK-Cu / Niacinamide Rejuvenation Cream (0.5%)</span>
+        <span class="menu-item-price">$108.95 / $166.95 / $223.95 (At Cost)</span>
+      </div>
+      <div class="menu-item-desc">Topical copper peptide and niacinamide formulation for collagen support, brightening, and anti-aging without tretinoin (safe for sensitive skin).</div>
+      <div class="menu-meta">Supply: 30gm (~5.7 Wks) / 60gm (~11.4 Wks) / 90gm (~17.1 Wks). Cold shipping included.</div>
+    </div>
+
+  </div>
+</section>
+
+<section id="intake" class="bottom-video-section">
+  <video class="video-bg" autoplay loop muted playsinline>
+    <source src="sculpture-flowers.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay" style="background: rgba(18, 14, 14, 0.85);"></div>
+  <div class="wrap">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 32px; padding: 60px 40px; backdrop-filter: blur(16px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); position: relative; z-index: 5;">
+      
+      <span class="eyebrow" style="letter-spacing: 0.25em;">Begin Your Transformation</span>
+      <h2 style="font-size: 48px; margin: 16px 0 20px; font-style: italic;">Ready to Elevate Your Health &amp; Longevity?</h2>
+      
+      <p style="color: var(--text-muted); font-size: 16.5px; line-height: 1.8; margin-bottom: 36px; max-width: 620px; margin-left: auto; margin-right: auto;">
+        Take the first step toward personalized metabolic care, bioidentical HRT, or functional skincare. Schedule your intake assessment today through the Malla Portal. <em>(Massachusetts residents only)</em>
+      </p>
+
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose" style="padding: 18px 42px; font-size: 15px;">
+          Book Intake via Malla &rarr;
+        </a>
+        <a href="#labs" class="btn btn-outline" style="padding: 18px 36px; font-size: 15px;">
+          View Lab Options
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 The Wellness Hunny. All rights reserved.</p>
+    <p>&copy; 2026 Lip Bunny Rx. All rights reserved. Servicing Massachusetts Patients Only.</p>
   </div>
 </footer>
 
