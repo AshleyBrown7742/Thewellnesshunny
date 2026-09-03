@@ -29,6 +29,7 @@
     line-height: 1.7;
     overflow-x: hidden;
     letter-spacing: 0.02em;
+    padding-bottom: 60px;
   }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 5; }
   h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; font-weight: 400; margin: 0; color: #ffffff; letter-spacing: 0.03em; }
@@ -71,17 +72,6 @@
     z-index: 100;
   }
 
-  .sticky-intake-btn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 99;
-    padding: 14px 28px;
-    font-size: 13.5px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-  }
-
   .hunny-banner {
     background: #181212;
     color: var(--text-muted);
@@ -91,7 +81,7 @@
     letter-spacing: 0.03em;
     border-bottom: 1px solid var(--line);
   }
-  .hunny-banner a { color: var(--rose-gold); text-decoration: none; margin-left: 6px; font-weight: 400; border-bottom: 1px solid var(--rose-gold); }
+  .hunny-banner a { color: var(--rose-gold); text-decoration: underline; margin-left: 6px; font-weight: 500; }
 
   nav {
     padding: 18px 0;
@@ -103,7 +93,7 @@
   .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; font-weight: 400; text-decoration: none; letter-spacing: 0.12em; flex-shrink: 0; }
   .logo span { color: var(--rose-gold); font-style: italic; font-weight: 300; }
 
-  .nav-links { display: flex; gap: 24px; align-items: center; list-style: none; margin: 0; padding: 0; }
+  .nav-links { display: flex; gap: 20px; align-items: center; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
   .nav-links a { color: var(--blush); text-decoration: none; font-size: 13.5px; font-weight: 400; letter-spacing: 0.04em; transition: color 0.3s ease; }
   .nav-links a:hover { color: var(--rose-gold); }
 
@@ -112,47 +102,46 @@
     min-height: 80vh;
     display: flex;
     align-items: center;
-    padding: 100px 0;
+    padding: 120px 0 80px;
     color: #ffffff;
     overflow: hidden;
-    background: #120e0e linear-gradient(180deg, #181212 0%, #120e0e 100%);
+    background: #120e0e;
   }
   .video-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover; z-index: 1;
-    filter: brightness(0.65) contrast(1.05);
+    object-fit: cover; z-index: 1; filter: brightness(0.5);
   }
   .video-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(18, 14, 14, 0.6) 0%, rgba(18, 14, 14, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(18, 14, 14, 0.5) 0%, rgba(18, 14, 14, 0.85) 100%);
     z-index: 2;
   }
 
   .hero-text { text-align: center; margin: 0 auto; max-width: 860px; position: relative; z-index: 5; }
   .hero-text h1 { font-size: 58px; font-style: italic; margin: 18px 0; font-weight: 300; line-height: 1.15; }
+  .hero-text h1 .accent { color: var(--rose-gold); }
   .hero-text p { color: var(--text-muted); font-size: 17.5px; margin-bottom: 36px; font-weight: 300; line-height: 1.8; }
 
-  section { padding: 100px 0; border-bottom: 1px solid var(--line); position: relative; z-index: 5; background-color: var(--bg-dark); }
+  section { padding: 90px 0; border-bottom: 1px solid var(--line); position: relative; z-index: 5; background-color: var(--bg-dark); }
   .section-head { text-align: center; margin-bottom: 50px; }
-  .section-head h2 { font-size: 44px; font-style: italic; font-weight: 300; }
+  .section-head h2 { font-size: 42px; font-style: italic; font-weight: 300; }
+  .section-head p { color: var(--text-muted); font-size: 15.5px; margin-top: 8px; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
   .card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 24px;
-    padding: 38px 32px;
+    border-radius: 20px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     backdrop-filter: blur(12px);
-    transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .card:hover { transform: translateY(-4px); border-color: rgba(232, 197, 190, 0.4); }
-  .card h3 { font-size: 28px; margin: 10px 0 14px; color: var(--blush-soft); font-style: italic; }
-  .card p { color: var(--text-muted); font-size: 14.5px; margin-bottom: 16px; line-height: 1.7; }
+  .card h3 { font-size: 26px; margin: 10px 0 10px; color: var(--blush-soft); font-style: italic; }
+  .card p { color: var(--text-muted); font-size: 14px; margin-bottom: 16px; line-height: 1.6; }
   .card .tag {
     background: rgba(232, 197, 190, 0.08);
     color: var(--rose-gold);
@@ -161,26 +150,45 @@
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    padding: 5px 14px;
+    padding: 4px 12px;
     border-radius: 999px;
     display: inline-block;
-    margin-bottom: 14px;
     align-self: flex-start;
   }
 
-  footer { padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); position: relative; z-index: 5; background: var(--bg-dark); }
+  .price-card-dark { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 12px 32px; }
+  .price-row-dark { display: flex; justify-content: space-between; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; gap: 12px; }
+  .price-row-dark:last-child { border-bottom: none; }
+  .price-row-dark .name { font-weight: 500; font-size: 17px; color: var(--blush-soft); }
+  .price-row-dark .desc { font-size: 13.5px; color: var(--text-muted); max-width: 520px; margin-top: 4px; line-height: 1.5; }
+  .price-row-dark .amt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--rose-gold); font-weight: 500; white-space: nowrap; }
+
+  .notice-banner-dark { background: rgba(232, 197, 190, 0.05); border: 1px solid var(--card-border); border-radius: 14px; padding: 18px 22px; margin-bottom: 28px; font-size: 13.5px; color: var(--blush); }
+  .notice-banner-dark strong { color: var(--rose-gold); }
+
+  .malla-card-container-dark {
+    background: #181212;
+    border: 1px solid var(--card-border);
+    border-radius: 28px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  footer { border-top: 1px solid var(--line); padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); position: relative; z-index: 5; background: var(--bg-dark); }
 
   @media (max-width: 900px) {
     .nav-links { display: none; }
   }
   @media (max-width: 720px) {
-    .hero-text h1 { font-size: 40px; }
+    .hero-text h1 { font-size: 38px; }
+    .price-card-dark, .malla-card-container-dark { padding: 30px 20px; }
   }
 </style>
 </head>
 <body>
-
-<a href="#intake" class="btn btn-rose sticky-intake-btn">Book Intake &rarr;</a>
 
 <div class="header-container">
   <div class="hunny-banner">
@@ -191,10 +199,11 @@
     <div class="wrap">
       <a href="lipbunny-rx.html" class="logo">LIP BUNNY <span>Rx</span></a>
       <ul class="nav-links">
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#services">Care Pathways</a></li>
         <li><a href="#pricing">Bunny Rx Club</a></li>
-        <li><a href="#labs">Lab Options</a></li>
-        <li><a href="#menu">Prescription Menu</a></li>
-        <li><a href="#intake">Book Intake</a></li>
+        <li><a href="#labs">Lab Requirements</a></li>
+        <li><a href="#intake">Intake Portal</a></li>
         <li><a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose" style="padding: 10px 22px; font-size: 13px;">Malla Portal &rarr;</a></li>
       </ul>
     </div>
@@ -202,42 +211,93 @@
 </div>
 
 <div class="video-hero">
+  <video class="video-bg" autoplay loop muted playsinline>
+    <source src="./lipbunny.mp4" type="video/mp4">
+  </video>
   <div class="video-overlay"></div>
   <div class="wrap">
     <div class="hero-text">
       <span class="eyebrow">Medical Telehealth &amp; In-Person Clinical Care</span>
-      <h1>We don't just write prescriptions, we optimize quality of life.</h1>
-      <p>Precision Bioidentical HRT, Full-Dose &amp; Microdosed Tirzepatide, and GHK-Cu Functional Aesthetics.</p>
+      <h1>We don't just write prescriptions, <span class="accent">we optimize life.</span></h1>
+      <p>Precision Bioidentical HRT, Full-Dose &amp; Microdosed Tirzepatide, and Therapeutic Peptides—delivered with complete medical supervision.</p>
       <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-        <a href="#pricing" class="btn btn-rose">Explore Bunny Rx Club &rarr;</a>
-        <a href="#intake" class="btn btn-outline">Book Intake</a>
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-rose">Complete Clinical Intake &rarr;</a>
+        <a href="#pricing" class="btn btn-outline">View Membership Pricing</a>
       </div>
     </div>
   </div>
 </div>
 
-<section id="pricing">
+<section id="philosophy">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Membership &amp; Access</span>
-      <h2>Bunny Rx Club</h2>
+      <span class="eyebrow">The Clinical Approach</span>
+      <h2>Prescription Precision Meets Root-Cause Longevity</h2>
+      <p>Modern clinical medicine works best when combined with structured lifestyle optimization.</p>
     </div>
     <div class="grid">
       <div class="card">
         <div>
-          <span class="tag">Clinical Program</span>
-          <h3>Standard Telehealth</h3>
-          <p>Comprehensive clinical intake, medical history review, and custom prescription access managed online.</p>
+          <span class="tag">Prescription GLP-1</span>
+          <h3>Metabolic &amp; Weight Loss</h3>
+          <p>Microdosed or target-dosed Tirzepatide tailored to promote fat loss while preserving lean body mass and avoiding gaunt features.</p>
         </div>
-        <a href="#intake" class="btn btn-outline">Select Program</a>
+        <a href="#intake" class="btn btn-outline" style="width:100%;">Get Started &rarr;</a>
       </div>
       <div class="card">
         <div>
-          <span class="tag">Full Optimization</span>
-          <h3>Bunny Rx VIP</h3>
-          <p>Direct provider communication, priority prescription fulfillment, and ongoing hormone optimization management.</p>
+          <span class="tag">Hormone Optimization</span>
+          <h3>Bioidentical HRT</h3>
+          <p>Customized Estradiol, Progesterone, and Testosterone therapies to restore energy, mental clarity, libido, and bone density.</p>
         </div>
-        <a href="#intake" class="btn btn-rose">Join VIP Access</a>
+        <a href="#intake" class="btn btn-outline" style="width:100%;">Get Started &rarr;</a>
+      </div>
+      <div class="card">
+        <div>
+          <span class="tag">Cellular &amp; Skin Repair</span>
+          <h3>Therapeutic Peptides</h3>
+          <p>Advanced peptides including GHK-Cu, BPC-157, and NAD+ for collagen synthesis, gut lining repair, and mitochondrial energy.</p>
+        </div>
+        <a href="#intake" class="btn btn-outline" style="width:100%;">Get Started &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Bunny Rx Club</span>
+      <h2>Transparent Membership &amp; Care Rates</h2>
+    </div>
+    <div class="price-card-dark">
+      <div class="price-row-dark">
+        <div>
+          <div class="name">Clinical Consult &amp; Intake Assessment</div>
+          <div class="desc">Initial 30-minute medical consultation with our healthcare provider to review health history, lab panels, and formulate your prescription plan.</div>
+        </div>
+        <div class="amt">$75 <span style="font-size:14px; font-style:normal; color:var(--text-muted);">/ visit</span></div>
+      </div>
+      <div class="price-row-dark">
+        <div>
+          <div class="name">Bunny Rx Club Monthly Membership</div>
+          <div class="desc">Includes ongoing provider oversight, dose titrations, direct chat support, refill management, and discounted pricing on compound prescriptions.</div>
+        </div>
+        <div class="amt">$99 <span style="font-size:14px; font-style:normal; color:var(--text-muted);">/ mo</span></div>
+      </div>
+      <div class="price-row-dark">
+        <div>
+          <div class="name">Tirzepatide Monthly Protocol</div>
+          <div class="desc">Compounded Tirzepatide shipped directly from certified 503A US pharmacies with full supplies (syringes/alcohol pads).</div>
+        </div>
+        <div class="amt">Starting at $299 <span style="font-size:14px; font-style:normal; color:var(--text-muted);">/ mo</span></div>
+      </div>
+      <div class="price-row-dark">
+        <div>
+          <div class="name">Bioidentical HRT Monthly Protocol</div>
+          <div class="desc">Customized creams, troches, or injectable hormone prescriptions customized to your exact baseline labs.</div>
+        </div>
+        <div class="amt">Starting at $149 <span style="font-size:14px; font-style:normal; color:var(--text-muted);">/ mo</span></div>
       </div>
     </div>
   </div>
@@ -246,63 +306,27 @@
 <section id="labs">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Diagnostic Precision</span>
-      <h2>Lab Options</h2>
+      <span class="eyebrow">Safety First</span>
+      <h2>Required Baseline Lab Panels</h2>
+      <p>Current bloodwork (within the last 6 months) is required before issuing any prescription therapies.</p>
     </div>
-    <div class="grid">
-      <div class="card">
-        <div>
-          <span class="tag">Comprehensive Panel</span>
-          <h3>Full Hormone &amp; Metabolic Labs</h3>
-          <p>Detailed evaluation covering sex hormones, thyroid panel, metabolic markers, and inflammatory indicators.</p>
-        </div>
-        <a href="index.html#labs" class="btn btn-outline">View Lab Specs</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="menu">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Formulations</span>
-      <h2>Prescription Menu</h2>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <div>
-          <span class="tag">Metabolic Care</span>
-          <h3>Tirzepatide Therapies</h3>
-          <p>Microdosing and target dosing protocols personalized to maintain lean mass and optimize metabolic efficiency.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div>
-          <span class="tag">Hormone Health</span>
-          <h3>Bioidentical HRT</h3>
-          <p>Tailored hormone replacement therapy designed to restore balance, energy, and overall vitality.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div>
-          <span class="tag">Cellular Rejuvenation</span>
-          <h3>GHK-Cu Aesthetics</h3>
-          <p>Peptide therapy targeted at cellular repair, collagen synthesis, and functional skin quality.</p>
-        </div>
-      </div>
+    <div class="notice-banner-dark">
+      <strong>Have existing labs?</strong> Upload your existing blood panels directly in the Malla Portal during intake. If you need new labs, order our discounted <strong>Comprehensive Male/Female Panels ($245)</strong> directly via <a href="index.html#labs" style="color:var(--rose-gold);">The Wellness Hunny Lab Menu &rarr;</a>
     </div>
   </div>
 </section>
 
 <section id="intake">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Get Started</span>
-      <h2>Book Your Clinical Intake</h2>
-    </div>
-    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-      <p style="color: var(--text-muted); margin-bottom: 30px;">Complete your clinical review through our secure medical portal to request prescriptions and schedule your intake.</p>
-      <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose">Access Malla Medical Portal &rarr;</a>
+    <div class="malla-card-container-dark">
+      <span class="eyebrow" style="color: var(--rose-gold);">🔒 Secure Medical Portal</span>
+      <h2 style="color: #ffffff; font-size: 38px; font-style: italic; margin: 16px 0;">Begin Your Prescription Care Consultation</h2>
+      <p style="color: var(--text-muted); font-size: 15.5px; max-width: 600px; margin: 0 auto 32px auto;">
+        Register your intake, upload current medical history/labs, and schedule your telehealth consultation seamlessly through the Malla Portal.
+      </p>
+      <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose" style="padding: 16px 36px; font-weight: 600;">
+        Open Malla Clinical Portal &rarr;
+      </a>
     </div>
   </div>
 </section>
