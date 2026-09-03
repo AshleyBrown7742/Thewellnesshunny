@@ -21,18 +21,18 @@
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    margin: 0; 
-    background-color: var(--bg-dark); 
+    margin: 0;
+    background-color: var(--bg-dark);
     color: var(--blush);
-    font-family: 'Jost', sans-serif; 
-    font-weight: 300; 
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
     line-height: 1.7;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     letter-spacing: 0.02em;
   }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 5; }
   h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; font-weight: 400; margin: 0; color: #ffffff; letter-spacing: 0.03em; }
-  
+
   .eyebrow {
     font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.22em;
     font-size: 11px; font-weight: 500; color: var(--rose-gold);
@@ -43,29 +43,28 @@
     border: none; cursor: pointer; border-radius: 999px; padding: 16px 34px;
     display: inline-block; text-decoration: none; transition: all 0.3s ease; text-align: center;
   }
-  .btn-rose { 
-    background: linear-gradient(135deg, #ebd0ca 0%, #d4aba3 100%); 
-    color: #1a1211 !important; 
+  .btn-rose {
+    background: linear-gradient(135deg, #ebd0ca 0%, #d4aba3 100%);
+    color: #1a1211 !important;
     box-shadow: 0 4px 20px rgba(232, 197, 190, 0.2);
   }
-  .btn-rose:hover { 
-    background: linear-gradient(135deg, #f5ded8 0%, #e0b8b0 100%); 
-    transform: translateY(-2px); 
+  .btn-rose:hover {
+    background: linear-gradient(135deg, #f5ded8 0%, #e0b8b0 100%);
+    transform: translateY(-2px);
     box-shadow: 0 6px 24px rgba(232, 197, 190, 0.35);
   }
-  .btn-outline { 
-    background: rgba(255, 255, 255, 0.02); 
-    color: var(--blush) !important; 
-    border: 1px solid var(--card-border); 
+  .btn-outline {
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--blush) !important;
+    border: 1px solid var(--card-border);
     backdrop-filter: blur(6px);
   }
-  .btn-outline:hover { 
-    border-color: var(--rose-gold); 
-    color: var(--rose-gold) !important; 
+  .btn-outline:hover {
+    border-color: var(--rose-gold);
+    color: var(--rose-gold) !important;
     background: rgba(232, 197, 190, 0.05);
   }
 
-  /* Sticky Top Header Container */
   .header-container {
     position: sticky;
     top: 0;
@@ -83,22 +82,22 @@
     backdrop-filter: blur(8px);
   }
 
-  .hunny-banner { 
-    background: #181212; 
-    color: var(--text-muted); 
-    text-align: center; 
-    padding: 11px 20px; 
-    font-size: 13px; 
+  .hunny-banner {
+    background: #181212;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 11px 20px;
+    font-size: 13px;
     letter-spacing: 0.03em;
-    border-bottom: 1px solid var(--line); 
+    border-bottom: 1px solid var(--line);
   }
   .hunny-banner a { color: var(--rose-gold); text-decoration: none; margin-left: 6px; font-weight: 400; border-bottom: 1px solid var(--rose-gold); }
 
-  nav { 
-    padding: 18px 0; 
-    border-bottom: 1px solid var(--line); 
-    background: rgba(18, 14, 14, 0.95); 
-    backdrop-filter: blur(10px); 
+  nav {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+    background: rgba(18, 14, 14, 0.95);
+    backdrop-filter: blur(10px);
   }
   nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
   .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; font-weight: 400; text-decoration: none; letter-spacing: 0.12em; flex-shrink: 0; }
@@ -140,33 +139,33 @@
   .section-head h2 { font-size: 44px; font-style: italic; font-weight: 300; }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
-  .card { 
-    background: var(--card-bg); 
-    border: 1px solid var(--card-border); 
-    border-radius: 24px; 
-    padding: 38px 32px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 38px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     backdrop-filter: blur(12px);
     transition: transform 0.3s ease, border-color 0.3s ease;
   }
   .card:hover { transform: translateY(-4px); border-color: rgba(232, 197, 190, 0.4); }
   .card h3 { font-size: 28px; margin: 10px 0 14px; color: var(--blush-soft); font-style: italic; }
   .card p { color: var(--text-muted); font-size: 14.5px; margin-bottom: 16px; line-height: 1.7; }
-  .card .tag { 
-    background: rgba(232, 197, 190, 0.08); 
-    color: var(--rose-gold); 
-    border: 1px solid rgba(232, 197, 190, 0.25); 
-    font-size: 11px; 
-    font-weight: 500; 
+  .card .tag {
+    background: rgba(232, 197, 190, 0.08);
+    color: var(--rose-gold);
+    border: 1px solid rgba(232, 197, 190, 0.25);
+    font-size: 11px;
+    font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    padding: 5px 14px; 
-    border-radius: 999px; 
-    display: inline-block; 
-    margin-bottom: 14px; 
-    align-self: flex-start; 
+    padding: 5px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 14px;
+    align-self: flex-start;
   }
 
   footer { padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); position: relative; z-index: 5; background: var(--bg-dark); }
@@ -185,7 +184,7 @@
 
 <div class="header-container">
   <div class="hunny-banner">
-    Looking for Root-Cause Wellness Coaching &amp; Protocols? <a href="https://www.thewellnesshunny.com" target="_blank" rel="noopener">&larr; Visit The Wellness Hunny</a>
+    Looking for Root-Cause Wellness Coaching &amp; Protocols? <a href="https://ashleybrown7742.github.io/Thewellnesshunny/" target="_blank" rel="noopener">&larr; Visit The Wellness Hunny</a>
   </div>
 
   <nav>
@@ -203,6 +202,9 @@
 </div>
 
 <div class="video-hero">
+  <video autoplay loop muted playsinline class="video-bg">
+    <source src="sculpture-flowers.mp4" type="video/mp4">
+  </video>
   <div class="video-overlay"></div>
   <div class="wrap">
     <div class="hero-text">
@@ -216,6 +218,97 @@
     </div>
   </div>
 </div>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Membership &amp; Access</span>
+      <h2>Bunny Rx Club</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div>
+          <span class="tag">Clinical Program</span>
+          <h3>Standard Telehealth</h3>
+          <p>Comprehensive clinical intake, medical history review, and custom prescription access managed online.</p>
+        </div>
+        <a href="#intake" class="btn btn-outline">Select Program</a>
+      </div>
+      <div class="card">
+        <div>
+          <span class="tag">Full Optimization</span>
+          <h3>Bunny Rx VIP</h3>
+          <p>Direct provider communication, priority prescription fulfillment, and ongoing hormone optimization management.</p>
+        </div>
+        <a href="#intake" class="btn btn-rose">Join VIP Access</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="labs">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Diagnostic Precision</span>
+      <h2>Lab Options</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div>
+          <span class="tag">Comprehensive Panel</span>
+          <h3>Full Hormone &amp; Metabolic Labs</h3>
+          <p>Detailed evaluation covering sex hormones, thyroid panel, metabolic markers, and inflammatory indicators.</p>
+        </div>
+        <a href="blood-labs.html" class="btn btn-outline">View Lab Specs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Formulations</span>
+      <h2>Prescription Menu</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div>
+          <span class="tag">Metabolic Care</span>
+          <h3>Tirzepatide Therapies</h3>
+          <p>Microdosing and target dosing protocols personalized to maintain lean mass and optimize metabolic efficiency.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <span class="tag">Hormone Health</span>
+          <h3>Bioidentical HRT</h3>
+          <p>Tailored hormone replacement therapy designed to restore balance, energy, and overall vitality.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <span class="tag">Cellular Rejuvenation</span>
+          <h3>GHK-Cu Aesthetics</h3>
+          <p>Peptide therapy targeted at cellular repair, collagen synthesis, and functional skin quality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="intake">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get Started</span>
+      <h2>Book Your Clinical Intake</h2>
+    </div>
+    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+      <p style="color: var(--text-muted); margin-bottom: 30px;">Complete your clinical review through our secure medical portal to request prescriptions and schedule your intake.</p>
+      <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose">Access Malla Medical Portal &rarr;</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
