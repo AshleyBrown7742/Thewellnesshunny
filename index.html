@@ -3,572 +3,725 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lip Bunny Rx — Bunny Rx Club Clinical Care</title>
+<title>The Wellness Hunny — Root-Cause Wellness Coaching</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-dark: #120e0e;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(230, 201, 197, 0.18);
-    --rose-gold: #e8c5be;
-    --blush: #f7ece9;
-    --blush-soft: #fcf8f7;
-    --text-muted: #bdaeab;
-    --line: rgba(232, 197, 190, 0.15);
+    --cream: #faf7f2;
+    --cream-deep: #ebd2c0;
+    --card: #ffffff;
+    --tan-light: #e3d2c0;
+    --tan: #b89b7d;
+    --tan-deep: #8c6d4f;
+    --ink: #2b231d;
+    --ink-soft: #635748;
+    --line: #e3dad0;
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
   body {
-    margin: 0; 
-    background-color: var(--bg-dark); 
-    color: var(--blush);
-    font-family: 'Jost', sans-serif; 
-    font-weight: 300; 
-    line-height: 1.7;
-    overflow-x: hidden; 
-    letter-spacing: 0.02em;
+    margin: 0; background: var(--cream); color: var(--ink);
+    font-family: 'Jost', sans-serif; font-weight: 400; line-height: 1.7;
+    overflow-x: hidden; padding-bottom: 60px; /* Space for mobile sticky nav */
   }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 5; }
-  h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; font-weight: 400; margin: 0; color: #ffffff; letter-spacing: 0.03em; }
-  
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; margin: 0; color: var(--ink); }
+  a { color: var(--tan-deep); }
   .eyebrow {
-    font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.22em;
-    font-size: 11px; font-weight: 500; color: var(--rose-gold);
+    font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 11.5px; font-weight: 600; color: var(--tan-deep);
   }
-
   .btn {
-    font-family: 'Jost', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: 0.08em;
-    border: none; cursor: pointer; border-radius: 999px; padding: 16px 34px;
-    display: inline-block; text-decoration: none; transition: all 0.3s ease; text-align: center;
+    font-family: 'Jost', sans-serif; font-weight: 600; font-size: 15px;
+    border: none; cursor: pointer; border-radius: 999px; padding: 14px 28px;
+    display: inline-block; text-decoration: none; position: relative; overflow: hidden;
+    transition: all 0.2s ease; text-align: center;
   }
-  .btn-rose { 
-    background: linear-gradient(135deg, #ebd0ca 0%, #d4aba3 100%); 
-    color: #1a1211 !important; 
-    box-shadow: 0 4px 20px rgba(232, 197, 190, 0.2);
+  
+  .btn-primary {
+    background: var(--tan-deep);
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   }
-  .btn-rose:hover { 
-    background: linear-gradient(135deg, #f5ded8 0%, #e0b8b0 100%); 
-    transform: translateY(-2px); 
-    box-shadow: 0 6px 24px rgba(232, 197, 190, 0.35);
-  }
-  .btn-outline { 
-    background: rgba(255, 255, 255, 0.02); 
-    color: var(--blush) !important; 
-    border: 1px solid var(--card-border); 
-    backdrop-filter: blur(6px);
-  }
-  .btn-outline:hover { 
-    border-color: var(--rose-gold); 
-    color: var(--rose-gold) !important; 
-    background: rgba(232, 197, 190, 0.05);
+  .btn-primary:hover {
+    background: #6e543b;
+    transform: translateY(-1px);
   }
 
-  /* Floating Sticky Book Intake Button */
-  .sticky-intake-btn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 99;
-    padding: 14px 28px;
-    font-size: 13.5px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    animation: fadeInBtn 0.5s ease-in-out;
+  .btn-ghost { 
+    background: #ffffff !important; 
+    color: var(--ink) !important; 
+    border: 1px solid #ffffff; 
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   }
-  @keyframes fadeInBtn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  .btn-ghost:hover { 
+    background: var(--cream-deep) !important; 
+    border-color: var(--cream-deep);
   }
 
-  .hunny-banner { 
-    background: #181212; 
-    color: var(--text-muted); 
+  .top-header-cream {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 247, 242, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(140, 109, 79, 0.15);
+  }
+
+  /* Translucent Top Banner */
+  .rx-banner { 
+    background: rgba(250, 247, 242, 0.15); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--ink); 
     text-align: center; 
-    padding: 11px 20px; 
-    font-size: 13px; 
-    letter-spacing: 0.03em;
-    border-bottom: 1px solid var(--line); 
-    position: relative; 
-    z-index: 20; 
+    padding: 10px 20px; 
+    font-size: 13.5px; 
+    font-weight: 500; 
+    border-bottom: 1px solid rgba(140, 109, 79, 0.12); 
   }
-  .hunny-banner a { color: var(--rose-gold); text-decoration: none; margin-left: 6px; font-weight: 400; border-bottom: 1px solid var(--rose-gold); }
+  .rx-banner a { color: var(--tan-deep); text-decoration: underline; margin-left: 6px; font-weight: 600; }
 
-  /* Navigation Bar */
-  nav { padding: 18px 0; border-bottom: 1px solid var(--line); position: absolute; width: 100%; top: 41px; z-index: 10; background: rgba(18, 14, 14, 0.85); backdrop-filter: blur(10px); }
-  nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-  .logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #fff; font-weight: 400; text-decoration: none; letter-spacing: 0.12em; flex-shrink: 0; }
-  .logo span { color: var(--rose-gold); font-style: italic; font-weight: 300; }
-
-  .nav-links { display: flex; gap: 24px; align-items: center; list-style: none; margin: 0; padding: 0; }
-  .nav-links a { color: var(--blush); text-decoration: none; font-size: 13.5px; font-weight: 400; letter-spacing: 0.04em; transition: color 0.3s ease; }
-  .nav-links a:hover { color: var(--rose-gold); }
+  nav { padding: 16px 0; width: 100%; position: relative; top: 0; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 28px; color: var(--ink); font-weight: 600; text-decoration: none; }
+  .logo span { color: var(--tan-deep); }
+  
+  .nav-links { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .nav-links a { font-size: 13.5px; font-weight: 500; color: var(--ink); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--tan-deep); }
+  .nav-links .rx-link { 
+    background: rgba(235, 210, 192, 0.65);
+    border: 1px solid var(--tan-deep); 
+    padding: 6px 16px; 
+    border-radius: 999px; 
+    color: var(--ink) !important; 
+    font-weight: 600;
+  }
 
   .video-hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
-    padding: 180px 0 120px;
+    padding: 120px 0 80px;
     color: #ffffff;
     overflow: hidden;
-    background: #120e0e linear-gradient(180deg, #181212 0%, #120e0e 100%);
+    background-color: #2b231d;
   }
   .video-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     object-fit: cover; z-index: 1;
-    filter: brightness(0.65) contrast(1.05);
   }
   .video-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(18, 14, 14, 0.6) 0%, rgba(18, 14, 14, 0.9) 100%);
-    z-index: 2;
+    background: linear-gradient(180deg, rgba(43, 35, 29, 0.55) 0%, rgba(43, 35, 29, 0.75) 100%);
+    z-index: 1;
   }
 
-  .hero-text { text-align: center; margin: 0 auto; max-width: 860px; position: relative; z-index: 5; }
-  .hero-text h1 { font-size: 58px; font-style: italic; margin: 18px 0; font-weight: 300; line-height: 1.15; }
-  .hero-text p { color: var(--text-muted); font-size: 17.5px; margin-bottom: 36px; font-weight: 300; line-height: 1.8; }
+  .hero-text h1 { font-size: 58px; font-style: italic; line-height: 1.1; margin: 16px 0; color: #fff; }
+  .hero-text h1 .accent { color: var(--tan-light); }
+  .hero-text .sub { font-size: 18px; color: rgba(255,255,255,0.9); max-width: 540px; margin: 0 0 28px; }
+  .hero-text .eyebrow { color: var(--tan-light); }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
-  section { padding: 100px 0; border-bottom: 1px solid var(--line); position: relative; z-index: 5; background-color: var(--bg-dark); }
-  .section-head { text-align: center; margin-bottom: 50px; }
-  .section-head h2 { font-size: 44px; font-style: italic; font-weight: 300; }
+  /* DUAL CARE HYBRID BANNER */
+  .dual-care-section {
+    background: #1f1813;
+    border-top: 1px solid var(--tan-deep);
+    border-bottom: 1px solid var(--tan-deep);
+    color: #fff;
+    padding: 40px 0;
+  }
+  .dual-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    margin-top: 24px;
+  }
+  .dual-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(227, 210, 192, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+  }
+  .dual-box h3 { color: var(--tan-light); font-size: 20px; font-style: italic; margin-bottom: 6px; }
+  .dual-box p { font-size: 13px; color: rgba(255, 255, 255, 0.8); margin: 0; line-height: 1.4; }
+  .dual-plus { font-size: 28px; color: var(--tan-light); font-family: 'Cormorant Garamond', serif; }
 
-  .bottom-video-section {
+  section { padding: 70px 0; }
+  .section-head { margin-bottom: 36px; }
+  .section-head.center { text-align: center; }
+  .section-head h2 { font-size: 38px; font-style: italic; }
+  .section-head p { color: var(--ink-soft); font-size: 15.5px; margin-top: 8px; }
+
+  .philo-section {
     position: relative;
-    padding: 140px 0;
+    padding: 100px 0;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
     color: #ffffff;
     overflow: hidden;
-    background: #120e0e;
-    border-bottom: 1px solid var(--line);
+    background-color: #1f1813;
   }
+  .philo-section h2 { color: #ffffff; }
+  .philo-section p { color: rgba(255, 255, 255, 0.9); }
+  .philo-section .eyebrow { color: var(--tan-light); }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
-  .card { 
-    background: var(--card-bg); 
-    border: 1px solid var(--card-border); 
-    border-radius: 24px; 
-    padding: 38px 32px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    backdrop-filter: blur(12px);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-  }
-  .card:hover { transform: translateY(-4px); border-color: rgba(232, 197, 190, 0.4); }
-  .card h3 { font-size: 28px; margin: 10px 0 14px; color: var(--blush-soft); font-style: italic; }
-  .card p { color: var(--text-muted); font-size: 14.5px; margin-bottom: 16px; line-height: 1.7; }
-  .card .tag { 
-    background: rgba(232, 197, 190, 0.08); 
-    color: var(--rose-gold); 
-    border: 1px solid rgba(232, 197, 190, 0.25); 
-    font-size: 11px; 
-    font-weight: 500; 
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 5px 14px; 
-    border-radius: 999px; 
-    display: inline-block; 
-    margin-bottom: 14px; 
-    align-self: flex-start; 
-  }
-  .card-disclaimer {
-    font-size: 12px;
-    color: var(--rose-gold);
-    opacity: 0.85;
-    margin-bottom: 24px;
-    font-style: italic;
-  }
+  .chip-row { display: flex; flex-wrap: wrap; margin-top: 20px; gap: 8px; }
+  .chip { background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25); color: #fff; font-size: 12.5px; font-weight: 500; padding: 6px 16px; border-radius: 999px; }
 
-  .holistic-banner {
-    background: linear-gradient(135deg, rgba(232, 197, 190, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
-    border: 1px solid var(--card-border);
-    border-radius: 24px;
-    padding: 32px 36px;
-    margin-bottom: 50px;
+  .grid-cards { display: flex; flex-wrap: wrap; gap: 16px; }
+  .grid-card { flex: 1 1 220px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+  .grid-card .num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; color: var(--tan-deep); margin-bottom: 6px; font-weight: 600; }
+  .grid-card h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 16.5px; margin-bottom: 6px; }
+  .grid-card p { color: var(--ink-soft); font-size: 13.5px; margin: 0; line-height: 1.6; }
+
+  .price-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 8px 32px; }
+  .price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; gap: 12px; }
+  .price-row:last-child { border-bottom: none; }
+  .price-row .name { font-weight: 600; font-size: 16.5px; }
+  .price-row .desc { font-size: 13.5px; color: var(--ink-soft); max-width: 480px; margin-top: 2px; line-height: 1.5; }
+  .price-row .amt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 25px; color: var(--tan-deep); font-weight: 600; white-space: nowrap; }
+
+  .notice-banner { background: rgba(235, 210, 192, 0.4); border: 1px solid var(--tan); border-radius: 14px; padding: 16px 20px; margin-bottom: 28px; font-size: 13.5px; color: var(--ink); }
+  .notice-banner strong { color: var(--tan-deep); }
+
+  /* FILTER BUTTONS FOR LABS */
+  .lab-filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+  .filter-btn { background: #fff; border: 1px solid var(--line); padding: 8px 18px; border-radius: 999px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+  .filter-btn.active, .filter-btn:hover { background: var(--tan-deep); color: #fff; border-color: var(--tan-deep); }
+
+  .lab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 16px; }
+  .lab-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+  .lab-card h3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 18px; margin-bottom: 4px; }
+  .lab-card .lab-price { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 26px; color: var(--tan-deep); font-weight: 600; margin-bottom: 4px; }
+  .lab-card .turnaround { font-size: 11px; font-weight: 600; color: var(--tan-deep); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+  .lab-card p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; margin: 0 0 14px; }
+  
+  /* ACCORDION MARKERS */
+  .lab-card details { background: var(--cream); border-radius: 10px; padding: 8px 12px; margin-bottom: 16px; font-size: 12.5px; }
+  .lab-card summary { font-weight: 600; color: var(--tan-deep); cursor: pointer; outline: none; }
+  .lab-card .panel-list-content { margin-top: 8px; color: var(--ink); line-height: 1.5; }
+
+  .category-title { margin: 32px 0 16px; border-bottom: 1.5px solid var(--ink); padding-bottom: 6px; display: flex; justify-content: space-between; align-items: baseline; }
+  .category-title h2 { font-size: 24px; font-style: italic; }
+  .category-title span { font-size: 12px; color: var(--tan-deep); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* Native Custom Malla Booking Card */
+  .malla-card-container {
+    background: #1f1813;
+    border: 1px solid var(--tan-deep);
+    border-radius: 28px;
+    padding: 60px 40px;
     text-align: center;
-    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    max-width: 850px;
+    margin: 0 auto;
   }
-  .holistic-banner h3 {
-    font-size: 30px;
-    font-style: italic;
-    color: var(--rose-gold);
-    margin-bottom: 10px;
-  }
-  .holistic-banner p {
-    color: var(--blush);
-    font-size: 15px;
-    line-height: 1.7;
-    margin: 0;
+  .malla-badge-pill {
+    display: inline-block;
+    background: rgba(235, 210, 192, 0.15);
+    border: 1px solid var(--tan);
+    color: var(--tan-light);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 16px;
   }
 
-  .process-box { 
-    background: var(--card-bg); 
-    border: 1px solid var(--card-border); 
-    border-radius: 28px; 
-    padding: 48px; 
-    margin-top: 20px; 
-    backdrop-filter: blur(16px);
-  }
-  .price-highlight { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--rose-gold); font-style: italic; font-weight: 300; margin: 8px 0; }
+  .fullscript-banner { background: var(--cream-deep); border: 1px dashed var(--tan); border-radius: 14px; padding: 18px 22px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+  .fullscript-banner p { margin: 0; font-size: 14px; color: var(--ink-soft); }
 
-  .menu-category-title {
-    font-size: 32px;
-    font-style: italic;
-    color: #ffffff;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 12px;
-    margin: 60px 0 30px;
-  }
-  .menu-item {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--card-border);
-    border-radius: 18px;
-    padding: 24px 28px;
-    margin-bottom: 20px;
-  }
-  .menu-item-head {
-    display: flex;
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item:first-child { border-top: 2px solid var(--ink); }
+  .faq-item summary { cursor: pointer; padding: 18px 0; font-weight: 600; font-size: 16px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; color: var(--tan-deep); font-size: 22px; font-weight: 400; }
+  .faq-item[open] summary::after { content: "\2212"; }
+  .faq-item p { color: var(--ink-soft); font-size: 14.5px; padding-bottom: 18px; margin: 0; max-width: 680px; line-height: 1.6; }
+
+  footer { border-top: 1px solid var(--line); padding: 30px 0; text-align: center; font-size: 12.5px; color: var(--ink-soft); }
+
+  /* STICKY MOBILE ACTION BAR */
+  .mobile-bar {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #1f1813;
+    border-top: 1px solid var(--tan-deep);
+    padding: 10px 16px;
+    z-index: 999;
     justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
+    align-items: center;
   }
-  .menu-item-title { font-size: 22px; color: #ffffff; font-style: italic; }
-  .menu-item-price { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--rose-gold); font-style: italic; }
-  .menu-item-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 12px; }
-  .menu-item-bullets { color: var(--blush); font-size: 13.5px; padding-left: 0; list-style: none; margin: 12px 0; }
-  .menu-item-bullets li { position: relative; padding-left: 18px; margin-bottom: 6px; }
-  .menu-item-bullets li::before { content: "✦"; position: absolute; left: 0; color: var(--rose-gold); font-size: 10px; top: 2px; }
-  .menu-meta { font-size: 12.5px; color: var(--rose-gold); opacity: 0.85; border-top: 1px dashed var(--line); padding-top: 8px; margin-top: 12px; }
+  .mobile-bar-text { color: #fff; font-size: 12px; }
+  .mobile-bar-text strong { color: var(--tan-light); display: block; font-size: 13px; }
 
-  footer { padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); letter-spacing: 0.04em; position: relative; z-index: 5; background: var(--bg-dark); }
-
-  @media (max-width: 900px) {
-    .nav-links { display: none; }
-  }
   @media (max-width: 720px) {
-    .hero-text h1 { font-size: 40px; }
-    .process-box { padding: 28px; }
-    .bottom-video-section { padding: 100px 0; }
-    .sticky-intake-btn { bottom: 16px; right: 16px; padding: 12px 22px; font-size: 12.5px; }
-    .holistic-banner { padding: 24px 20px; }
+    .hero-text h1 { font-size: 38px; }
+    .price-card, .malla-card-container { padding: 30px 20px; }
+    .nav-links { display: none; }
+    .dual-grid { grid-template-columns: 1fr; gap: 10px; }
+    .dual-plus { display: none; }
+    .mobile-bar { display: flex; }
   }
 </style>
 </head>
 <body>
 
-<a href="#intake" class="btn btn-rose sticky-intake-btn">Book Intake &rarr;</a>
-
-<div class="hunny-banner">
-  Looking for Root-Cause Wellness Coaching &amp; Protocols? <a href="index.html">&larr; Visit The Wellness Hunny</a>
-</div>
-
-<nav>
-  <div class="wrap">
-    <a href="lipbunny-rx.html" class="logo">LIP BUNNY <span>Rx</span></a>
-    <ul class="nav-links">
-      <li><a href="#pricing">Bunny Rx Club</a></li>
-      <li><a href="#labs">Lab Options</a></li>
-      <li><a href="#menu">Prescription Menu</a></li>
-      <li><a href="#intake">Book Intake</a></li>
-      <li><a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose" style="padding: 10px 22px; font-size: 13px;">Malla Portal &rarr;</a></li>
-    </ul>
+<div class="top-header-cream">
+  <div class="rx-banner">
+    Looking for Medical Weight Loss (GLP-1), HRT &amp; Peptides? <a href="lipbunny-rx.html">Visit Lip Bunny Rx &rarr;</a>
   </div>
-</nav>
+
+  <nav>
+    <div class="wrap">
+      <a href="index.html" class="logo">wellness<span>hunny</span></a>
+      <div class="nav-links">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#labs">Labs Menu</a>
+        <a href="#intake">Intake</a>
+        <a href="#faq">FAQ</a>
+        <a href="lipbunny-rx.html" class="rx-link">Lip Bunny Rx &rarr;</a>
+      </div>
+    </div>
+  </nav>
+</div>
 
 <div class="video-hero">
   <video class="video-bg" autoplay loop muted playsinline>
-    <source src="statue-petals.mp4" type="video/mp4">
+    <source src="./honey.mp4" type="video/mp4">
   </video>
   <div class="video-overlay"></div>
   <div class="wrap">
     <div class="hero-text">
-      <span class="eyebrow">Medical Telehealth &amp; In-Person Clinical Care</span>
-      <h1>We don't just write prescriptions, we optimize quality of life.</h1>
-      <p>Precision Bioidentical HRT, Full-Dose &amp; Microdosed Tirzepatide, and GHK-Cu Functional Aesthetics—available via 100% virtual appointments across Massachusetts or in-person at Lip Bunny Beauty. Backed by direct 24/7 provider access and prescriptions billed at wholesale cost.</p>
-      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-        <a href="#pricing" class="btn btn-rose">Explore Bunny Rx Club &rarr;</a>
-        <a href="#intake" class="btn btn-outline">Book Intake</a>
+      <span class="eyebrow">Virtual Root-Cause Wellness Coaching</span>
+      <h1>Feel like <span class="accent">yourself</span> again.</h1>
+      <p class="sub">Structured root-cause coaching, medical support, holistic lifestyle protocols, functional lab testing, and direct clinical referrals—tailored to your health goals.</p>
+      <div class="hero-ctas">
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary">Complete Pre-Consult Intake</a>
+        <a href="lipbunny-rx.html" class="btn btn-ghost">Prescription Therapies (Lip Bunny Rx) &rarr;</a>
       </div>
     </div>
   </div>
 </div>
 
+<div class="dual-care-section">
+  <div class="wrap">
+    <div class="section-head center" style="margin-bottom: 0;">
+      <span class="eyebrow">The Complete Solution</span>
+      <h2 style="color: #fff; font-size: 32px;">Combine Root-Cause Coaching + Medical Therapies</h2>
+      <p style="color: rgba(255,255,255,0.8); max-width: 650px; margin: 8px auto 0;">You don't have to choose between functional health and clinical medicine. Combine both pathways seamlessly with zero duplicate paperwork.</p>
+    </div>
+    <div class="dual-grid">
+      <div class="dual-box">
+        <h3>Wellness Hunny</h3>
+        <p><strong>The Lifestyle Engine:</strong> Root-cause gut resets, mineral balancing, nutrition, &amp; lifestyle optimization.</p>
+      </div>
+      <div class="dual-plus">+</div>
+      <div class="dual-box">
+        <h3>Lip Bunny Rx</h3>
+        <p><strong>The Clinical Accelerator:</strong> Targeted GLP-1 weight loss, bioidentical HRT, &amp; therapeutic peptides.</p>
+      </div>
+      <div class="dual-plus">=</div>
+      <div class="dual-box" style="border-color: var(--tan);">
+        <h3 style="color: #fff;">Optimal Synergy</h3>
+        <p>Protect muscle mass, reduce prescription side effects, and maintain long-term results effortlessly.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="philosophy" class="philo-section">
+  <video class="video-bg" autoplay loop muted playsinline>
+    <source src="./tea.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay" style="background: rgba(31, 24, 19, 0.8);"></div>
+  <div class="wrap">
+    <div style="max-width: 650px;">
+      <span class="eyebrow">Our Philosophy</span>
+      <h2 style="font-size: 38px; margin: 8px 0 16px;">Health isn’t a luxury item, and healing shouldn't require a medical degree.</h2>
+      <p style="font-size: 16px; line-height: 1.7; margin-bottom: 14px;">
+        In a world full of confusing advice and systemized over-prescribing, we cut through the noise.
+      </p>
+      <p style="font-size: 15px; line-height: 1.7; color: rgba(255, 255, 255, 0.85);">
+        <strong>Wellness Hunny</strong> exists to guide you back to the foundational basics of physical, mental, and spiritual health. You have the innate ability to tune into your body, listen to what it needs, and take charge of your own healing. You <em>can</em> rewrite your diagnosis, reduce reliance on medications, and step into total vitality.
+      </p>
+      <div class="chip-row">
+        <span class="chip">Medical Coaching</span>
+        <span class="chip">Holistic Protocols</span>
+        <span class="chip">Functional Testing</span>
+        <span class="chip">Weight Loss &amp; HRT Referrals</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Ways We Help</span>
+      <h2>Care Pathways &amp; Medical Coaching</h2>
+      <p>Comprehensive support bridging functional coaching and medical navigation.</p>
+    </div>
+    <div class="grid-cards">
+      <div class="grid-card">
+        <div class="num">01</div>
+        <h3>Medical Coaching</h3>
+        <p>Get clarity on diagnoses, evaluate medication side effects, and prepare to advocate for yourself effectively with your healthcare providers.</p>
+      </div>
+      <div class="grid-card">
+        <div class="num">02</div>
+        <h3>Structured Reset Protocols</h3>
+        <p>Targeted protocols—including Fasting, Detox, Metabolic Resets, Gut Resets, and Nervous System Recovery—with guided coaching support.</p>
+      </div>
+      <div class="grid-card">
+        <div class="num">03</div>
+        <h3>Weight Loss &amp; HRT Referrals</h3>
+        <p>Obtain readiness labs and direct referrals to start prescription therapies through Lip Bunny Rx with zero duplicate intakes.</p>
+      </div>
+      <div class="grid-card">
+        <div class="num">04</div>
+        <h3>Functional Testing</h3>
+        <p>Order targeted testing (HTMA, gut panels, hormone markers) paired with expert result interpretation and custom protocol design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="pricing">
   <div class="wrap">
-    
-    <div class="holistic-banner">
-      <h3>Complete Total-Body Clinical Oversight</h3>
-      <p>We believe true medical wellness goes beyond single prescriptions. The <strong>Bunny Rx Club</strong> provides mandatory clinical oversight for GLP-1 and HRT therapies—incorporating monthly 30-minute virtual check-ins, direct 24/7 on-call provider access, symptom management, ongoing lab monitoring, and nutrition support. <em>Serving Massachusetts residents only.</em></p>
+    <div class="section-head center">
+      <span class="eyebrow">Transparent Pricing</span>
+      <h2>À La Carte &amp; Session Options</h2>
     </div>
-
-    <div class="section-head">
-      <span class="eyebrow">Mandatory Clinical Oversight</span>
-      <h2>Bunny Rx Club Membership</h2>
-      <p style="color: var(--text-muted); max-width: 620px; margin: 12px auto 0; font-size: 15px;">
-        Required for all GLP-1 and HRT patients. Flexible care delivered via 100% virtual appointments with in-person or remote lab options.
-      </p>
-    </div>
-
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 32px;">
-      
-      <div class="card" style="text-align: center; align-items: center;">
-        <span class="tag">Required Membership</span>
-        <h3>GLP-1 Membership</h3>
-        <p>Covers 1-hr initial consult, 1-hr lab review, 30-min virtual monthly check-ins, lab monitoring, 24/7 on-call provider access, and medication coordination.</p>
-        <div class="price-highlight">$85 <span style="font-size: 16px; color: var(--text-muted); font-style: normal;">/ month</span></div>
-        <div class="card-disclaimer">*Clinical membership fee only. Prescriptions are sold at cost and shipped directly to your door.</div>
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%; font-size:12px;">Join GLP-1 Club</a>
+    <div class="price-card">
+      <div class="price-row">
+        <div>
+          <div class="name">Free 15-Minute Intro Consult</div>
+          <div class="desc">A quick virtual discovery session to discuss your health goals and see if our coaching or referral pathways are right for you.</div>
+        </div>
+        <div class="amt">Free</div>
       </div>
-
-      <div class="card" style="text-align: center; align-items: center;">
-        <span class="tag">Required Membership</span>
-        <h3>HRT Membership</h3>
-        <p>Comprehensive female hormone oversight, 30-min monthly virtual check-ins, continuous dosing adjustments, 24/7 on-call provider access, and prescription coordination.</p>
-        <div class="price-highlight">$85 <span style="font-size: 16px; color: var(--text-muted); font-style: normal;">/ month</span></div>
-        <div class="card-disclaimer">*Clinical membership fee only. Prescriptions are sold at cost and shipped directly to your door.</div>
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%; font-size:12px;">Join HRT Club</a>
+      <div class="price-row">
+        <div>
+          <div class="name">Single 1:1 Consult / Coaching Visit (30 Min)</div>
+          <div class="desc">Targeted 30-minute session open to all clients. Use for medical coaching, symptom deep-dives, protocol review, or prescription referral preparation.</div>
+        </div>
+        <div class="amt">$65 <span style="font-size:14px; font-style:normal;">/ 30 min</span></div>
       </div>
-
-      <div class="card" style="text-align: center; align-items: center; border-color: var(--rose-gold); background: rgba(232, 197, 190, 0.05);">
-        <span class="tag" style="background: var(--rose-gold); color: #120e0e;">Best Value • Dual Care</span>
-        <h3>Combination Membership</h3>
-        <p>Unified GLP-1 + HRT clinical management. Includes 1-hr initial consult, 1-hr lab review, 30-min monthly check-ins, 24/7 provider access, and dual protocol tracking.</p>
-        <div class="price-highlight" style="color: #ffffff;">$120 <span style="font-size: 16px; color: var(--rose-gold); font-style: normal;">/ month</span></div>
-        <div class="card-disclaimer">*Clinical membership fee only. Prescriptions are sold at cost and shipped directly to your door.</div>
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose" style="width:100%; font-size:12px;">Join Combination Club</a>
+      <div class="price-row">
+        <div>
+          <div class="name">Monthly Protocol Coaching Package</div>
+          <div class="desc">Includes 4 weekly check-in sessions (30 mins each) for step-by-step guidance, accountability, and real-time adjustments.</div>
+        </div>
+        <div class="amt">$200 <span style="font-size:14px; font-style:normal;">/ mo</span></div>
       </div>
-
-    </div>
-
-    <div class="process-box" style="margin-top: 0;">
-      <h3 style="font-size: 28px; font-style: italic; color: var(--rose-gold); margin-bottom: 24px; text-align: center;">What's Included in Every Bunny Rx Membership</h3>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); text-align: center;">
+      <div class="price-row">
         <div>
-          <h4 style="color: #ffffff; font-size: 18px; margin-bottom: 6px;">1-Hour Consult &amp; Review</h4>
-          <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6;">Includes comprehensive 1-hour initial virtual consultation plus 1-hour comprehensive lab review session.</p>
+          <div class="name">Lab Interpretation Add-On</div>
+          <div class="desc">A thorough 45-minute virtual analysis of ordered functional lab panels alongside a custom step-by-step action plan.</div>
         </div>
-        <div>
-          <h4 style="color: #ffffff; font-size: 18px; margin-bottom: 6px;">30-Min Monthly Check-Ins</h4>
-          <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6;">Regular virtual check-ins for tracking, prescription adjustments, symptom management, and nutrition support.</p>
-        </div>
-        <div>
-          <h4 style="color: #ffffff; font-size: 18px; margin-bottom: 6px;">24/7 Direct Provider Access</h4>
-          <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6;">Direct 24/7 on-call access to your care provider whenever questions or symptom adjustments arise.</p>
-        </div>
-        <div>
-          <h4 style="color: #ffffff; font-size: 18px; margin-bottom: 6px;">At-Cost Prescriptions</h4>
-          <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6;">Medications sold strictly at wholesale cost and shipped directly from compounding pharmacy to your home.</p>
-        </div>
+        <div class="amt">+$150 <span style="font-size:14px; font-style:normal;">/ lab set</span></div>
       </div>
     </div>
 
+    <div class="fullscript-banner">
+      <div>
+        <strong>À La Carte Protocols &amp; Professional-Grade Supplements</strong>
+        <p>Order preset reset protocols and practitioner-grade supplements directly through our Fullscript dispensary.</p>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <a href="https://us.fullscript.com/welcome/lipbunnybeauty/signup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 8px 18px; font-size: 13px;">Create Account &rarr;</a>
+        <a href="https://us.fullscript.com/s/lipbunnybeauty/shop" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 8px 18px; font-size: 13px;">Shop Store &rarr;</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="labs">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Diagnostic Options</span>
-      <h2>Lab Draw Locations &amp; Options</h2>
-      <p style="color: var(--text-muted); max-width: 680px; margin: 12px auto 0; font-size: 15px;">
-        All appointments are 100% virtual, but lab draws require blood collection. We offer three convenient draw options across Massachusetts.
-      </p>
+    <div class="section-head center">
+      <span class="eyebrow">Diagnostic Testing</span>
+      <h2>À La Carte Lab Menu</h2>
+      <p>Direct-to-consumer lab panels and specialized testing ordered directly without mandatory initial consults.</p>
     </div>
 
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-bottom: 32px;">
-      
-      <div class="menu-item" style="margin-bottom: 0; text-align: center;">
-        <h3 class="menu-item-title" style="font-size: 24px;">1. In-Person HQ Location</h3>
-        <div class="menu-item-price" style="margin: 10px 0;">Included in Membership</div>
-        <div class="menu-item-desc">
-          Visit our primary office in <strong>Fall River, MA</strong> for your required lab draws. <em>(Boston location coming soon!)</em>
-        </div>
-      </div>
-
-      <div class="menu-item" style="margin-bottom: 0; text-align: center; border-color: var(--rose-gold);">
-        <h3 class="menu-item-title" style="font-size: 24px;">2. Access Hotspots</h3>
-        <div class="menu-item-price" style="margin: 10px 0;">+$45 Draw Fee</div>
-        <div class="menu-item-desc">
-          Visit any partner <strong>Labcorp Patient Service Center</strong> or Access Medical Labs draw station throughout Massachusetts.
-        </div>
-        <a href="https://www.labcorp.com/labs-and-appointments" target="_blank" rel="noopener" class="btn btn-rose" style="padding: 8px 18px; font-size: 12px; margin-top: 10px;">
-          Find Nearby Labcorp Draw Site &rarr;
-        </a>
-      </div>
-
-      <div class="menu-item" style="margin-bottom: 0; text-align: center;">
-        <h3 class="menu-item-title" style="font-size: 24px;">3. Remote Mobile Draw</h3>
-        <div class="menu-item-price" style="margin: 10px 0;">+$200+ Draw Fee</div>
-        <div class="menu-item-desc">
-          A licensed mobile phlebotomist comes directly to your home or office. Available in qualifying MA areas upon request.
-        </div>
-      </div>
-
+    <div class="notice-banner">
+      <strong>Massachusetts Patients &amp; Draw Details:</strong> Direct blood draws are exclusive to <strong>MA patients</strong>. In-person draws at <strong>Lip Bunny Beauty (Fall River, MA)</strong> have no extra site fee. Draws at remote Access Points incur a flat <strong>~$45 fee</strong> per visit. At-home saliva and tissue kits ship directly to your door with no site visit needed.
     </div>
 
-    <div class="holistic-banner" style="margin-bottom: 0; border-color: var(--rose-gold); background: rgba(232, 197, 190, 0.08);">
-      <h3>Looking for Root-Cause Coaching &amp; Functional Testing?</h3>
-      <p style="margin-bottom: 16px;">
-        Enhance your journey with holistic wellness coaching, diet optimization, gut health protocols, and heavy metal/nutrient testing through <strong>The Wellness Hunny</strong>.
-      </p>
-      <p style="font-size: 14px; color: var(--rose-gold); margin-bottom: 20px;">
-        <strong>Drop-In Coaching Visit:</strong> $65 / 30-min session &nbsp;|&nbsp; <strong>Monthly Wellness Pass:</strong> $200 / month (Weekly 30-min check-ins)
-      </p>
-      <a href="index.html" class="btn btn-rose">
-        Visit The Wellness Hunny &rarr;
-      </a>
+    <div class="lab-filters">
+      <button class="filter-btn active" onclick="filterLabs('all', event)">All Labs</button>
+      <button class="filter-btn" onclick="filterLabs('at-home', event)">At-Home Kits</button>
+      <button class="filter-btn" onclick="filterLabs('blood', event)">Blood Panels (MA)</button>
     </div>
 
+    <div class="category-title lab-cat-athome" style="margin-top: 0;">
+      <h2>At-Home Functional Kits</h2>
+      <span>Tissue, Microbiome &amp; Saliva</span>
+    </div>
+
+    <div class="lab-grid lab-cat-athome">
+      <div class="lab-card">
+        <div>
+          <h3>Hair Tissue Mineral Analysis (HTMA)</h3>
+          <div class="lab-price">$125</div>
+          <div class="turnaround">⏱ Results in 7–10 Business Days</div>
+          <p>Measures long-term mineral levels and toxic heavy metal accumulation locked in tissue over time. Superior to blood for tracking 3-month cellular stress patterns.</p>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="padding: 9px 16px; font-size: 13px; width: 100%;">Order HTMA &rarr;</a>
+      </div>
+
+      <div class="lab-card">
+        <div>
+          <h3>Genova GI Effects® Stool Profile</h3>
+          <div class="lab-price">$339</div>
+          <div class="turnaround">⏱ Results in 10–14 Business Days</div>
+          <p>The standard for evaluating microbiome balance, digestive efficiency, inflammation, and hidden gut infections. Ideal for chronic bloating or leaky gut.</p>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="padding: 9px 16px; font-size: 13px; width: 100%;">Order GI Panel &rarr;</a>
+      </div>
+
+      <div class="lab-card">
+        <div>
+          <h3>Adrenal Fatigue Panel (Saliva x4)</h3>
+          <div class="lab-price">$99</div>
+          <div class="turnaround">⏱ Results in 5–7 Business Days</div>
+          <p>At-home saliva kit mapping daily cortisol flow (AM, Noon, Evening, Night) to evaluate adrenal stress and fatigue.</p>
+          <details>
+            <summary>View Panel Key Markers</summary>
+            <div class="panel-list-content">Cortisol (4x daily curve), DHEA, 17-OH Progesterone.</div>
+          </details>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="padding: 9px 16px; font-size: 13px; width: 100%;">Order Adrenal Kit &rarr;</a>
+      </div>
+    </div>
+
+    <div class="category-title lab-cat-blood">
+      <h2>Comprehensive Blood Panels</h2>
+      <span>Blood Draws (MA Patients)</span>
+    </div>
+
+    <div class="lab-grid lab-cat-blood">
+      <div class="lab-card">
+        <div>
+          <h3>Male Comprehensive Panel</h3>
+          <div class="lab-price">$245</div>
+          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
+          <p>Full health baseline for energy, cardiovascular health, thyroid, and hormones.</p>
+          <details>
+            <summary>View Panel Key Markers</summary>
+            <div class="panel-list-content">CBC, CMP, HbA1c, TSH, Free T3/T4, Testosterone (Free/Total), SHBG, Estradiol, Lipids, B12, Vit D, Homocysteine.</div>
+          </details>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <div class="lab-card">
+        <div>
+          <h3>Female Comprehensive Panel</h3>
+          <div class="lab-price">$245</div>
+          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
+          <p>Core evaluation of metabolic health, energy, thyroid function, and sex hormones.</p>
+          <details>
+            <summary>View Panel Key Markers</summary>
+            <div class="panel-list-content">CBC, CMP, HbA1c, TSH, Free T3/T4, Testosterone, Estradiol, FSH, Lipids, Vit D, B12, Homocysteine.</div>
+          </details>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <div class="lab-card">
+        <div>
+          <h3>Complete Thyroid Panel</h3>
+          <div class="lab-price">$195</div>
+          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
+          <p>Comprehensive diagnostic thyroid workup covering metabolic signaling and antibodies.</p>
+          <details>
+            <summary>View Panel Key Markers</summary>
+            <div class="panel-list-content">TSH, Free T3, Free T4, Reverse T3, TPO &amp; Thyroglobulin Antibodies.</div>
+          </details>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <div class="lab-card">
+        <div>
+          <h3>Menstrual &amp; Hormone Panel</h3>
+          <div class="lab-price">$175</div>
+          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
+          <p>Evaluates cycle regularity, PMS, androgen activity, and overall estrogen balance.</p>
+          <details>
+            <summary>View Panel Key Markers</summary>
+            <div class="panel-list-content">HbA1c, Testosterone, FSH, LH, Estradiol, Progesterone, Fasting Insulin, Prolactin, DHT.</div>
+          </details>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <div class="lab-card">
+        <div>
+          <h3>CardioPro Advanced Panel</h3>
+          <div class="lab-price">$285</div>
+          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
+          <p>Advanced cardiovascular risk evaluation going far beyond standard cholesterol testing.</p>
+          <details>
+            <summary>View Panel Key Markers</summary>
+            <div class="panel-list-content">Lipids, sd-LDL, hs-CRP, Homocysteine, Lp(a), Apo A-1, Apo B, Fasting Insulin, Vit D.</div>
+          </details>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <div class="lab-card">
+        <div>
+          <h3>Autoimmune &amp; Inflammation Panel</h3>
+          <div class="lab-price">$185</div>
+          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
+          <p>Screens for systemic inflammation and markers related to joint pain or auto-antibody activity.</p>
+          <details>
+            <summary>View Panel Key Markers</summary>
+            <div class="panel-list-content">hs-CRP, ESR (Sed Rate), ANA Titer, Rheumatoid Factor, Complement C3/C4.</div>
+          </details>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <div class="lab-card">
+        <div>
+          <h3>COVID-19 Spike Antibody</h3>
+          <div class="lab-price">$135</div>
+          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
+          <p>Evaluates lingering post-viral fatigue or neutral antibody presence.</p>
+          <details>
+            <summary>View Panel Key Markers</summary>
+            <div class="panel-list-content">SARS-CoV-2 Spike (S1-RBD) Antibodies.</div>
+          </details>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+
+      <div class="lab-card">
+        <div>
+          <h3>Anemia Panel</h3>
+          <div class="lab-price">$95</div>
+          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
+          <p>Targeted evaluation for chronic low energy, pale skin, dizziness, or iron status.</p>
+          <details>
+            <summary>View Panel Key Markers</summary>
+            <div class="panel-list-content">CBC and complete iron status markers.</div>
+          </details>
+        </div>
+        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="menu">
+<section id="intake">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Focused Clinical Menu</span>
-      <h2>Prescription Protocol Options</h2>
-    </div>
+    <div class="malla-card-container">
+      <span class="malla-badge-pill">🔒 Secure HIPAA-Compliant Portal</span>
+      
+      <h2 style="color: #ffffff; font-size: 42px; font-style: italic; margin-bottom: 16px;">
+        Ready to Elevate Your Health &amp; Longevity?
+      </h2>
+      
+      <p style="color: rgba(255, 255, 255, 0.85); font-size: 16px; max-width: 620px; margin: 0 auto 32px auto; line-height: 1.7;">
+        Take the first step toward personalized root-cause coaching, gut microbiome restoration, or functional testing. Schedule your intake assessment today through the Malla Portal.
+      </p>
 
-    <h3 class="menu-category-title">Tirzepatide &amp; Metabolic Protocols</h3>
-
-    <div class="menu-item">
-      <div class="menu-item-head">
-        <span class="menu-item-title">Microdosed Tirzepatide / Glycine / B12</span>
-        <span class="menu-item-price">$120 / 1mL Vial (At Cost)</span>
+      <div style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 32px;">
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 16px 36px; font-weight: 600;">
+          Book via Malla Portal &rarr;
+        </a>
+        <span style="color: rgba(255,255,255,0.6); font-size: 12px; margin-top: 10px;">No upfront payment required to register intake</span>
       </div>
-      <div class="menu-item-desc">Low-dose tirzepatide tailored for subtle metabolic enhancement, moderate weight loss, reduced bloating, puffiness, and systemic inflammation reduction without aggressive titration. Maintained flat for optimal anti-aging and physiological support.</div>
-      <ul class="menu-item-bullets">
-        <li>Promotes moderate, steady weight loss while reducing bloating and water retention</li>
-        <li>Targeted systemic inflammation reduction and metabolic health maintenance</li>
-        <li>Glycine reduces GI side effects while supporting gut lining, sleep, and recovery</li>
-        <li>B12 for cellular energy, metabolic balance, and neurological support</li>
-      </ul>
-      <div class="menu-meta">How Used: Weekly SQ injection. Shipped directly from compounding pharmacy at cost.</div>
-    </div>
 
-    <div class="menu-item">
-      <div class="menu-item-head">
-        <span class="menu-item-title">Titrated Tirzepatide / Glycine / B12 (Weight Loss Protocol)</span>
-        <span class="menu-item-price">$120 – $340 / vial (At Cost)</span>
+      <div style="border-top: 1px dashed rgba(227, 210, 192, 0.3); padding-top: 22px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; color: var(--tan-light); font-size: 13px;">
+        <span>✦ Virtual Telehealth Care</span>
+        <span>✦ In-Person Draws at Lip Bunny Beauty</span>
+        <span>✦ Root-Cause Functional Analysis</span>
       </div>
-      <div class="menu-item-desc">Standard GLP-1/GIP protocol for weight loss and metabolic repair. Your dosage is titrated gradually to your unique needs based on progress and clinical response.</div>
-      <ul class="menu-item-bullets">
-        <li>Starting Dose (1mL vial): $120</li>
-        <li>Level 1 (2mL vial): $175</li>
-        <li>Level 2 (3mL vial): $225</li>
-        <li>Level 3 (4mL vial): $270</li>
-        <li>Level 4 (6mL vial): $340</li>
-      </ul>
-      <div class="menu-meta">How Used: Weekly SQ injection. Sold at wholesale cost and shipped directly to patient.</div>
     </div>
-
-    <h3 class="menu-category-title">Bioidentical HRT &amp; Hormone Optimization</h3>
-
-    <div class="menu-item">
-      <div class="menu-item-head">
-        <span class="menu-item-title">BIEST Cream Ht 50/50 (Estradiol / Estriol)</span>
-        <span class="menu-item-price">$75 – $105 (At Cost)</span>
-      </div>
-      <div class="menu-item-desc">Balanced bi-estrogen cream for menopausal symptom management, bone density, and cognitive clarity. Estriol buffers tissue proliferation while strengthening tissue.</div>
-      <div class="menu-meta">Applied daily. Strengths customized to clinical lab response.</div>
-    </div>
-
-    <div class="menu-item">
-      <div class="menu-item-head">
-        <span class="menu-item-title">Bioidentical Progesterone Capsules</span>
-        <span class="menu-item-price">$55 – $60 (At Cost)</span>
-      </div>
-      <div class="menu-item-desc">Oral progesterone for deep sleep promotion, uterine lining protection, anxiety reduction, and PMS/PMDD relief.</div>
-      <div class="menu-meta">Taken orally at bedtime. Dose tailored based on hormone testing.</div>
-    </div>
-
-    <div class="menu-item">
-      <div class="menu-item-head">
-        <span class="menu-item-title">Testosterone Cream</span>
-        <span class="menu-item-price">$30 – $38 (At Cost)</span>
-      </div>
-      <div class="menu-item-desc">Targeted micro-dose topical testosterone cream designed specifically for female libido restoration, physical energy, lean body composition, and mental clarity.</div>
-      <div class="menu-meta">Applied daily. Dose titrated based on androgen levels.</div>
-    </div>
-
-    <h3 class="menu-category-title">GHK-Cu &amp; Functional Peptide Skincare</h3>
-
-    <div class="menu-item">
-      <div class="menu-item-head">
-        <span class="menu-item-title">Estriol / GHK-Cu / Tretinoin Topical Cream</span>
-        <span class="menu-item-price">$115 – $220 (At Cost)</span>
-      </div>
-      <div class="menu-item-desc">Advanced estrogen-receptor topical cream combining estriol, GHK-Cu copper peptide, and tretinoin for perimenopausal skin changes, elasticity, and collagen building.</div>
-      <div class="menu-meta">Supply: 30-Day to 90-Day Options available. Shipped directly at cost.</div>
-    </div>
-
-    <div class="menu-item">
-      <div class="menu-item-head">
-        <span class="menu-item-title">Caffeine / GHK-Cu / Tretinoin / Niacinamide Cream (1% / 3% / 0.01%)</span>
-        <span class="menu-item-price">$143.95 (At Cost)</span>
-      </div>
-      <div class="menu-item-desc">Multi-active topical cream combining caffeine, GHK-Cu peptide, tretinoin, and niacinamide for collagen stimulation, microcirculation, pore refinement, and brightening.</div>
-      <div class="menu-meta">Supply: 6-Week Supply (30gm tube). Cold shipping included.</div>
-    </div>
-
-    <div class="menu-item">
-      <div class="menu-item-head">
-        <span class="menu-item-title">GHK-Cu Copper Peptide Cream (3%)</span>
-        <span class="menu-item-price">$128.95 (At Cost)</span>
-      </div>
-      <div class="menu-item-desc">Topical copper peptide cream for collagen/elastin induction, skin repair, anti-inflammation, and fine line reduction with no photosensitivity risk.</div>
-      <div class="menu-meta">Supply: 6-Week Supply (30gm bottle). Cold shipping included.</div>
-    </div>
-
-    <div class="menu-item">
-      <div class="menu-item-head">
-        <span class="menu-item-title">GHK-Cu / Niacinamide Rejuvenation Cream (0.5%)</span>
-        <span class="menu-item-price">$108.95 / $166.95 / $223.95 (At Cost)</span>
-      </div>
-      <div class="menu-item-desc">Topical copper peptide and niacinamide formulation for collagen support, brightening, and anti-aging without tretinoin (safe for sensitive skin).</div>
-      <div class="menu-meta">Supply: 30gm (~5.7 Wks) / 60gm (~11.4 Wks) / 90gm (~17.1 Wks). Cold shipping included.</div>
-    </div>
-
   </div>
 </section>
 
-<section id="intake" class="bottom-video-section">
-  <video class="video-bg" autoplay loop muted playsinline>
-    <source src="sculpture-flowers.mp4" type="video/mp4">
-  </video>
-  <div class="video-overlay" style="background: rgba(18, 14, 14, 0.85);"></div>
+<section id="faq">
   <div class="wrap">
-    <div style="max-width: 800px; margin: 0 auto; text-align: center; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 32px; padding: 60px 40px; backdrop-filter: blur(16px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); position: relative; z-index: 5;">
-      
-      <span class="eyebrow" style="letter-spacing: 0.25em;">Begin Your Transformation</span>
-      <h2 style="font-size: 48px; margin: 16px 0 20px; font-style: italic;">Ready to Elevate Your Health &amp; Longevity?</h2>
-      
-      <p style="color: var(--text-muted); font-size: 16.5px; line-height: 1.8; margin-bottom: 36px; max-width: 620px; margin-left: auto; margin-right: auto;">
-        Take the first step toward personalized metabolic care, bioidentical HRT, or functional skincare. Schedule your intake assessment today through the Malla Portal. <em>(Massachusetts residents only)</em>
-      </p>
-
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-rose" style="padding: 18px 42px; font-size: 15px;">
-          Book Intake via Malla &rarr;
-        </a>
-        <a href="#labs" class="btn btn-outline" style="padding: 18px 36px; font-size: 15px;">
-          View Lab Options
-        </a>
-      </div>
-
+    <div class="section-head center">
+      <span class="eyebrow">Got Questions?</span>
+      <h2>Frequently Asked Questions</h2>
     </div>
+
+    <details class="faq-item">
+      <summary>Can I combine Wellness Hunny coaching with Lip Bunny Rx prescriptions?</summary>
+      <p>Yes, absolutely! In fact, we highly recommend it. Combining root-cause coaching (gut health, stress, and nutrition) with clinical therapies (GLP-1s, HRT, or peptides) ensures you retain lean muscle mass, minimize prescription side effects, and keep weight off permanently.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need to see a doctor before booking a coaching session?</summary>
+      <p>No. You can book directly with us at any time. We focus on root-cause coaching, lifestyle protocols, and helping you navigate your options clearly before or alongside traditional healthcare.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How does the Lip Bunny Rx prescription referral work?</summary>
+      <p>If you're interested in GLP-1 weight management or HRT, we complete your initial readiness assessment and baseline lab ordering during your Wellness Hunny consult, then seamlessly route you to Lip Bunny Rx with zero redundant paperwork.</p>
+    </details>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 Lip Bunny Rx. All rights reserved. Servicing Massachusetts Patients Only.</p>
+    <p>&copy; 2026 The Wellness Hunny. All rights reserved. | Root-Cause Wellness &amp; Health Coaching</p>
   </div>
 </footer>
+
+<div class="mobile-bar">
+  <div class="mobile-bar-text">
+    <strong>Wellness Hunny</strong>
+    Root-Cause Coaching
+  </div>
+  <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;">Book Intake</a>
+</div>
+
+<script>
+function filterLabs(category, event) {
+  const atHomeEls = document.querySelectorAll('.lab-cat-athome');
+  const bloodEls = document.querySelectorAll('.lab-cat-blood');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  filterBtns.forEach(btn => btn.classList.remove('active'));
+  if (event && event.target) {
+    event.target.classList.add('active');
+  }
+
+  if (category === 'all') {
+    atHomeEls.forEach(el => el.style.display = '');
+    bloodEls.forEach(el => el.style.display = '');
+  } else if (category === 'at-home') {
+    atHomeEls.forEach(el => el.style.display = '');
+    bloodEls.forEach(el => el.style.display = 'none');
+  } else if (category === 'blood') {
+    atHomeEls.forEach(el => el.style.display = 'none');
+    bloodEls.forEach(el => el.style.display = '');
+  }
+}
+</script>
 
 </body>
 </html>
