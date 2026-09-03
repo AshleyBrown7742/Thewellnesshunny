@@ -23,7 +23,7 @@
   body {
     margin: 0; background: var(--cream); color: var(--ink);
     font-family: 'Jost', sans-serif; font-weight: 400; line-height: 1.7;
-    overflow-x: hidden; padding-bottom: 60px; /* Space for mobile sticky nav */
+    overflow-x: hidden; padding-bottom: 60px;
   }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; }
   h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; margin: 0; color: var(--ink); }
@@ -70,7 +70,6 @@
     border-bottom: 1px solid rgba(140, 109, 79, 0.15);
   }
 
-  /* Translucent Top Banner */
   .rx-banner { 
     background: rgba(250, 247, 242, 0.15); 
     backdrop-filter: blur(12px);
@@ -129,7 +128,6 @@
   .hero-text .eyebrow { color: var(--tan-light); }
   .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
-  /* DUAL CARE HYBRID BANNER */
   .dual-care-section {
     background: #1f1813;
     border-top: 1px solid var(--tan-deep);
@@ -194,7 +192,6 @@
   .notice-banner { background: rgba(235, 210, 192, 0.4); border: 1px solid var(--tan); border-radius: 14px; padding: 16px 20px; margin-bottom: 28px; font-size: 13.5px; color: var(--ink); }
   .notice-banner strong { color: var(--tan-deep); }
 
-  /* FILTER BUTTONS FOR LABS */
   .lab-filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
   .filter-btn { background: #fff; border: 1px solid var(--line); padding: 8px 18px; border-radius: 999px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
   .filter-btn.active, .filter-btn:hover { background: var(--tan-deep); color: #fff; border-color: var(--tan-deep); }
@@ -206,7 +203,6 @@
   .lab-card .turnaround { font-size: 11px; font-weight: 600; color: var(--tan-deep); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
   .lab-card p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; margin: 0 0 14px; }
   
-  /* ACCORDION MARKERS */
   .lab-card details { background: var(--cream); border-radius: 10px; padding: 8px 12px; margin-bottom: 16px; font-size: 12.5px; }
   .lab-card summary { font-weight: 600; color: var(--tan-deep); cursor: pointer; outline: none; }
   .lab-card .panel-list-content { margin-top: 8px; color: var(--ink); line-height: 1.5; }
@@ -215,7 +211,6 @@
   .category-title h2 { font-size: 24px; font-style: italic; }
   .category-title span { font-size: 12px; color: var(--tan-deep); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
 
-  /* Native Custom Malla Booking Card */
   .malla-card-container {
     background: #1f1813;
     border: 1px solid var(--tan-deep);
@@ -253,28 +248,12 @@
 
   footer { border-top: 1px solid var(--line); padding: 30px 0; text-align: center; font-size: 12.5px; color: var(--ink-soft); }
 
-  /* STICKY MOBILE ACTION BAR */
-  .mobile-bar {
-    display: none;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: #1f1813;
-    border-top: 1px solid var(--tan-deep);
-    padding: 10px 16px;
-    z-index: 999;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .mobile-bar-text { color: #fff; font-size: 12px; }
-  .mobile-bar-text strong { color: var(--tan-light); display: block; font-size: 13px; }
-
   @media (max-width: 720px) {
     .hero-text h1 { font-size: 38px; }
     .price-card, .malla-card-container { padding: 30px 20px; }
     .nav-links { display: none; }
     .dual-grid { grid-template-columns: 1fr; gap: 10px; }
     .dual-plus { display: none; }
-    .mobile-bar { display: flex; }
   }
 </style>
 </head>
@@ -465,9 +444,9 @@
     </div>
 
     <div class="lab-filters">
-      <button class="filter-btn active" onclick="filterLabs('all')">All Labs</button>
-      <button class="filter-btn" onclick="filterLabs('at-home')">At-Home Kits</button>
-      <button class="filter-btn" onclick="filterLabs('blood')">Blood Panels (MA)</button>
+      <button class="filter-btn active" onclick="filterLabs(event, 'all')">All Labs</button>
+      <button class="filter-btn" onclick="filterLabs(event, 'at-home')">At-Home Kits</button>
+      <button class="filter-btn" onclick="filterLabs(event, 'blood')">Blood Panels (MA)</button>
     </div>
 
     <div class="category-title lab-cat-athome" style="margin-top: 0;">
@@ -558,76 +537,6 @@
         </div>
         <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
       </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Menstrual &amp; Hormone Panel</h3>
-          <div class="lab-price">$175</div>
-          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
-          <p>Evaluates cycle regularity, PMS, androgen activity, and overall estrogen balance.</p>
-          <details>
-            <summary>View Panel Key Markers</summary>
-            <div class="panel-list-content">HbA1c, Testosterone, FSH, LH, Estradiol, Progesterone, Fasting Insulin, Prolactin, DHT.</div>
-          </details>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>CardioPro Advanced Panel</h3>
-          <div class="lab-price">$285</div>
-          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
-          <p>Advanced cardiovascular risk evaluation going far beyond standard cholesterol testing.</p>
-          <details>
-            <summary>View Panel Key Markers</summary>
-            <div class="panel-list-content">Lipids, sd-LDL, hs-CRP, Homocysteine, Lp(a), Apo A-1, Apo B, Fasting Insulin, Vit D.</div>
-          </details>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Autoimmune &amp; Inflammation Panel</h3>
-          <div class="lab-price">$185</div>
-          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
-          <p>Screens for systemic inflammation and markers related to joint pain or auto-antibody activity.</p>
-          <details>
-            <summary>View Panel Key Markers</summary>
-            <div class="panel-list-content">hs-CRP, ESR (Sed Rate), ANA Titer, Rheumatoid Factor, Complement C3/C4.</div>
-          </details>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>COVID-19 Spike Antibody</h3>
-          <div class="lab-price">$135</div>
-          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
-          <p>Evaluates lingering post-viral fatigue or neutral antibody presence.</p>
-          <details>
-            <summary>View Panel Key Markers</summary>
-            <div class="panel-list-content">SARS-CoV-2 Spike (S1-RBD) Antibodies.</div>
-          </details>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
-
-      <div class="lab-card">
-        <div>
-          <h3>Anemia Panel</h3>
-          <div class="lab-price">$95</div>
-          <div class="turnaround">⏱ Results in 3–5 Business Days</div>
-          <p>Targeted evaluation for chronic low energy, pale skin, dizziness, or iron status.</p>
-          <details>
-            <summary>View Panel Key Markers</summary>
-            <div class="panel-list-content">CBC and complete iron status markers.</div>
-          </details>
-        </div>
-        <a href="#intake" class="btn btn-primary" style="width: 100%;">Order Panel &rarr;</a>
-      </div>
     </div>
   </div>
 </section>
@@ -636,26 +545,13 @@
   <div class="wrap">
     <div class="malla-card-container">
       <span class="malla-badge-pill">🔒 Secure HIPAA-Compliant Portal</span>
-      
-      <h2 style="color: #ffffff; font-size: 42px; font-style: italic; margin-bottom: 16px;">
-        Ready to Elevate Your Health &amp; Longevity?
-      </h2>
-      
+      <h2 style="color: #ffffff; font-size: 42px; font-style: italic; margin-bottom: 16px;">Ready to Elevate Your Health &amp; Longevity?</h2>
       <p style="color: rgba(255, 255, 255, 0.85); font-size: 16px; max-width: 620px; margin: 0 auto 32px auto; line-height: 1.7;">
         Take the first step toward personalized root-cause coaching, gut microbiome restoration, or functional testing. Schedule your intake assessment today through the Malla Portal.
       </p>
-
       <div style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-bottom: 32px;">
-        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 16px 36px; font-weight: 600;">
-          Book via Malla Portal &rarr;
-        </a>
+        <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 16px 36px; font-weight: 600;">Book via Malla Portal &rarr;</a>
         <span style="color: rgba(255,255,255,0.6); font-size: 12px; margin-top: 10px;">No upfront payment required to register intake</span>
-      </div>
-
-      <div style="border-top: 1px dashed rgba(227, 210, 192, 0.3); padding-top: 22px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; color: var(--tan-light); font-size: 13px;">
-        <span>✦ Virtual Telehealth Care</span>
-        <span>✦ In-Person Draws at Lip Bunny Beauty</span>
-        <span>✦ Root-Cause Functional Analysis</span>
       </div>
     </div>
   </div>
@@ -670,62 +566,42 @@
 
     <details class="faq-item">
       <summary>Can I combine Wellness Hunny coaching with Lip Bunny Rx prescriptions?</summary>
-      <p>Yes, absolutely! In fact, we highly recommend it. Combining root-cause coaching (gut health, stress, and nutrition) with clinical therapies (GLP-1s, HRT, or peptides) ensures you retain lean muscle mass, minimize prescription side effects, and keep weight off permanently.</p>
+      <p>Yes, absolutely! Combining root-cause coaching with clinical therapies ensures you retain lean muscle mass and maintain long-term results.</p>
     </details>
 
     <details class="faq-item">
       <summary>Do I need to see a doctor before booking a coaching session?</summary>
-      <p>No. You can book directly with us at any time. We focus on root-cause coaching, lifestyle protocols, and helping you navigate your options clearly before or alongside traditional healthcare.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>How does the Lip Bunny Rx prescription referral work?</summary>
-      <p>If you're interested in GLP-1 weight management or HRT, we complete your initial readiness assessment and baseline lab ordering during your Wellness Hunny consult, then seamlessly route you to Lip Bunny Rx with zero redundant paperwork.</p>
+      <p>No. You can book directly with us at any time. We focus on root-cause coaching, lifestyle protocols, and navigating your options.</p>
     </details>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>&copy; 2026 Wellness Hunny. Root-Cause Functional Health &amp; Lifestyle Coaching.</p>
+    <p>&copy; 2026 The Wellness Hunny. All rights reserved.</p>
   </div>
 </footer>
 
-<div class="mobile-bar">
-  <div class="mobile-bar-text">
-    <strong>Wellness Hunny</strong>
-    Root-Cause Coaching
-  </div>
-  <a href="https://app.malla.co/join/ashley-brown-00659" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 8px 18px; font-size: 13px;">Book Intake</a>
-</div>
-
 <script>
-  function filterLabs(type) {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => btn.classList.remove('active'));
-    
-    event.target.classList.add('active');
+function filterLabs(evt, category) {
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  evt.currentTarget.classList.add('active');
 
-    const homeCat = document.querySelectorAll('.lab-cat-athome');
-    const bloodCat = document.querySelectorAll('.lab-cat-blood');
+  const atHomeElements = document.querySelectorAll('.lab-cat-athome');
+  const bloodElements = document.querySelectorAll('.lab-cat-blood');
 
-    if (type === 'all') {
-      homeCat.forEach(el => el.style.display = 'grid');
-      bloodCat.forEach(el => el.style.display = 'grid');
-      document.querySelector('.category-title.lab-cat-athome').style.display = 'flex';
-      document.querySelector('.category-title.lab-cat-blood').style.display = 'flex';
-    } else if (type === 'at-home') {
-      homeCat.forEach(el => el.style.display = 'grid');
-      bloodCat.forEach(el => el.style.display = 'none');
-      document.querySelector('.category-title.lab-cat-athome').style.display = 'flex';
-      document.querySelector('.category-title.lab-cat-blood').style.display = 'none';
-    } else if (type === 'blood') {
-      homeCat.forEach(el => el.style.display = 'none');
-      bloodCat.forEach(el => el.style.display = 'grid');
-      document.querySelector('.category-title.lab-cat-athome').style.display = 'none';
-      document.querySelector('.category-title.lab-cat-blood').style.display = 'flex';
-    }
+  if (category === 'all') {
+    atHomeElements.forEach(el => el.style.display = '');
+    bloodElements.forEach(el => el.style.display = '');
+  } else if (category === 'at-home') {
+    atHomeElements.forEach(el => el.style.display = '');
+    bloodElements.forEach(el => el.style.display = 'none');
+  } else if (category === 'blood') {
+    atHomeElements.forEach(el => el.style.display = 'none');
+    bloodElements.forEach(el => el.style.display = '');
   }
+}
 </script>
 
 </body>
