@@ -329,6 +329,12 @@
     .section-head h2, .philo-section h2, .malla-card-container h2 { font-size: 34px !important; }
     .dual-care-section h2 { font-size: 32px !important; }
   }
+
+  /* ===== WIDE-SCREEN SCALING: use more of the screen, larger text ===== */
+  .wrap { max-width: 1240px; }
+  .price-row .desc { max-width: 760px; }
+  @media (min-width: 1500px) { .wrap { zoom: 1.2; } }
+  @media (min-width: 1850px) { .wrap { zoom: 1.35; } }
 </style>
 </head>
 <body>
